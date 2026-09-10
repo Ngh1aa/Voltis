@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+<title id="title">VOLTIS TERRAIN concept electric SUV</title>
+<desc id="desc">Original concept illustration of a robust electric SUV on a dark technical background.</desc>
+<defs>
+  <linearGradient id="body" x1="0" y1=".2" x2="1" y2=".9">
+    <stop offset="0" stop-color="#b8c2bb"/>
+    <stop offset=".28" stop-color="#5b6a61"/>
+    <stop offset=".65" stop-color="#26302b"/>
+    <stop offset="1" stop-color="#0d1210"/>
+  </linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#29483e"/>
+    <stop offset=".7" stop-color="#0a1310"/>
+  </linearGradient>
+  <radialGradient id="wheel">
+    <stop offset=".06" stop-color="#68736c"/>
+    <stop offset=".09" stop-color="#111513"/>
+    <stop offset=".55" stop-color="#111513"/>
+    <stop offset=".6" stop-color="#9ba59f"/>
+    <stop offset=".66" stop-color="#141916"/>
+    <stop offset="1" stop-color="#020302"/>
+  </radialGradient>
+</defs>
+<rect width="1400" height="760" fill="#0c100e"/>
+<g opacity=".24" stroke="#334038">
+  <path d="M0 600H1400M0 640H1400M0 680H1400"/>
+  <path d="M160 0V760M320 0V760M480 0V760M640 0V760M800 0V760M960 0V760M1120 0V760M1280 0V760"/>
+</g>
+<ellipse cx="720" cy="622" rx="530" ry="48" fill="#000" opacity=".68"/>
+<circle cx="415" cy="566" r="112" fill="url(#wheel)"/>
+<circle cx="1060" cy="566" r="112" fill="url(#wheel)"/>
+<circle cx="415" cy="566" r="46" fill="#202821" stroke="#ff7a1a" stroke-width="3"/>
+<circle cx="1060" cy="566" r="46" fill="#202821" stroke="#ff7a1a" stroke-width="3"/>
+<path d="M193 512l55-130c18-43 52-73 98-88 91-29 210-40 358-38 149 1 262 21 339 59 54 27 102 71 145 131l113 33 20 47-45 24h-96c-8-72-54-124-110-124-58 0-104 53-112 124H527c-8-72-54-124-112-124-57 0-103 52-111 124h-69c-36-1-52-18-42-58z" fill="url(#body)" stroke="#aab5ae" stroke-width="2"/>
+<path d="M363 307c93-29 204-36 334-36 133 0 234 15 307 47 42 18 82 53 120 102H850l-52-143c-151-13-302-3-435 30z" fill="url(#glass)"/>
+<path d="M810 278l49 142H628l28-149c54-1 104 0 154 7z" fill="#10221c"/>
+<path d="M628 420h496" stroke="#8f9a94" stroke-width="3" opacity=".45"/>
+<path d="M285 441h128" stroke="#e6efe9" stroke-width="11" stroke-linecap="round"/>
+<path d="M1170 433h76" stroke="#ff7a1a" stroke-width="11" stroke-linecap="round"/>
+<path d="M250 500h146" stroke="#8dff63" stroke-width="4"/>
+<path d="M534 510h430" stroke="#69766f" stroke-width="2"/>
+<path d="M661 286l-29 134M813 286l38 134" stroke="#849188" stroke-width="2" opacity=".55"/>
+<text x="116" y="112" fill="#ff7a1a" font-family="Arial, sans-serif" font-size="20" letter-spacing="4">VOLTIS / 02</text>
+<text x="116" y="165" fill="#f5f7f4" font-family="Arial, sans-serif" font-weight="700" font-size="58" letter-spacing="-2">TERRAIN</text>
+<g fill="#8c9791" font-family="Arial, sans-serif" font-size="16">
+  <text x="118" y="204"></text>
+  <text x="1138" y="112" text-anchor="end">02 — 760</text>
+</g>
+</svg>
