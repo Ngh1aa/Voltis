@@ -8,6 +8,13 @@
   root.dataset.locale = "en";
   try { localStorage.setItem("voltis-locale", "en"); } catch (_) {}
 
+  if (!document.querySelector('script[data-voltis-media-library]')) {
+    const media = document.createElement("script");
+    media.src = "./js/media-library.js?v=2026-09-10-1";
+    media.dataset.voltisMediaLibrary = "true";
+    document.head.appendChild(media);
+  }
+
   const refinementStyle = document.createElement("link");
   refinementStyle.rel = "stylesheet";
   refinementStyle.href = "./css/refinement.css?v=6";
