@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 760" role="img" aria-labelledby="title desc">
+<title id="title">VOLTIS AERO concept electric sedan</title>
+<desc id="desc">Original concept illustration of a streamlined electric sedan on a dark technical background.</desc>
+<defs>
+  <linearGradient id="body" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#d9ded8"/>
+    <stop offset=".35" stop-color="#708077"/>
+    <stop offset=".66" stop-color="#28322e"/>
+    <stop offset="1" stop-color="#101512"/>
+  </linearGradient>
+  <linearGradient id="glass" x1=".2" y1="0" x2=".9" y2="1">
+    <stop offset="0" stop-color="#1f4037"/>
+    <stop offset=".6" stop-color="#0b1512"/>
+    <stop offset="1" stop-color="#020404"/>
+  </linearGradient>
+  <radialGradient id="wheel">
+    <stop offset=".1" stop-color="#232925"/>
+    <stop offset=".62" stop-color="#0a0d0c"/>
+    <stop offset=".66" stop-color="#9ca69f"/>
+    <stop offset=".71" stop-color="#171b18"/>
+    <stop offset="1" stop-color="#040605"/>
+  </radialGradient>
+  <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+    <feGaussianBlur stdDeviation="14"/>
+  </filter>
+</defs>
+<rect width="1400" height="760" fill="#090c0b"/>
+<g opacity=".35" stroke="#26302b" stroke-width="1">
+  <path d="M0 610H1400M0 650H1400M0 690H1400"/>
+  <path d="M180 0V760M360 0V760M540 0V760M720 0V760M900 0V760M1080 0V760M1260 0V760"/>
+</g>
+<path d="M120 638C354 614 1070 608 1290 640" stroke="#8dff63" stroke-width="8" opacity=".22" filter="url(#soft)" fill="none"/>
+<ellipse cx="735" cy="617" rx="515" ry="54" fill="#000" opacity=".62"/>
+<g>
+  <circle cx="412" cy="565" r="103" fill="url(#wheel)"/>
+  <circle cx="1062" cy="565" r="103" fill="url(#wheel)"/>
+  <circle cx="412" cy="565" r="48" fill="#202822" stroke="#89f55f" stroke-width="3"/>
+  <circle cx="1062" cy="565" r="48" fill="#202822" stroke="#89f55f" stroke-width="3"/>
+  <g stroke="#647168" stroke-width="5" opacity=".8">
+    <path d="M412 522V608M369 565H455M382 535L442 595M442 535L382 595"/>
+    <path d="M1062 522V608M1019 565H1105M1032 535L1092 595M1092 535L1032 595"/>
+  </g>
+</g>
+<path d="M241 531c22-78 67-146 154-179 93-35 218-50 327-55 119-5 230 7 328 44 62 24 119 63 174 117l73 19 20 51-41 22H1164c-7-68-50-116-103-116-55 0-97 48-105 116H514c-7-68-49-116-103-116-54 0-96 48-104 116h-62c-32-2-42-17-35-47l31-72z" fill="url(#body)" stroke="#b7c1bb" stroke-width="2"/>
+<path d="M469 347c75-31 171-39 260-43 107-4 196 4 281 32 50 16 100 45 151 87H858l-78-111c-105-3-206 4-311 35z" fill="url(#glass)" opacity=".95"/>
+<path d="M780 312l77 111H611l32-116c48-4 91-4 137 5z" fill="#10221c"/>
+<path d="M611 423h548" stroke="#89958e" stroke-width="3" opacity=".45"/>
+<path d="M260 470c113-18 236-22 367-20" stroke="#eef4ef" stroke-width="3" opacity=".55"/>
+<path d="M1154 423c44 2 74 12 112 31" stroke="#ff7a1a" stroke-width="8" stroke-linecap="round"/>
+<path d="M278 454c50-4 95-6 134-7" stroke="#dffff0" stroke-width="10" stroke-linecap="round"/>
+<path d="M1245 505c20-1 36 3 51 11" stroke="#8dff63" stroke-width="5" stroke-linecap="round"/>
+<path d="M530 510h374" stroke="#7d8b82" stroke-width="2" opacity=".55"/>
+<path d="M685 331l-32 92" stroke="#8a9890" stroke-width="2" opacity=".6"/>
+<text x="116" y="112" fill="#8dff63" font-family="Arial, sans-serif" font-size="20" letter-spacing="4">VOLTIS / 01</text>
+<text x="116" y="165" fill="#f5f7f4" font-family="Arial, sans-serif" font-weight="700" font-size="58" letter-spacing="-2">AERO</text>
+<g fill="#8c9791" font-family="Arial, sans-serif" font-size="16">
+  <text x="118" y="204"></text>
+  <text x="1138" y="112" text-anchor="end">01 — 760</text>
+</g>
+</svg>
