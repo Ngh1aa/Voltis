@@ -1,19 +1,30 @@
 (() => {
   "use strict";
 
-  const MEDIA_VERSION = "2026-09-10-1";
+  const MEDIA_VERSION = "2026-09-10-2";
+
+  // Official Tesla-hosted reference media only. These assets are intentionally
+  // centralized so the prototype can be re-skinned later without touching page markup.
   const IMG = {
-    engineering: "https://images.unsplash.com/photo-1581091212991-8891c7d4bd9b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    collaboration: "https://images.unsplash.com/photo-1758518732175-5d608ba3abdf?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    chargingNight: "https://images.unsplash.com/photo-1767042286073-8b87bbbe68ff?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    interiorDark: "https://images.unsplash.com/photo-1770290405667-5586bd4431b3?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    interiorLight: "https://images.unsplash.com/photo-1770287872664-f8e29eccc7d9?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    dashboard: "https://images.unsplash.com/photo-1760435107992-f4714801666b?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    blueprints: "https://images.unsplash.com/photo-1762146828422-50a8bd416d3c?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    roadSUV: "https://images.unsplash.com/photo-1775114501677-18ba958f38c6?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    roadEV: "https://images.unsplash.com/photo-1711921127505-f4a8727329a5?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    solar: "https://images.unsplash.com/photo-1749402676657-bb3299fdd5a5?auto=format&fit=crop&fm=jpg&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000",
-    megapack: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/megapack-resources.jpg"
+    modelY: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/learn_new_model_y_hero.jpg",
+    cybertruck: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Learn-Cybertruck-HFS-Hero.jpg",
+    model3Dark: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/service-portal-hero.jpg",
+    supercharger: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_1056,w_1874,c_fit,f_auto,q_auto:best/Supercharging_Vehicle_Q4_21_Image",
+    charging: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_635,w_1018,c_fit,f_auto,q_auto:best/Charging_3Y_MYT_Image",
+    touchscreen: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_526,w_846,c_fit,f_auto,q_auto:best/Touchscreen_3Y_MYT_Image",
+    controls: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_450,w_720,c_fit,f_auto,q_auto:best/Physical-Controls_3Y_MYT_Image",
+    essentials: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto:best/Essentials_3Y_Image",
+    support: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_1069,w_1728,c_fit,f_auto,q_auto:best/Support_3Y_MYT_Image",
+    delivery: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/support-after-taking-delivery-hero-global.jpg",
+    travel: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/travel-tips-tesla-hero.jpg",
+    ecosystem: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Ecosystem_Header_Image.png",
+    powerwall: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Learn-Powerwall-Home-Battery-Essential-01.jpg",
+    megapack: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/megapack-resources.jpg",
+    teslaApp: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/support-tesla-app-hero.jpg"
+  };
+
+  const VIDEO = {
+    supercharging: "https://digitalassets.tesla.com/tesla-contents/video/upload/f_auto,q_auto:best/EN---Supercharging.mp4"
   };
 
   function installStyles() {
@@ -32,18 +43,12 @@
     img.setAttribute("alt", alt);
     img.setAttribute("decoding", "async");
     img.setAttribute("referrerpolicy", "no-referrer");
+    img.dataset.mediaSource = "tesla";
     if (priority) {
       img.setAttribute("fetchpriority", "high");
       img.removeAttribute("loading");
     } else {
       img.setAttribute("loading", "lazy");
-    }
-    if (!img.dataset.voltisFallbackBound) {
-      img.dataset.voltisFallbackBound = "true";
-      img.addEventListener("error", () => {
-        const fallback = img.dataset.voltisOriginalSrc;
-        if (fallback && img.getAttribute("src") !== fallback) img.setAttribute("src", fallback);
-      });
     }
   }
 
@@ -69,94 +74,130 @@
     if (caption) caption.textContent = label;
   }
 
+  function addTeslaSourceBadge(container) {
+    if (!container || container.querySelector(".tesla-source-badge")) return;
+    const badge = document.createElement("span");
+    badge.className = "tesla-source-badge";
+    badge.textContent = "REFERENCE MEDIA / TESLA.COM";
+    container.appendChild(badge);
+  }
+
   function upgradeProjectMap() {
     const frame = document.querySelector(".project-map");
     if (!frame) return;
     frame.classList.add("project-map--photo");
     frame.innerHTML = '<img alt=""><div class="project-map__caption"><span>CHARGING / INFRASTRUCTURE</span><strong>Infrastructure is part of the journey.</strong></div>';
-    setImage(frame.querySelector("img"), IMG.chargingNight, "EV charging infrastructure at night", true);
+    setImage(frame.querySelector("img"), IMG.supercharger, "Tesla Supercharger reference image", true);
+    addTeslaSourceBadge(frame);
+  }
+
+  function addGalleryFilm() {
+    const grid = document.querySelector(".gallery-grid");
+    if (!grid || grid.querySelector("[data-gallery-film]")) return;
+
+    const figure = document.createElement("figure");
+    figure.className = "gallery-item gallery-item--wide gallery-item--video";
+    figure.dataset.galleryFilm = "true";
+    figure.innerHTML = `
+      <video controls muted playsinline preload="metadata" poster="${IMG.supercharger}">
+        <source src="${VIDEO.supercharging}" type="video/mp4">
+      </video>
+      <figcaption>Film / charging experience · Tesla reference</figcaption>
+      <span class="film-index">FILM / 01</span>`;
+    grid.prepend(figure);
   }
 
   function homepage() {
-    setImage(document.querySelector(".hero__media-frame img"), IMG.roadEV, "Electric vehicle in motion on a winding road — reference photography for VOLTIS", true);
-    setImage(document.querySelector('[data-model="aero"] .model-card__media img'), IMG.roadEV, "Electric fastback-style vehicle in motion — AERO visual reference");
-    setImage(document.querySelector('[data-model="terrain"] .model-card__media img'), IMG.roadSUV, "Electric SUV in motion on a mountain road — TERRAIN visual reference");
+    const heroFrame = document.querySelector(".hero__media-frame");
+    setImage(heroFrame?.querySelector("img"), IMG.modelY, "Tesla Model Y reference photography used for the VOLTIS hero", true);
+    addTeslaSourceBadge(heroFrame);
+
+    setImage(document.querySelector('[data-model="aero"] .model-card__media img'), IMG.model3Dark, "Tesla Model 3 reference image used for VOLTIS AERO");
+    setImage(document.querySelector('[data-model="terrain"] .model-card__media img'), IMG.cybertruck, "Tesla Cybertruck reference image used for VOLTIS TERRAIN");
 
     setMany(".cockpit-card img", [
-      { src: IMG.dashboard, alt: "Digital instrument display in a modern electric vehicle" },
-      { src: IMG.interiorLight, alt: "Light-toned electric vehicle cabin showing material and surface design" },
-      { src: IMG.interiorDark, alt: "Modern electric vehicle cockpit with physical and digital controls" }
+      { src: IMG.touchscreen, alt: "Tesla touchscreen reference for a minimal digital cockpit" },
+      { src: IMG.essentials, alt: "Tesla cabin reference for interior material and spatial design" },
+      { src: IMG.controls, alt: "Tesla physical-controls reference for automotive interaction design" }
     ]);
 
     setMany(".signature-card > img", [
-      { src: IMG.chargingNight, alt: "EV charging infrastructure used as an energy-system visual reference" },
-      { src: IMG.dashboard, alt: "Digital vehicle instrument display used as an interface visual reference" },
-      { src: IMG.solar, alt: "Solar generation field used as a clean-energy visual reference" }
+      { src: IMG.supercharger, alt: "Tesla Supercharger reference used for the VOLTIS energy visual system" },
+      { src: IMG.touchscreen, alt: "Tesla vehicle interface reference used for the VOLTIS digital system" },
+      { src: IMG.ecosystem, alt: "Tesla energy ecosystem reference used for the VOLTIS clean-energy system" }
     ]);
 
     setMany(".news-card__visual img", [
-      { src: IMG.roadEV, alt: "Electric vehicle exterior in motion" },
-      { src: IMG.chargingNight, alt: "Electric vehicle charging stations at night" },
-      { src: IMG.engineering, alt: "Engineers collaborating in an automotive development facility" }
+      { src: IMG.modelY, alt: "Tesla Model Y exterior reference" },
+      { src: IMG.supercharger, alt: "Tesla Supercharger reference" },
+      { src: IMG.servicePortal || IMG.model3Dark, alt: "Tesla service and engineering reference" }
     ]);
 
-    setImage(document.querySelector(".energy-map--photo > img"), IMG.megapack, "Utility-scale battery energy storage installation used as an energy architecture reference");
+    const energyFrame = document.querySelector(".energy-map--photo");
+    setImage(energyFrame?.querySelector("img"), IMG.megapack, "Tesla Megapack reference for VOLTIS energy architecture");
+    addTeslaSourceBadge(energyFrame);
   }
 
   function vehicles() {
     setMany(".vehicle-panel img", [
-      { src: IMG.roadEV, alt: "Electric performance-oriented vehicle driving on a curved road", priority: true },
-      { src: IMG.roadSUV, alt: "Electric SUV driving on a winding mountain road", priority: true }
+      { src: IMG.model3Dark, alt: "Tesla Model 3 reference image for the VOLTIS AERO fastback direction", priority: true },
+      { src: IMG.cybertruck, alt: "Tesla Cybertruck reference image for the VOLTIS TERRAIN utility direction", priority: true }
     ]);
+    document.querySelectorAll(".vehicle-panel").forEach(addTeslaSourceBadge);
   }
 
   function company() {
-    setImage(document.querySelector(".media-frame img"), IMG.collaboration, "Cross-functional team collaborating around a table");
+    setImage(document.querySelector(".media-frame img"), IMG.servicePortal || IMG.model3Dark, "Tesla vehicle-service environment used as a technical company reference");
+    addTeslaSourceBadge(document.querySelector(".media-frame"));
   }
 
   function projects() {
     upgradeProjectMap();
     setMany(".project-card__media img", [
-      { src: IMG.chargingNight, alt: "Electric vehicle charging infrastructure at night" },
-      { src: IMG.solar, alt: "Solar generation field supporting renewable-energy infrastructure" },
-      { src: IMG.megapack, alt: "Utility-scale battery energy storage installation" }
+      { src: IMG.supercharger, alt: "Tesla Supercharger infrastructure reference" },
+      { src: IMG.ecosystem, alt: "Tesla integrated clean-energy ecosystem reference" },
+      { src: IMG.megapack, alt: "Tesla Megapack utility-scale storage reference" }
     ]);
   }
 
   function stories() {
     setMany(".story-card__media img", [
-      { src: IMG.interiorDark, alt: "Modern electric vehicle cabin and driver interface" },
-      { src: IMG.dashboard, alt: "Digital instrument display showing vehicle information" },
-      { src: IMG.chargingNight, alt: "Electric vehicle charging stations at night" },
-      { src: IMG.engineering, alt: "Automotive engineers working together in a development facility" },
-      { src: IMG.solar, alt: "Solar generation field" },
-      { src: IMG.blueprints, alt: "Technical drawings used to represent disciplined product design" }
+      { src: IMG.essentials, alt: "Tesla Model 3 cabin reference" },
+      { src: IMG.touchscreen, alt: "Tesla touchscreen interface reference" },
+      { src: IMG.supercharger, alt: "Tesla Supercharger reference" },
+      { src: IMG.servicePortal || IMG.model3Dark, alt: "Tesla technical service reference" },
+      { src: IMG.ecosystem, alt: "Tesla integrated energy ecosystem reference" },
+      { src: IMG.controls, alt: "Tesla physical controls reference" }
     ]);
   }
 
   function resources() {
-    ensureHeroMedia(IMG.blueprints, "Technical drawings and documentation used as a VOLTIS resources visual", "DOCUMENTATION / SYSTEMS / EVIDENCE");
+    ensureHeroMedia(IMG.teslaApp, "Tesla app reference used to frame VOLTIS digital documentation", "DOCUMENTATION / SYSTEMS / EVIDENCE");
+    addTeslaSourceBadge(document.querySelector(".page-media-band"));
   }
 
   function gallery() {
     setMany(".gallery-item img", [
-      { src: IMG.roadEV, alt: "Electric vehicle moving through a curved road" },
-      { src: IMG.engineering, alt: "Automotive engineers in a development facility" },
-      { src: IMG.interiorDark, alt: "Dark electric vehicle cabin and dashboard" },
-      { src: IMG.chargingNight, alt: "EV charging infrastructure illuminated at night" },
-      { src: IMG.solar, alt: "Solar generation field under an overcast sky" },
-      { src: IMG.megapack, alt: "Utility-scale battery storage installation" },
-      { src: IMG.dashboard, alt: "Close view of a digital vehicle instrument display" },
-      { src: IMG.interiorLight, alt: "Light electric vehicle interior showing material detail" }
+      { src: IMG.modelY, alt: "Tesla Model Y exterior reference" },
+      { src: IMG.servicePortal || IMG.model3Dark, alt: "Tesla technical service reference" },
+      { src: IMG.essentials, alt: "Tesla Model 3 cabin reference" },
+      { src: IMG.supercharger, alt: "Tesla Supercharger reference" },
+      { src: IMG.ecosystem, alt: "Tesla energy ecosystem reference" },
+      { src: IMG.megapack, alt: "Tesla Megapack storage reference" },
+      { src: IMG.touchscreen, alt: "Tesla touchscreen reference" },
+      { src: IMG.controls, alt: "Tesla physical controls reference" }
     ]);
+    addGalleryFilm();
   }
 
   function careers() {
-    setImage(document.querySelector(".careers-hero__media img"), IMG.engineering, "Engineers collaborating in an automotive development facility", true);
+    setImage(document.querySelector(".careers-hero__media img"), IMG.servicePortal || IMG.model3Dark, "Tesla technical service reference used for the VOLTIS careers page", true);
+    addTeslaSourceBadge(document.querySelector(".careers-hero__media"));
   }
 
   function contact() {
-    ensureHeroMedia(IMG.collaboration, "People in a professional project discussion", "PRODUCT / PROJECT / PARTNERSHIP");
+    ensureHeroMedia(IMG.delivery, "Tesla vehicle and charging reference used for VOLTIS contact routing", "PRODUCT / PROJECT / PARTNERSHIP");
+    addTeslaSourceBadge(document.querySelector(".page-media-band"));
   }
 
   const handlers = {
