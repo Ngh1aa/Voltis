@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090c0b">
+  <meta name="description" content="VOLTIS component state matrix for Figma and portfolio presentation.">
+  <title>VOLTIS — Component States</title>
+  <link rel="stylesheet" href="./css/pages.css?v=1">
+  <link rel="stylesheet" href="./css/figma-case-study.css?v=1">
+</head>
+<body class="figma-screen">
+<main class="figma-frame">
+  <div class="figma-topline"><strong>VOLTIS / Component states</strong><span>Interaction language · Default → Feedback → Completion</span></div>
+
+  <section class="figma-intro">
+    <div><p class="figma-eyebrow">02 / States</p><h1>Fast feedback. <em>Low noise.</em></h1><div class="energy-rail"><span>Input</span><i class="energy-rail__line"></i><span>Response</span></div></div>
+    <div class="figma-intro-copy"><p>VOLTIS state changes are short and explicit. Green confirms energy, availability, focus and selected intent. Orange is reserved for change, warning and corrective attention.</p><p>Every state preserves layout so feedback never causes the interface to jump.</p></div>
+  </section>
+
+  <section class="figma-section" id="state-index">
+    <div class="figma-section-head"><p class="figma-eyebrow">State index</p><div><h2>Nine states,<br>one behavior model.</h2><p>Default · Hover · Active · Focus · Disabled · Error · Success · Selected · Saved.</p></div></div>
+    <div class="figma-grid figma-grid-5">
+      <article class="spec-card"><p class="state-label">01 / Default</p><h3>Ready</h3><p>Resting surface with neutral hierarchy.</p></article>
+      <article class="spec-card"><p class="state-label">02 / Hover</p><h3>Intent</h3><p>Small movement or contrast increase on pointer devices.</p></article>
+      <article class="spec-card"><p class="state-label">03 / Active</p><h3>Action</h3><p>Pressed or current navigation state.</p></article>
+      <article class="spec-card"><p class="state-label">04 / Focus</p><h3>Keyboard</h3><p>High-visibility focus treatment without color ambiguity.</p></article>
+      <article class="spec-card"><p class="state-label">05 / Disabled</p><h3>Unavailable</h3><p>Lower emphasis while preserving label and footprint.</p></article>
+      <article class="spec-card"><p class="state-label">06 / Error</p><h3>Correct</h3><p>Orange identifies a required correction.</p></article>
+      <article class="spec-card"><p class="state-label">07 / Success</p><h3>Confirmed</h3><p>Green confirms a completed local action.</p></article>
+      <article class="spec-card"><p class="state-label">08 / Selected</p><h3>Current</h3><p>Persistent choice in filters, models or options.</p></article>
+      <article class="spec-card"><p class="state-label">09 / Saved</p><h3>Stored</h3><p>Persistent visual spec for a future saved-vehicle behavior.</p></article>
+    </div>
+  </section>
+
+  <section class="figma-section figma-section--paper" id="buttons">
+    <div class="figma-section-head"><p class="figma-eyebrow">Button</p><div><h2>Default → Hover →<br>Pressed → Disabled.</h2><p>Primary action stays Energy Green. Feedback uses movement and edge treatment rather than glow.</p></div></div>
+    <div class="figma-grid figma-grid-4">
+      <article class="state-card"><div class="state-card__head"><strong>Primary button</strong><span class="state-label">Default</span></div><div class="state-stage"><span class="demo-btn demo-btn--energy">Register interest ↗</span></div><p class="state-note">48px minimum target with high-contrast green surface.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Primary button</strong><span class="state-label">Hover</span></div><div class="state-stage"><span class="demo-btn demo-btn--energy demo-btn--hover">Register interest ↗</span></div><p class="state-note">1px lift plus stronger lower edge. No glow.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Primary button</strong><span class="state-label">Pressed</span></div><div class="state-stage"><span class="demo-btn demo-btn--energy demo-btn--pressed">Register interest ↗</span></div><p class="state-note">1px downward movement and subtle scale response.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Primary button</strong><span class="state-label">Disabled</span></div><div class="state-stage"><span class="demo-btn demo-btn--energy demo-btn--disabled">Register interest ↗</span></div><p class="state-note">Opacity drops while size and label remain stable.</p></article>
+    </div>
+  </section>
+
+  <section class="figma-section" id="focus-active">
+    <div class="figma-section-head"><p class="figma-eyebrow">Active / Focus</p><div><h2>Current location<br>must be obvious.</h2><p>Navigation uses a green underline for the current route; keyboard focus uses an external focus ring so it cannot be mistaken for selection.</p></div></div>
+    <div class="figma-grid figma-grid-2">
+      <article class="state-card"><div class="state-card__head"><strong>Navigation</strong><span class="state-label">Active</span></div><div class="state-stage"><div class="state-nav"><a href="#">Vehicles</a><a class="is-active" href="#">Company</a><a href="#">Projects</a><a href="#">Stories</a></div></div><p class="state-note">Current page = white label + 2px Energy Green rule.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Secondary action</strong><span class="state-label">Focus</span></div><div class="state-stage"><span class="demo-btn demo-btn--outline demo-btn--focus">View resources</span></div><p class="state-note">3px Focus Green outline with 4px offset.</p></article>
+    </div>
+  </section>
+
+  <section class="figma-section" id="inputs">
+    <div class="figma-section-head"><p class="figma-eyebrow">Input</p><div><h2>Default → Focus →<br>Error → Success.</h2><p>Form feedback is stronger than decorative interaction because task completion depends on it.</p></div></div>
+    <div class="figma-grid figma-grid-4">
+      <article class="state-card"><div class="state-card__head"><strong>Email input</strong><span class="state-label">Default</span></div><div class="state-stage"><div class="demo-field"><label>Email</label><input class="demo-input" placeholder="name@example.com"></div></div><p class="state-note">Neutral technical border and clear label.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Email input</strong><span class="state-label">Focus</span></div><div class="state-stage"><div class="demo-field"><label>Email</label><input class="demo-input is-focus" value="driver@voltis.example" readonly></div></div><p class="state-note">Focus is visible before validation is introduced.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Email input</strong><span class="state-label">Error</span></div><div class="state-stage"><div class="demo-field"><label>Email</label><input class="demo-input is-error" value="driver@"><span class="field-message is-error"><i></i>Enter a valid email address.</span></div></div><p class="state-note">Orange border + message. Color is paired with text.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Email input</strong><span class="state-label">Success</span></div><div class="state-stage"><div class="demo-field"><label>Email</label><input class="demo-input is-success" value="driver@voltis.example" readonly><span class="field-message"><i></i>Email format confirmed.</span></div></div><p class="state-note">Green confirms the local validation state.</p></article>
+    </div>
+  </section>
+
+  <section class="figma-section figma-section--paper" id="selection">
+    <div class="figma-section-head"><p class="figma-eyebrow">Selected</p><div><h2>Choice remains<br>visible after action.</h2><p>Selected states are persistent and should not rely on hover. Vehicle intent, filters and enquiry topics can all reuse the same signal logic.</p></div></div>
+    <div class="figma-grid figma-grid-3">
+      <article class="state-card"><div class="state-card__head"><strong>Chip</strong><span class="state-label">Default</span></div><div class="state-stage"><div class="chip-row"><span class="demo-chip">Fastback</span><span class="demo-chip">Utility</span><span class="demo-chip">Energy</span></div></div><p class="state-note">Neutral outline before a choice is made.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Chip</strong><span class="state-label">Selected</span></div><div class="state-stage"><div class="chip-row"><span class="demo-chip is-selected">Fastback</span><span class="demo-chip">Utility</span><span class="demo-chip">Energy</span></div></div><p class="state-note">Energy Green communicates the current choice.</p></article>
+      <article class="state-card"><div class="state-card__head"><strong>Radio</strong><span class="state-label">Selected</span></div><div class="state-stage"><div class="choice-row"><label class="choice"><input type="radio" name="vehicle-state" checked> AERO</label><label class="choice"><input type="radio" name="vehicle-state"> TERRAIN</label></div></div><p class="state-note">Native control semantics retained with brand accent.</p></article>
+    </div>
+  </section>
+
+  <section class="figma-section" id="vehicle-card-states">
+    <div class="figma-section-head"><p class="figma-eyebrow">Vehicle card</p><div><h2>Default → Hover →<br>Selected → Saved.</h2><p>The product object stays dominant. State feedback is contained to edge, position and the save control.</p></div></div>
+    <div class="figma-grid figma-grid-4">
+      <article class="state-card"><div class="state-card__head"><strong>AERO</strong><span class="state-label">Default</span></div><div class="vehicle-demo"><div class="vehicle-demo__top"><span class="vehicle-demo__index">VOLTIS / 01</span><button class="save-control">♡</button><img src="./assets/voltis-aero.svg" alt="VOLTIS AERO concept illustration"></div><div class="vehicle-demo__body"><div><h3>AERO</h3><p>Fastback / driver-focused.</p></div><strong>EXPLORE ↗</strong></div></div></article>
+      <article class="state-card"><div class="state-card__head"><strong>AERO</strong><span class="state-label">Hover</span></div><div class="vehicle-demo is-hover"><div class="vehicle-demo__top"><span class="vehicle-demo__index">VOLTIS / 01</span><button class="save-control">♡</button><img src="./assets/voltis-aero.svg" alt="VOLTIS AERO concept illustration"></div><div class="vehicle-demo__body"><div><h3>AERO</h3><p>Fastback / driver-focused.</p></div><strong>EXPLORE ↗</strong></div></div></article>
+      <article class="state-card"><div class="state-card__head"><strong>AERO</strong><span class="state-label">Selected</span></div><div class="vehicle-demo is-selected"><div class="vehicle-demo__top"><span class="vehicle-demo__index">VOLTIS / 01 · SELECTED</span><button class="save-control">♡</button><img src="./assets/voltis-aero.svg" alt="VOLTIS AERO concept illustration"></div><div class="vehicle-demo__body"><div><h3>AERO</h3><p>Current comparison choice.</p></div><strong>SELECTED</strong></div></div></article>
+      <article class="state-card"><div class="state-card__head"><strong>AERO</strong><span class="state-label">Saved</span></div><div class="vehicle-demo"><div class="vehicle-demo__top"><span class="vehicle-demo__index">VOLTIS / 01 · SAVED</span><button class="save-control is-saved">♥</button><img src="./assets/voltis-aero.svg" alt="VOLTIS AERO concept illustration"></div><div class="vehicle-demo__body"><div><h3>AERO</h3><p>Saved state visual specification.</p></div><strong>SAVED</strong></div></div></article>
+    </div>
+  </section>
+
+  <section class="figma-section" id="system-feedback">
+    <div class="figma-section-head"><p class="figma-eyebrow">System feedback</p><div><h2>Error and success<br>stay task-specific.</h2><p>VOLTIS avoids global status color everywhere. Feedback appears close to the action that caused it.</p></div></div>
+    <div class="figma-grid figma-grid-2">
+      <article class="state-card"><div class="state-card__head"><strong>Enquiry</strong><span class="state-label">Error</span></div><div class="state-stage"><div class="geometry-sample border-motion"><b>Submission needs attention</b><span>Check the highlighted fields before sending the enquiry.</span></div></div></article>
+      <article class="state-card"><div class="state-card__head"><strong>Enquiry</strong><span class="state-label">Success</span></div><div class="state-stage"><div class="geometry-sample border-energy"><b>Enquiry prepared</b><span>Prototype confirmation state — backend connection is not implied.</span></div></div></article>
+    </div>
+  </section>
+
+  <nav class="presentation-nav" aria-label="VOLTIS presentation screens">
+    <a href="./figma-design-system.html"><span>01</span><strong>Design System</strong></a>
+    <a href="./figma-component-states.html"><span>02</span><strong>Component States</strong></a>
+    <a href="./figma-sitemap.html"><span>03</span><strong>Sitemap</strong></a>
+    <a href="./figma-user-flow.html"><span>04</span><strong>User Flows</strong></a>
+    <a href="./figma-prototype.html"><span>05</span><strong>Prototype</strong></a>
+  </nav>
+
+  <footer class="figma-footer"><a class="figma-brand" href="./index.html"><svg viewBox="0 0 46 28" aria-hidden="true"><path d="M3 4 16.8 24h7.6L13.2 4H3Zm17.6 0L32.3 24h7.7L28.2 4h-7.6Z" fill="currentColor"/></svg>VOLTIS</a><small>Static interaction specification. “Saved” is documented as a future component state; the current public VOLTIS prototype does not claim account persistence.</small></footer>
+</main>
+</body>
+</html>
