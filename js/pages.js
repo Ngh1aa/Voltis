@@ -1,6 +1,13 @@
 (() => {
   "use strict";
 
+  if (!document.querySelector('script[data-voltis-media-library]')) {
+    const media = document.createElement("script");
+    media.src = "./js/media-library.js?v=2026-09-10-1";
+    media.dataset.voltisMediaLibrary = "true";
+    document.head.appendChild(media);
+  }
+
   const toggle = document.querySelector("[data-menu-toggle]");
   const mobileNav = document.querySelector("[data-mobile-nav]");
   if (toggle && mobileNav) {
