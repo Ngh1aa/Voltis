@@ -3,7 +3,7 @@
 
   if (!document.querySelector('script[data-voltis-media-library]')) {
     const media = document.createElement("script");
-    media.src = "./js/media-library.js?v=2026-09-10-1";
+    media.src = "./js/media-library.js?v=2026-09-10-2";
     media.dataset.voltisMediaLibrary = "true";
     document.head.appendChild(media);
   }
