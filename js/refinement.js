@@ -92,6 +92,81 @@
     return document.documentElement.lang === "en" ? "en" : "vi";
   }
 
+  const media = {
+    hero: {
+      selector: ".hero__media-frame img",
+      src: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/learn_new_model_y_hero.jpg",
+      altKey: "heroPhotoAlt",
+      fallback: "./assets/voltis-aero.svg"
+    },
+    aero: {
+      selector: '[data-model="aero"] .model-card__media img',
+      src: "https://images.unsplash.com/photo-1767949374128-58d3592a273d?auto=format&fit=crop&fm=jpg&q=82&w=2200",
+      altKey: "aeroPhotoAlt",
+      fallback: "./assets/voltis-aero.svg"
+    },
+    terrain: {
+      selector: '[data-model="terrain"] .model-card__media img',
+      src: "https://images.unsplash.com/photo-1767949374177-0523cc71421b?auto=format&fit=crop&fm=jpg&q=82&w=2200",
+      altKey: "terrainPhotoAlt",
+      fallback: "./assets/voltis-terrain.svg"
+    }
+  };
+
+  const cockpitMedia = [
+    [".cluster-visual", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_526,w_846,c_fit,f_auto,q_auto:best/Touchscreen_3Y_MYT_Image", "cockpitAlt", "TESLA / HMI"],
+    [".material-visual", "https://images.unsplash.com/photo-1770287872664-f8e29eccc7d9?auto=format&fit=crop&fm=jpg&q=82&w=2200", "materialAlt", "UNSPLASH / INTERIOR"],
+    [".switch-visual", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_450,w_720,c_fit,f_auto,q_auto:best/Physical-Controls_3Y_MYT_Image", "controlsAlt", "TESLA / CONTROLS"]
+  ];
+
+  const signatureMedia = [
+    [".signature-card--rail", "https://images.unsplash.com/photo-1775259928422-779c18e32007?auto=format&fit=crop&fm=jpg&q=82&w=2200", "galleryEnergyAlt"],
+    [".signature-card--index", "https://images.unsplash.com/photo-1770287872664-f8e29eccc7d9?auto=format&fit=crop&fm=jpg&q=82&w=2200", "galleryInteriorAlt"],
+    [".signature-card--signal", "https://images.unsplash.com/photo-1592263904934-b00851dc93eb?auto=format&fit=crop&fm=jpg&q=82&w=2200", "gallerySolarAlt"]
+  ];
+
+  const newsMedia = [
+    [".news-card__visual--a", "https://images.unsplash.com/photo-1767949374128-58d3592a273d?auto=format&fit=crop&fm=jpg&q=82&w=2200", "newsDesignAlt", "01"],
+    [".news-card__visual--b", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_635,w_1018,c_fit,f_auto,q_auto:best/Charging_3Y_MYT_Image", "newsChargingAlt", "02"],
+    [".news-card__visual--c", "https://images.unsplash.com/photo-1581091212991-8891c7d4bd9b?auto=format&fit=crop&fm=jpg&q=82&w=2200", "newsCompanyAlt", "03"]
+  ];
+
+  function imageMarkup(src, altKey, extra = "") {
+    return `<img src="${src}" alt="" data-i18n-alt="${altKey}" loading="lazy" decoding="async" referrerpolicy="no-referrer" ${extra}>`;
+  }
+
+  function upgradeMedia() {
+    Object.values(media).forEach(item => {
+      const img = document.querySelector(item.selector);
+      if (!img) return;
+      img.src = item.src;
+      img.setAttribute("data-i18n-alt", item.altKey);
+      img.setAttribute("decoding", "async");
+      img.setAttribute("referrerpolicy", "no-referrer");
+      if (item.fallback) img.onerror = function () { this.onerror = null; this.src = item.fallback; };
+    });
+
+    cockpitMedia.forEach(([selector, src, altKey, credit]) => {
+      const frame = document.querySelector(selector);
+      if (!frame) return;
+      frame.classList.remove("cluster-visual", "material-visual", "switch-visual");
+      frame.classList.add("media-visual");
+      frame.innerHTML = `${imageMarkup(src, altKey)}<span class="media-credit">${credit}</span>`;
+    });
+
+    signatureMedia.forEach(([selector, src, altKey]) => {
+      const card = document.querySelector(selector);
+      if (!card || card.querySelector(":scope > img")) return;
+      card.insertAdjacentHTML("afterbegin", imageMarkup(src, altKey));
+    });
+
+    newsMedia.forEach(([selector, src, altKey, index]) => {
+      const frame = document.querySelector(selector);
+      if (!frame) return;
+      frame.innerHTML = `${imageMarkup(src, altKey)}<span>${index}</span>`;
+    });
+  }
+
   function applyRefinedCopy() {
     const lang = locale();
     const dict = refined[lang];
@@ -112,6 +187,7 @@
     });
   }
 
+  upgradeMedia();
   applyRefinedCopy();
   bindLocaleRefinement();
   window.addEventListener("pageshow", applyRefinedCopy);
