@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090c0b">
+  <meta name="description" content="VOLTIS information architecture and sitemap presentation.">
+  <title>VOLTIS — Sitemap</title>
+  <link rel="stylesheet" href="./css/pages.css?v=1">
+  <link rel="stylesheet" href="./css/figma-case-study.css?v=1">
+</head>
+<body class="figma-screen">
+<main class="figma-frame">
+  <div class="figma-topline"><strong>VOLTIS / Information architecture</strong><span>Sitemap · 9 public HTML routes</span></div>
+
+  <section class="figma-intro">
+    <div><p class="figma-eyebrow">03 / Sitemap</p><h1>One system. <em>Clear routes.</em></h1><div class="energy-rail"><span>Entry</span><i class="energy-rail__line"></i><span>Intent</span></div></div>
+    <div class="figma-intro-copy"><p>The architecture supports four core jobs: understand the brand, explore vehicle direction, verify capability and evidence, then start the right conversation.</p><p>Primary navigation remains compact while Gallery and Careers stay available through mobile navigation, footer and contextual links.</p></div>
+  </section>
+
+  <section class="figma-section" id="primary-map">
+    <div class="figma-section-head"><p class="figma-eyebrow">Primary architecture</p><div><h2>From curiosity<br>to contact.</h2><p>The home page is the orientation layer. Every branch answers a different user question without forcing all content into the same template.</p></div></div>
+
+    <div class="sitemap-root">
+      <a class="map-node root" href="./index.html"><span>00 / Entry</span><strong>Home</strong><span>index.html</span></a>
+    </div>
+
+    <div class="map-groups">
+      <section class="map-group">
+        <p class="map-group-title">Product & mobility</p>
+        <div class="map-stack">
+          <a class="map-node" href="./vehicles.html"><span>01 / Product index</span><strong>Vehicles</strong><span>vehicles.html</span></a>
+          <a class="map-node" href="./vehicles.html#aero"><span>01A / Direction</span><strong>AERO</strong><span>#aero · fastback</span></a>
+          <a class="map-node" href="./vehicles.html#terrain"><span>01B / Direction</span><strong>TERRAIN</strong><span>#terrain · utility</span></a>
+          <a class="map-node" href="./projects.html"><span>03 / Ecosystem</span><strong>Projects</strong><span>projects.html</span></a>
+        </div>
+      </section>
+
+      <section class="map-group">
+        <p class="map-group-title">Company</p>
+        <div class="map-stack">
+          <a class="map-node" href="./company.html"><span>02 / Trust</span><strong>Company</strong><span>company.html</span></a>
+          <a class="map-node" href="./careers.html"><span>08 / People</span><strong>Careers</strong><span>careers.html</span></a>
+          <a class="map-node" href="./resources.html"><span>Document / Capability</span><strong>Corporate Profile</strong><span>Resources / item 05</span></a>
+        </div>
+      </section>
+
+      <section class="map-group">
+        <p class="map-group-title">Knowledge & proof</p>
+        <div class="map-stack">
+          <a class="map-node" href="./stories.html"><span>04 / Editorial</span><strong>Stories</strong><span>stories.html</span></a>
+          <a class="map-node" href="./resources.html"><span>05 / Evidence</span><strong>Resources</strong><span>resources.html</span></a>
+          <a class="map-node" href="./gallery.html"><span>07 / Visual proof</span><strong>Gallery</strong><span>gallery.html</span></a>
+        </div>
+      </section>
+
+      <section class="map-group">
+        <p class="map-group-title">Conversion</p>
+        <div class="map-stack">
+          <a class="map-node" href="./contact.html"><span>06 / Contact</span><strong>Contact</strong><span>contact.html</span></a>
+          <a class="map-node" href="./contact.html#routes"><span>Route / Product</span><strong>Vehicle interest</strong><span>#routes</span></a>
+          <a class="map-node" href="./contact.html#routes"><span>Route / Project</span><strong>Infrastructure</strong><span>#routes</span></a>
+          <a class="map-node" href="./contact.html#routes"><span>Route / Business</span><strong>Partnership</strong><span>#routes</span></a>
+        </div>
+      </section>
+    </div>
+
+    <div class="map-note"><strong>Primary conversion logic:</strong> Home → relevant evidence route → Contact → choose Vehicle / Project / Partnership enquiry. The site is a company-and-product presentation prototype, not an e-commerce checkout experience.</div>
+  </section>
+
+  <section class="figma-section figma-section--paper" id="page-roles">
+    <div class="figma-section-head"><p class="figma-eyebrow">Page roles</p><div><h2>Every route answers<br>one primary question.</h2><p>Page purpose stays explicit so the visual system can vary composition without losing navigation clarity.</p></div></div>
+    <div class="figma-grid figma-grid-3">
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Home / Orientation</p><h3>What is VOLTIS?</h3><p>Brand proposition, vehicle directions and next paths.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Vehicles / Product</p><h3>Which direction fits me?</h3><p>AERO vs TERRAIN with intent-led comparison.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Company / Trust</p><h3>How does VOLTIS think?</h3><p>Manifesto, operating model and working principles.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Projects / Capability</p><h3>Can the ecosystem scale?</h3><p>Charging, energy storage and deployment directions.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Stories / Editorial</p><h3>What is the point of view?</h3><p>Design, technology, energy and company thinking.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Resources / Evidence</p><h3>Where is the documentation?</h3><p>Searchable technical and company resource library.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Gallery / Art direction</p><h3>What does the world look like?</h3><p>Vehicle, interface, engineering and energy imagery.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Careers / People</p><h3>How would teams work?</h3><p>Disciplines, collaboration principles and role structure.</p></article>
+      <article class="map-card" style="padding:22px"><p class="flow-kicker">Contact / Conversion</p><h3>What should I do next?</h3><p>Route enquiries by product, project or partnership intent.</p></article>
+    </div>
+  </section>
+
+  <section class="figma-section" id="nav-model">
+    <div class="figma-section-head"><p class="figma-eyebrow">Navigation model</p><div><h2>Six primary links.<br>Two contextual routes.</h2><p>Desktop prioritises the most frequent discovery tasks. Gallery and Careers remain discoverable without overcrowding the header.</p></div></div>
+    <div class="figma-grid figma-grid-2">
+      <article class="spec-card"><p class="spec-label">Desktop primary</p><h3>Vehicles · Company · Projects · Stories · Resources · Contact</h3><p>Persistent product, trust, proof, editorial, evidence and conversion paths.</p></article>
+      <article class="spec-card"><p class="spec-label">Contextual / secondary</p><h3>Gallery · Careers</h3><p>Available through mobile navigation, footer and route-specific calls to action.</p></article>
+    </div>
+  </section>
+
+  <nav class="presentation-nav" aria-label="VOLTIS presentation screens">
+    <a href="./figma-design-system.html"><span>01</span><strong>Design System</strong></a>
+    <a href="./figma-component-states.html"><span>02</span><strong>Component States</strong></a>
+    <a href="./figma-sitemap.html"><span>03</span><strong>Sitemap</strong></a>
+    <a href="./figma-user-flow.html"><span>04</span><strong>User Flows</strong></a>
+    <a href="./figma-prototype.html"><span>05</span><strong>Prototype</strong></a>
+  </nav>
+
+  <footer class="figma-footer"><a class="figma-brand" href="./index.html"><svg viewBox="0 0 46 28" aria-hidden="true"><path d="M3 4 16.8 24h7.6L13.2 4H3Zm17.6 0L32.3 24h7.7L28.2 4h-7.6Z" fill="currentColor"/></svg>VOLTIS</a><small>Information architecture reflects the current public prototype. Corporate Profile is represented as a resource-library item rather than a separate HTML route.</small></footer>
+</main>
+</body>
+</html>
