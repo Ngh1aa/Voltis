@@ -1,0 +1,41 @@
+/* VOLTIS shared photography layer */
+.page-media-band{
+  position:relative;
+  margin-top:clamp(42px,6vw,78px);
+  min-height:clamp(300px,42vw,620px);
+  overflow:hidden;
+  border:1px solid rgba(248,250,246,.14);
+  background:#101512;
+}
+.page-media-band img{
+  width:100%;height:100%;min-height:inherit;object-fit:cover;
+  filter:saturate(.88) contrast(1.04);
+}
+.page-media-band::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(9,12,11,.02) 45%,rgba(9,12,11,.66) 100%);
+}
+.page-media-band__caption{
+  position:absolute;z-index:2;left:clamp(18px,3vw,36px);bottom:clamp(16px,2.4vw,28px);
+  padding:8px 10px;background:rgba(9,12,11,.78);color:#f8faf6;
+  font-size:10px;font-weight:820;letter-spacing:.14em;text-transform:uppercase;
+}
+.project-map.project-map--photo{
+  min-height:clamp(420px,48vw,620px);background:#101512;border:1px solid rgba(248,250,246,.14);
+}
+.project-map.project-map--photo::before{display:none}
+.project-map--photo .map-node{display:none}
+.project-map--photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.06)}
+.project-map--photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,12,11,.04),rgba(9,12,11,.84));pointer-events:none}
+.project-map__caption{position:absolute;z-index:2;left:clamp(20px,4vw,42px);right:clamp(20px,4vw,42px);bottom:clamp(20px,4vw,38px);display:grid;gap:8px;color:#f8faf6}
+.project-map__caption span{color:#8dff63;font-size:10px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.project-map__caption strong{max-width:13ch;font-size:clamp(1.7rem,3.5vw,3.8rem);line-height:.96;letter-spacing:-.045em}
+.vehicle-panel img,.story-card__media img,.project-card__media img,.gallery-item img,.careers-hero__media img,.media-frame img{
+  filter:saturate(.9) contrast(1.035);
+}
+@media (max-width:639px){
+  .page-media-band{width:100%;border-left:0;border-right:0;min-height:280px}
+}
+@media (prefers-reduced-motion:reduce){
+  .vehicle-panel img,.story-card__media img{transition:none!important}
+}
