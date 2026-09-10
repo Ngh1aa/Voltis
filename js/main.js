@@ -10,14 +10,14 @@
 
   if (!document.querySelector('script[data-voltis-media-library]')) {
     const media = document.createElement("script");
-    media.src = "./js/media-library.js?v=2026-09-10-1";
+    media.src = "./js/media-library.js?v=2026-09-10-2";
     media.dataset.voltisMediaLibrary = "true";
     document.head.appendChild(media);
   }
 
   const refinementStyle = document.createElement("link");
   refinementStyle.rel = "stylesheet";
-  refinementStyle.href = "./css/refinement.css?v=6";
+  refinementStyle.href = "./css/refinement.css?v=7";
   document.head.appendChild(refinementStyle);
 
   const releaseStyle = document.createElement("style");
@@ -80,7 +80,7 @@
   function loadRefinement() {
     if (document.querySelector('script[data-voltis-refinement]')) return;
     const refinement = document.createElement("script");
-    refinement.src = "./js/refinement.js?v=6";
+    refinement.src = "./js/refinement.js?v=7";
     refinement.dataset.voltisRefinement = "true";
     refinement.onload = () => { forceEnglish(); replaceEnergyArchitectureVisual(); wireSiteNavigation(); };
     refinement.onerror = () => { forceEnglish(); replaceEnergyArchitectureVisual(); wireSiteNavigation(); };
