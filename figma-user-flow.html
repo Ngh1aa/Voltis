@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090c0b">
+  <meta name="description" content="VOLTIS user flow presentation for vehicle, project, resource and contact journeys.">
+  <title>VOLTIS — User Flows</title>
+  <link rel="stylesheet" href="./css/pages.css?v=1">
+  <link rel="stylesheet" href="./css/figma-case-study.css?v=1">
+</head>
+<body class="figma-screen">
+<main class="figma-frame">
+  <div class="figma-topline"><strong>VOLTIS / User flows</strong><span>Discovery → Evidence → Right conversation</span></div>
+
+  <section class="figma-intro">
+    <div><p class="figma-eyebrow">04 / User flows</p><h1>Move with <em>intent.</em></h1><div class="energy-rail"><span>Discover</span><i class="energy-rail__line"></i><span>Act</span></div></div>
+    <div class="figma-intro-copy"><p>VOLTIS is not an e-commerce prototype, so the meaningful conversion is not Cart → Checkout. The core task is to move from interest to enough evidence to start the correct vehicle, project or partnership conversation.</p><p>Flows below are mapped directly to the current HTML routes and anchors.</p></div>
+  </section>
+
+  <section class="figma-section" id="primary-flow">
+    <div class="figma-section-head"><p class="figma-eyebrow">Primary flow</p><div><h2>Explore vehicle →<br>register interest.</h2><p>The main product journey gives visitors a fast path from brand proposition to model intent and then into a routed contact experience.</p></div></div>
+    <div class="flow-card">
+      <div class="flow-card__meta"><p class="flow-kicker">Flow 01 / Vehicle</p><strong>Product interest</strong><p>For visitors evaluating the electric vehicle direction.</p></div>
+      <div class="flow-steps">
+        <a class="flow-step is-entry" href="./index.html"><span>01 / Entry</span><strong>Home</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step" href="./vehicles.html"><span>02 / Browse</span><strong>Vehicles</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step is-decision" href="./vehicles.html#aero"><span>03 / Decide</span><strong>AERO / TERRAIN</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step" href="./contact.html#routes"><span>04 / Route</span><strong>Vehicle interest</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step is-goal" href="./contact.html#form"><span>05 / Goal</span><strong>Enquiry form</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="figma-section figma-section--paper" id="project-flow">
+    <div class="figma-section-head"><p class="figma-eyebrow">Capability flow</p><div><h2>Understand capability →<br>discuss a project.</h2><p>Visitors who arrive with infrastructure or business intent need proof before a contact form, so projects and company evidence come first.</p></div></div>
+    <div class="flow-card">
+      <div class="flow-card__meta"><p class="flow-kicker">Flow 02 / Project</p><strong>Infrastructure collaboration</strong><p>For charging, storage, digital service or deployment conversations.</p></div>
+      <div class="flow-steps">
+        <a class="flow-step is-entry" href="./index.html"><span>01 / Entry</span><strong>Home</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step" href="./projects.html"><span>02 / Evidence</span><strong>Projects</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step is-decision" href="./company.html"><span>03 / Trust</span><strong>Company</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step" href="./contact.html#routes"><span>04 / Route</span><strong>Infrastructure</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step is-goal" href="./contact.html#form"><span>05 / Goal</span><strong>Discuss project</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="figma-section" id="resource-flow">
+    <div class="figma-section-head"><p class="figma-eyebrow">Evidence flow</p><div><h2>Find document →<br>request information.</h2><p>The resource journey is utility-led: enter the library, search by need, inspect a relevant document item and contact VOLTIS only when more context is required.</p></div></div>
+    <div class="flow-card">
+      <div class="flow-card__meta"><p class="flow-kicker">Flow 03 / Resource</p><strong>Documentation</strong><p>For technical, media, company-profile and sustainability evidence.</p></div>
+      <div class="flow-steps">
+        <a class="flow-step is-entry" href="./resources.html"><span>01 / Entry</span><strong>Resources</strong></a><span class="flow-arrow">→</span>
+        <div class="flow-step"><span>02 / Action</span><strong>Search library</strong></div><span class="flow-arrow">→</span>
+        <div class="flow-step is-decision"><span>03 / Decide</span><strong>Select document</strong></div><span class="flow-arrow">→</span>
+        <a class="flow-step" href="./contact.html"><span>04 / Need more</span><strong>Contact</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step is-goal" href="./contact.html#form"><span>05 / Goal</span><strong>Request info</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="figma-section figma-section--paper" id="brand-flow">
+    <div class="figma-section-head"><p class="figma-eyebrow">Brand flow</p><div><h2>Story → visual proof →<br>revisit the product.</h2><p>Editorial discovery can begin without purchase intent. The system lets a visitor understand the point of view, see the visual world and return to the model range when interest becomes concrete.</p></div></div>
+    <div class="flow-card">
+      <div class="flow-card__meta"><p class="flow-kicker">Flow 04 / Editorial</p><strong>Build familiarity</strong><p>For low-intent visitors entering through a story or visual reference.</p></div>
+      <div class="flow-steps">
+        <a class="flow-step is-entry" href="./stories.html"><span>01 / Entry</span><strong>Stories</strong></a><span class="flow-arrow">→</span>
+        <div class="flow-step"><span>02 / Explore</span><strong>Design / Energy story</strong></div><span class="flow-arrow">→</span>
+        <a class="flow-step" href="./gallery.html"><span>03 / Visual</span><strong>Gallery</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step is-decision" href="./vehicles.html"><span>04 / Product</span><strong>Vehicles</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step is-goal" href="./contact.html"><span>05 / Goal</span><strong>Register interest</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="figma-section" id="career-flow">
+    <div class="figma-section-head"><p class="figma-eyebrow">Supporting flow</p><div><h2>Company → Careers →<br>future interest.</h2><p>Careers is intentionally secondary to the corporate story but still provides a clear route for prospective team members.</p></div></div>
+    <div class="flow-card">
+      <div class="flow-card__meta"><p class="flow-kicker">Flow 05 / Careers</p><strong>Future team</strong><p>For people exploring the organisation before role interest.</p></div>
+      <div class="flow-steps">
+        <a class="flow-step is-entry" href="./company.html"><span>01 / Entry</span><strong>Company</strong></a><span class="flow-arrow">→</span>
+        <a class="flow-step" href="./careers.html"><span>02 / Explore</span><strong>Careers</strong></a><span class="flow-arrow">→</span>
+        <div class="flow-step is-decision"><span>03 / Decide</span><strong>Discipline / role</strong></div><span class="flow-arrow">→</span>
+        <a class="flow-step is-goal" href="./contact.html"><span>04 / Goal</span><strong>Register future interest</strong></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="figma-section" id="flow-rules">
+    <div class="figma-section-head"><p class="figma-eyebrow">Flow rules</p><div><h2>Reduce uncertainty<br>before conversion.</h2><p>The user should never be asked to contact VOLTIS before enough context exists to choose the right conversation.</p></div></div>
+    <div class="figma-grid figma-grid-3">
+      <article class="spec-card"><p class="spec-label">01 / Entry</p><h3>Multiple valid starts</h3><p>Home, Vehicles, Stories and Resources can all be legitimate entry points from search, portfolio or direct links.</p></article>
+      <article class="spec-card"><p class="spec-label">02 / Decision</p><h3>Evidence before action</h3><p>Model intent, project proof or document context should be visible before a high-commitment contact CTA.</p></article>
+      <article class="spec-card"><p class="spec-label">03 / Goal</p><h3>Route the enquiry</h3><p>Vehicle, infrastructure and partnership intent should not collapse into one ambiguous generic message.</p></article>
+    </div>
+    <div class="flow-legend" style="margin-top:24px"><span><i class="entry"></i> Entry point</span><span><i class="decision"></i> Decision / evidence</span><span><i class="goal"></i> Goal / conversion</span></div>
+  </section>
+
+  <nav class="presentation-nav" aria-label="VOLTIS presentation screens">
+    <a href="./figma-design-system.html"><span>01</span><strong>Design System</strong></a>
+    <a href="./figma-component-states.html"><span>02</span><strong>Component States</strong></a>
+    <a href="./figma-sitemap.html"><span>03</span><strong>Sitemap</strong></a>
+    <a href="./figma-user-flow.html"><span>04</span><strong>User Flows</strong></a>
+    <a href="./figma-prototype.html"><span>05</span><strong>Prototype</strong></a>
+  </nav>
+
+  <footer class="figma-footer"><a class="figma-brand" href="./index.html"><svg viewBox="0 0 46 28" aria-hidden="true"><path d="M3 4 16.8 24h7.6L13.2 4H3Zm17.6 0L32.3 24h7.7L28.2 4h-7.6Z" fill="currentColor"/></svg>VOLTIS</a><small>User flows are grounded in the current static website. Contact submission remains a prototype interaction until connected to a real backend.</small></footer>
+</main>
+</body>
+</html>
