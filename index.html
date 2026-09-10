@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="vi" data-theme="voltis">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090c0b">
+  <meta name="description" content="VOLTIS — prototype website giới thiệu thương hiệu và sản phẩm xe ô tô điện.">
+  <title>VOLTIS — Chuyển động bằng điện, thiết kế cho tương lai</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script defer src="./js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Bỏ qua điều hướng</a>
+
+  <div class="announcement" role="status">
+    <div class="shell announcement__inner">
+      <span class="announcement__eyebrow">VOLTIS / 2026</span>
+      <p data-i18n="announcement">Bản mẫu thương hiệu xe điện thế hệ mới — trải nghiệm số song ngữ Việt / Anh.</p>
+      <a href="#contact" class="announcement__link" data-i18n="announcementCta">Đăng ký trải nghiệm</a>
+    </div>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="shell header__inner">
+      <a class="brand" href="#top" aria-label="VOLTIS — Trang chủ" data-i18n-aria="brandHome">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 46 28" focusable="false">
+            <path d="M3 4 16.8 24h7.6L13.2 4H3Zm17.6 0L32.3 24h7.7L28.2 4h-7.6Z" fill="currentColor"/>
+            <path d="M17.2 24 29 4h8L25.2 24h-8Z" fill="currentColor" opacity=".5"/>
+          </svg>
+        </span>
+        <span class="brand__word">VOLTIS</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Điều hướng chính" data-i18n-aria="mainNavLabel">
+        <a href="#models" data-i18n="navProducts">Sản phẩm</a>
+        <a href="#company" data-i18n="navCompany">Công ty</a>
+        <a href="#projects" data-i18n="navProjects">Dự án</a>
+        <a href="#news" data-i18n="navNews">Tin tức</a>
+        <a href="#resources" data-i18n="navResources">Tài liệu</a>
+        <a href="#contact" data-i18n="navContact">Liên hệ</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="locale-switch" aria-label="Chọn ngôn ngữ" data-i18n-aria="languageLabel">
+          <button type="button" class="locale-switch__btn is-active" data-locale="vi" aria-pressed="true">VI</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" class="locale-switch__btn" data-locale="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="btn btn--compact btn--outline header__cta" href="#contact" data-i18n="headerCta">Hẹn lái thử</a>
+        <button class="menu-toggle" type="button" aria-label="Mở menu" data-i18n-aria="menuOpen" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+      <div class="shell mobile-menu__body">
+        <nav aria-label="Điều hướng di động" data-i18n-aria="mobileNavLabel">
+          <a href="#models" data-i18n="navProducts">Sản phẩm</a>
+          <a href="#company" data-i18n="navCompany">Công ty</a>
+          <a href="#projects" data-i18n="navProjects">Dự án</a>
+          <a href="#news" data-i18n="navNews">Tin tức</a>
+          <a href="#resources" data-i18n="navResources">Tài liệu</a>
+          <a href="#gallery" data-i18n="navGallery">Thư viện ảnh / video</a>
+          <a href="#careers" data-i18n="navCareers">Tuyển dụng</a>
+          <a href="#contact" data-i18n="navContact">Liên hệ</a>
+        </nav>
+        <div class="mobile-menu__meta">
+          <span data-i18n="mobileMeta">Điện hóa chuyển động. Giảm nhiễu, tăng trải nghiệm.</span>
+          <a href="#contact" class="btn btn--primary" data-i18n="headerCta">Hẹn lái thử</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero__grid shell">
+        <div class="hero__copy">
+          <div class="kicker">
+            <span class="kicker__dot" aria-hidden="true"></span>
+            <span data-i18n="heroKicker">VOLTIS ELECTRIC MOBILITY / VIỆT NAM</span>
+          </div>
+          <h1 id="hero-title">
+            <span data-i18n="heroLine1">Năng lượng sạch.</span>
+            <span class="hero__accent" data-i18n="heroLine2">Cảm giác lái không thỏa hiệp.</span>
+          </h1>
+          <p class="hero__lead" data-i18n="heroLead">
+            Một thương hiệu xe điện mới được thiết kế từ tư duy năng lượng, công nghệ và trải nghiệm con người — không chỉ thay động cơ xăng bằng pin.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#models" data-i18n="heroPrimary">Khám phá dòng xe</a>
+            <a class="btn btn--ghost" href="#company">
+              <span data-i18n="heroSecondary">Tìm hiểu VOLTIS</span>
+              <span class="btn__arrow" aria-hidden="true">↗</span>
+            </a>
+          </div>
+          <div class="hero__meta" aria-label="Thông tin bản mẫu" data-i18n-aria="heroMetaLabel">
+            <div>
+              <strong>02</strong>
+              <span data-i18n="heroMetaModels">mẫu xe concept</span>
+            </div>
+            <div>
+              <strong>EV</strong>
+              <span data-i18n="heroMetaPlatform">nền tảng thuần điện</span>
+            </div>
+            <div>
+              <strong>VI/EN</strong>
+              <span data-i18n="heroMetaLocale">trải nghiệm song ngữ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-label="Minh họa mẫu ý tưởng VOLTIS AERO" data-i18n-aria="heroVisualLabel">
+          <div class="hero__media-frame">
+            <img src="./assets/voltis-aero.svg" alt="Minh họa mẫu ý tưởng xe điện VOLTIS AERO, thiết kế nguyên bản cho bản mẫu" data-i18n-alt="aeroAlt" width="1400" height="760" fetchpriority="high">
+            <div class="hero__rail hero__rail--top" aria-hidden="true">
+              <span>400V</span><span data-i18n="heroEnergyFlow">DÒNG NĂNG LƯỢNG</span><span>01</span>
+            </div>
+            <div class="hero__rail hero__rail--bottom" aria-hidden="true">
+              <span class="signal-dot"></span>
+              <span data-i18n="heroVisualNote">Ý TƯỞNG / KHÔNG PHẢI SẢN PHẨM THƯƠNG MẠI</span>
+            </div>
+          </div>
+          <button class="orbit-control" type="button" data-spin-trigger aria-label="Kích hoạt chuyển động minh họa" data-i18n-aria="motionAria">
+            <span class="orbit-control__ring" aria-hidden="true"></span>
+            <span data-i18n="motionTrigger">Kích hoạt</span>
+          </button>
+        </div>
+      </div>
+      <div class="hero__ticker" aria-hidden="true">
+        <div class="hero__ticker-track">
+          <span data-i18n="ticker">VOLTIS / ĐIỆN / CÓ TRÁCH NHIỆM / TIẾN VỀ PHÍA TRƯỚC /</span>
+          <span data-i18n="ticker">VOLTIS / ĐIỆN / CÓ TRÁCH NHIỆM / TIẾN VỀ PHÍA TRƯỚC /</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="models section" id="models" aria-labelledby="models-title">
+      <div class="shell">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow" data-i18n="eyebrowModels">01 / DÒNG XE</span>
+            <h2 id="models-title" data-i18n="modelsTitle">Hai cách bước vào kỷ nguyên điện.</h2>
+          </div>
+          <p data-i18n="modelsIntro">Dải sản phẩm bản mẫu tập trung vào hai nhu cầu khác nhau: một fastback hiệu suất cao và một SUV linh hoạt cho hành trình dài.</p>
+        </div>
+
+        <div class="model-stage" data-model-stage>
+          <article class="model-card is-active" data-model="aero">
+            <div class="model-card__topline">
+              <span>VOLTIS / 01</span>
+              <span data-i18n="modelConcept">CONCEPT</span>
+            </div>
+            <div class="model-card__media">
+              <img src="./assets/voltis-aero.svg" alt="Minh họa mẫu ý tưởng fastback điện VOLTIS AERO" data-i18n-alt="aeroAlt" loading="lazy" width="1400" height="760">
+            </div>
+            <div class="model-card__body">
+              <div>
+                <p class="model-card__type" data-i18n="aeroType">FASTBACK ĐIỆN</p>
+                <h3>AERO</h3>
+              </div>
+              <p data-i18n="aeroDesc">Tỷ lệ thân xe thấp, khoang lái tập trung người lái và ngôn ngữ khí động học liền mạch.</p>
+            </div>
+            <div class="model-card__specs" aria-label="Đặc tính minh họa" data-i18n-aria="specsLabel">
+              <span><b data-i18n="aeroSpec1K">Ưu tiên</b><small data-i18n="aeroSpec1V">Hiệu suất</small></span>
+              <span><b data-i18n="aeroSpec2K">Dẫn động</b><small data-i18n="aeroSpec2V">Thuần điện</small></span>
+              <span><b data-i18n="aeroSpec3K">Thiết kế</b><small data-i18n="aeroSpec3V">Khí động học</small></span>
+            </div>
+          </article>
+
+          <article class="model-card" data-model="terrain">
+            <div class="model-card__topline">
+              <span>VOLTIS / 02</span>
+              <span data-i18n="modelConcept">CONCEPT</span>
+            </div>
+            <div class="model-card__media">
+              <img src="./assets/voltis-terrain.svg" alt="Minh họa mẫu ý tưởng SUV điện VOLTIS TERRAIN" data-i18n-alt="terrainAlt" loading="lazy" width="1400" height="760">
+            </div>
+            <div class="model-card__body">
+              <div>
+                <p class="model-card__type" data-i18n="terrainType">SUV ĐIỆN</p>
+                <h3>TERRAIN</h3>
+              </div>
+              <p data-i18n="terrainDesc">Tư thế vững chãi, không gian linh hoạt và hệ thống năng lượng được tối ưu cho những hành trình đa địa hình.</p>
+            </div>
+            <div class="model-card__specs" aria-label="Đặc tính minh họa" data-i18n-aria="specsLabel">
+              <span><b data-i18n="terrainSpec1K">Ưu tiên</b><small data-i18n="terrainSpec1V">Đa dụng</small></span>
+              <span><b data-i18n="terrainSpec2K">Không gian</b><small data-i18n="terrainSpec2V">Linh hoạt</small></span>
+              <span><b data-i18n="terrainSpec3K">Thiết kế</b><small data-i18n="terrainSpec3V">Vững chãi</small></span>
+            </div>
+          </article>
+        </div>
+
+        <div class="prototype-note">
+          <span class="signal-dot" aria-hidden="true"></span>
+          <p data-i18n="prototypeNote">Tên xe, hình minh họa và đặc tính trên trang này là nội dung ý tưởng phục vụ bản mẫu UI/UX; không đại diện cho sản phẩm thương mại đã công bố.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="energy section section--dark" id="company" aria-labelledby="energy-title">
+      <div class="shell energy__grid">
+        <div class="energy__copy">
+          <span class="eyebrow eyebrow--light" data-i18n="eyebrowEnergy">02 / KIẾN TRÚC NĂNG LƯỢNG</span>
+          <h2 id="energy-title" data-i18n="energyTitle">Thiết kế chiếc xe như một hệ năng lượng chuyển động.</h2>
+          <p data-i18n="energyLead">VOLTIS lấy “energy flow” làm cấu trúc thị giác lẫn tư duy sản phẩm: năng lượng đi đâu, người lái cảm nhận gì và dữ liệu nào cần được hiểu ngay.</p>
+          <a class="text-link" href="#resources">
+            <span data-i18n="energyCta">Xem hồ sơ năng lực</span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="energy-map" aria-label="Sơ đồ minh họa luồng năng lượng" data-i18n-aria="energyMapLabel">
+          <div class="energy-map__line energy-map__line--a" aria-hidden="true"></div>
+          <div class="energy-map__line energy-map__line--b" aria-hidden="true"></div>
+          <div class="energy-node energy-node--1">
+            <span class="energy-node__index">01</span>
+            <strong data-i18n="energyNode1Title">Nguồn</strong>
+            <small data-i18n="energyNode1Text">Pin & quản trị năng lượng</small>
+          </div>
+          <div class="energy-node energy-node--2">
+            <span class="energy-node__index">02</span>
+            <strong data-i18n="energyNode2Title">Chuyển đổi</strong>
+            <small data-i18n="energyNode2Text">Điện năng thành chuyển động</small>
+          </div>
+          <div class="energy-node energy-node--3">
+            <span class="energy-node__index">03</span>
+            <strong data-i18n="energyNode3Title">Phản hồi</strong>
+            <small data-i18n="energyNode3Text">Dữ liệu rõ, thao tác ít</small>
+          </div>
+          <div class="energy-map__meter">
+            <span data-i18n="energyMeterLabel">Hiệu quả trải nghiệm</span>
+            <div class="meter"><i style="--meter: 82%"></i></div>
+            <span data-i18n="energyMeterNote">Minh họa định hướng, không phải số liệu đo lường.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience section" id="projects" aria-labelledby="experience-title">
+      <div class="shell">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow" data-i18n="eyebrowExperience">03 / TRẢI NGHIỆM</span>
+            <h2 id="experience-title" data-i18n="experienceTitle">Ít nhiễu hơn. Nhiều cảm nhận hơn.</h2>
+          </div>
+          <p data-i18n="experienceIntro">Thay vì “màn hình hóa” mọi thứ, giao diện trong xe được hình dung như một bảng điều khiển ưu tiên đúng thông tin ở đúng thời điểm.</p>
+        </div>
+
+        <div class="cockpit-grid">
+          <article class="cockpit-card cockpit-card--wide">
+            <div class="cockpit-card__visual cluster-visual" aria-hidden="true">
+              <div class="cluster-visual__arc"></div>
+              <div class="cluster-visual__speed">00<small>km/h</small></div>
+              <div class="cluster-visual__charge">
+                <span>EV</span>
+                <i></i>
+                <b data-i18n="clusterReady">SẴN SÀNG</b>
+              </div>
+            </div>
+            <div class="cockpit-card__copy">
+              <span data-i18n="hmiTag">01 / GIAO DIỆN</span>
+              <h3 data-i18n="experienceCard1Title">Cụm đồng hồ tối giản</h3>
+              <p data-i18n="experienceCard1Text">Tốc độ, trạng thái năng lượng và cảnh báo quan trọng được tách lớp theo mức ưu tiên.</p>
+            </div>
+          </article>
+
+          <article class="cockpit-card">
+            <div class="cockpit-card__visual material-visual" aria-hidden="true">
+              <span class="material-visual__panel"></span>
+              <span class="material-visual__line"></span>
+            </div>
+            <div class="cockpit-card__copy">
+              <span data-i18n="materialTag">02 / VẬT LIỆU</span>
+              <h3 data-i18n="experienceCard2Title">Vật liệu có chủ đích</h3>
+              <p data-i18n="experienceCard2Text">Tương phản mờ – bóng và điểm nhấn màu được dùng có tiết chế để giảm cảm giác “gadget”.</p>
+            </div>
+          </article>
+
+          <article class="cockpit-card cockpit-card--accent">
+            <div class="cockpit-card__visual switch-visual" aria-hidden="true">
+              <span class="switch-visual__rail"><i></i></span>
+              <span class="switch-visual__label" data-i18n="driveLabel">LÁI / P</span>
+            </div>
+            <div class="cockpit-card__copy">
+              <span data-i18n="controlTag">03 / ĐIỀU KHIỂN</span>
+              <h3 data-i18n="experienceCard3Title">Phản hồi tức thì</h3>
+              <p data-i18n="experienceCard3Text">Mọi trạng thái tương tác có phản hồi rõ ràng, nhanh và không phụ thuộc hiệu ứng phô trương.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sustainability section section--paper" id="resources" aria-labelledby="sustainability-title">
+      <div class="shell sustainability__grid">
+        <div class="sustainability__copy">
+          <span class="eyebrow" data-i18n="eyebrowResponsibility">04 / TRÁCH NHIỆM</span>
+          <h2 id="sustainability-title" data-i18n="sustainabilityTitle">Bền vững không phải một màu xanh trên giao diện.</h2>
+          <p data-i18n="sustainabilityLead">Định hướng nội dung của VOLTIS đặt bằng chứng, vòng đời sản phẩm và tính minh bạch lên trước các khẩu hiệu môi trường.</p>
+          <div class="sustainability__actions">
+            <a href="#news" class="btn btn--dark" data-i18n="sustainabilityPrimary">Đọc nguyên tắc phát triển</a>
+            <a href="#contact" class="text-link text-link--dark">
+              <span data-i18n="sustainabilitySecondary">Yêu cầu tài liệu</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="impact-ledger" aria-label="Khung minh họa cho dữ liệu bền vững" data-i18n-aria="impactLedgerLabel">
+          <div class="impact-ledger__header">
+            <span data-i18n="impactLedgerTag">VOLTIS / SỔ TÁC ĐỘNG</span>
+            <span data-i18n="revisionTag">BẢN 01</span>
+          </div>
+          <div class="impact-ledger__row">
+            <span>01</span>
+            <strong data-i18n="impact1Title">Nguồn vật liệu</strong>
+            <p data-i18n="impact1Text">Công bố xuất xứ, tiêu chuẩn và phạm vi dữ liệu khi có nguồn xác thực.</p>
+          </div>
+          <div class="impact-ledger__row">
+            <span>02</span>
+            <strong data-i18n="impact2Title">Vòng đời pin</strong>
+            <p data-i18n="impact2Text">Trình bày vòng đời, bảo dưỡng và phương án tái sử dụng bằng ngôn ngữ dễ hiểu.</p>
+          </div>
+          <div class="impact-ledger__row">
+            <span>03</span>
+            <strong data-i18n="impact3Title">Dữ liệu phát thải</strong>
+            <p data-i18n="impact3Text">Không đưa con số marketing khi chưa có phương pháp đo và nguồn kiểm chứng rõ ràng.</p>
+          </div>
+          <div class="impact-ledger__footer">
+            <span data-i18n="impactFoot">Khung nội dung bản mẫu — dữ liệu thực tế sẽ thay thế ở giai đoạn sản xuất.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-strip section" id="gallery" aria-labelledby="gallery-title">
+      <div class="shell">
+        <div class="section-head section-head--split">
+          <div>
+            <span class="eyebrow" data-i18n="eyebrowVisual">05 / NGÔN NGỮ HÌNH ẢNH</span>
+            <h2 id="gallery-title" data-i18n="galleryTitle">Một ngôn ngữ hình ảnh có thể nhận ra ngay cả khi bỏ logo.</h2>
+          </div>
+          <p data-i18n="galleryIntro">Đường năng lượng, chỉ số kỹ thuật, nền carbon và điểm nhấn cam – xanh tạo một hệ nhận diện số lặp lại có chủ đích.</p>
+        </div>
+
+        <div class="signature-grid">
+          <div class="signature-card signature-card--rail">
+            <span class="signature-card__label" data-i18n="signatureLabel1">DÒNG NĂNG LƯỢNG / 01</span>
+            <div class="signature-card__rail" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <strong data-i18n="signature1">Dòng năng lượng làm nhịp dẫn mắt.</strong>
+          </div>
+          <div class="signature-card signature-card--index">
+            <span class="signature-card__label" data-i18n="signatureLabel2">CHỈ MỤC / 02</span>
+            <div class="signature-card__number" aria-hidden="true">04—82</div>
+            <strong data-i18n="signature2">Số thứ tự như bảng đồng hồ, không dùng badge trang trí.</strong>
+          </div>
+          <div class="signature-card signature-card--signal">
+            <span class="signature-card__label" data-i18n="signatureLabel3">TÍN HIỆU / 03</span>
+            <div class="signature-card__signal" aria-hidden="true"><i></i><b></b></div>
+            <strong data-i18n="signature3">Cam cho chuyển động; xanh cho năng lượng và trạng thái.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="news section section--dark" id="news" aria-labelledby="news-title">
+      <div class="shell">
+        <div class="section-head section-head--split section-head--dark">
+          <div>
+            <span class="eyebrow eyebrow--light" data-i18n="eyebrowStories">06 / CÂU CHUYỆN</span>
+            <h2 id="news-title" data-i18n="newsTitle">Từ phòng thiết kế đến hạ tầng năng lượng.</h2>
+          </div>
+          <a href="#news" class="text-link" data-i18n="newsAll">Xem tất cả bài viết ↗</a>
+        </div>
+
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="news-card__visual news-card__visual--a" aria-hidden="true">
+              <span>01</span>
+              <i></i>
+            </div>
+            <div class="news-card__meta"><span data-i18n="newsTopicDesign">THIẾT KẾ</span><time datetime="2026-09-10">10.09.2026</time></div>
+            <h3 data-i18n="news1Title">Tại sao xe điện cần một ngôn ngữ thiết kế riêng?</h3>
+            <p data-i18n="news1Text">Từ tỷ lệ thân xe đến giao diện số: những gì thay đổi khi nền tảng năng lượng thay đổi.</p>
+            <a href="#contact" aria-label="Đọc bài viết" data-i18n-aria="readArticleLabel" data-i18n="readMore">Đọc thêm ↗</a>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__visual news-card__visual--b" aria-hidden="true">
+              <span>02</span>
+              <i></i>
+            </div>
+            <div class="news-card__meta"><span data-i18n="newsTopicEnergy">NĂNG LƯỢNG</span><time datetime="2026-09-10">10.09.2026</time></div>
+            <h3 data-i18n="news2Title">Thiết kế trải nghiệm sạc: nhanh không chỉ là kW.</h3>
+            <p data-i18n="news2Text">Khả năng tìm trạm, hiểu trạng thái và dự đoán hành trình cũng là một phần của hiệu suất.</p>
+            <a href="#contact" aria-label="Đọc bài viết" data-i18n-aria="readArticleLabel" data-i18n="readMore">Đọc thêm ↗</a>
+          </article>
+
+          <article class="news-card">
+            <div class="news-card__visual news-card__visual--c" aria-hidden="true">
+              <span>03</span>
+              <i></i>
+            </div>
+            <div class="news-card__meta"><span data-i18n="newsTopicCompany">CÔNG TY</span><time datetime="2026-09-10">10.09.2026</time></div>
+            <h3 data-i18n="news3Title">VOLTIS: xây thương hiệu từ hệ thống, không từ hiệu ứng.</h3>
+            <p data-i18n="news3Text">Một look & feel có thể mở rộng từ website sang hồ sơ năng lực, showroom và trải nghiệm trong xe.</p>
+            <a href="#contact" aria-label="Đọc bài viết" data-i18n-aria="readArticleLabel" data-i18n="readMore">Đọc thêm ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="careers section" id="careers" aria-labelledby="careers-title">
+      <div class="shell careers__inner">
+        <div>
+          <span class="eyebrow" data-i18n="eyebrowCareers">07 / TUYỂN DỤNG</span>
+          <h2 id="careers-title" data-i18n="careersTitle">Tương lai di chuyển cần nhiều góc nhìn.</h2>
+        </div>
+        <div class="careers__content">
+          <p data-i18n="careersText">VOLTIS đang ở giai đoạn ý tưởng trong bản mẫu này. Khu vực tuyển dụng được thiết kế để sau này có thể kể rõ EVP, vai trò và quy trình ứng tuyển thay vì chỉ là danh sách vị trí.</p>
+          <a href="#contact" class="btn btn--outline-dark" data-i18n="careersCta">Quan tâm cơ hội hợp tác</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-cta" id="contact" aria-labelledby="contact-title">
+      <div class="contact-cta__backdrop" aria-hidden="true">
+        <div class="contact-cta__arc"></div>
+        <div class="contact-cta__grid"></div>
+      </div>
+      <div class="shell contact-cta__inner">
+        <span class="eyebrow eyebrow--light" data-i18n="eyebrowContact">08 / BƯỚC TIẾP THEO</span>
+        <h2 id="contact-title" data-i18n="contactTitle">Sẵn sàng cho bước chuyển động tiếp theo?</h2>
+        <p data-i18n="contactLead">Đăng ký để nhận bản giới thiệu sản phẩm, thông tin dự án hoặc lịch trải nghiệm khi VOLTIS sẵn sàng.</p>
+        <div class="contact-cta__actions">
+          <a href="mailto:hello@voltis.example" class="btn btn--primary" data-i18n="contactPrimary">Liên hệ VOLTIS</a>
+          <a href="#top" class="btn btn--ghost-light" data-i18n="contactSecondary">Về đầu trang ↑</a>
+        </div>
+        <p class="contact-cta__note" data-i18n="contactNote">Địa chỉ email “.example” là địa chỉ minh họa an toàn cho bản mẫu; thay bằng thông tin thật trước khi phát hành.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer__grid">
+      <div class="footer__brand">
+        <a class="brand brand--footer" href="#top" aria-label="VOLTIS — Trang chủ" data-i18n-aria="brandHome">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 46 28" focusable="false">
+              <path d="M3 4 16.8 24h7.6L13.2 4H3Zm17.6 0L32.3 24h7.7L28.2 4h-7.6Z" fill="currentColor"/>
+              <path d="M17.2 24 29 4h8L25.2 24h-8Z" fill="currentColor" opacity=".5"/>
+            </svg>
+          </span>
+          <span class="brand__word">VOLTIS</span>
+        </a>
+        <p data-i18n="footerTagline">Di chuyển điện, được thiết kế như một hệ thống.</p>
+      </div>
+
+      <div class="footer__col">
+        <h3 data-i18n="footerExplore">Khám phá</h3>
+        <a href="#models" data-i18n="navProducts">Sản phẩm</a>
+        <a href="#projects" data-i18n="navProjects">Dự án</a>
+        <a href="#gallery" data-i18n="navGallery">Thư viện ảnh / video</a>
+      </div>
+      <div class="footer__col">
+        <h3 data-i18n="footerCompany">Công ty</h3>
+        <a href="#company" data-i18n="navCompany">Giới thiệu</a>
+        <a href="#resources" data-i18n="footerProfile">Hồ sơ năng lực</a>
+        <a href="#careers" data-i18n="navCareers">Tuyển dụng</a>
+      </div>
+      <div class="footer__col">
+        <h3 data-i18n="footerKnowledge">Thông tin</h3>
+        <a href="#resources" data-i18n="navResources">Tài liệu</a>
+        <a href="#news" data-i18n="navNews">Tin tức</a>
+        <a href="#contact" data-i18n="navContact">Liên hệ</a>
+      </div>
+    </div>
+    <div class="shell footer__bottom">
+      <span data-i18n="footerCopyright">© 2026 VOLTIS — BẢN MẪU UI/UX</span>
+      <span data-i18n="footerDisclaimer">Hình ảnh xe là minh họa ý tưởng nguyên bản; không sử dụng logo/hình ảnh đối thủ.</span>
+    </div>
+  </footer>
+</body>
+</html>
