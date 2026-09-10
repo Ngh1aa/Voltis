@@ -1,0 +1,203 @@
+/* VOLTIS refinement layer — typography, media and CTA consistency */
+:root {
+  --section-title: clamp(2.35rem, 4.8vw, 4.9rem);
+  --product-title: clamp(2.35rem, 4vw, 4.2rem);
+  --card-title: clamp(1.4rem, 1.8vw, 1.9rem);
+  --body: 1rem;
+  --body-lg: clamp(1rem, 1.1vw, 1.15rem);
+  --label: .6875rem;
+}
+
+body {
+  font-size: var(--body);
+  line-height: 1.6;
+}
+
+.section-head h2,
+.energy h2,
+.sustainability h2,
+.contact-cta h2,
+.careers h2 {
+  font-size: var(--section-title);
+  line-height: .96;
+  letter-spacing: -.048em;
+  font-weight: 760;
+  text-wrap: balance;
+}
+
+.model-card__body h3 {
+  font-size: var(--product-title);
+  line-height: .95;
+  letter-spacing: -.045em;
+  font-weight: 780;
+}
+
+.cockpit-card h3,
+.news-card h3 {
+  font-size: var(--card-title);
+  line-height: 1.08;
+  letter-spacing: -.025em;
+  font-weight: 760;
+}
+
+.section-head > p,
+.energy__copy > p,
+.sustainability__copy > p,
+.careers__content > p,
+.contact-cta__inner > p:not(.contact-cta__note) {
+  font-size: var(--body-lg);
+  line-height: 1.65;
+}
+
+.eyebrow,
+.kicker,
+.model-card__topline,
+.signature-card__label,
+.news-card__meta,
+.cockpit-card__copy > span,
+.media-credit {
+  font-size: var(--label);
+  line-height: 1.35;
+  letter-spacing: .15em;
+  font-weight: 820;
+  text-transform: uppercase;
+}
+
+.btn {
+  min-height: 48px;
+  padding-inline: 20px;
+  font-size: 13px;
+  line-height: 1;
+  font-weight: 780;
+  letter-spacing: .015em;
+  white-space: nowrap;
+}
+
+.btn--compact { min-height: 44px; }
+
+.hero__media-frame img,
+.model-card__media img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 14 / 7.6;
+  object-fit: cover;
+}
+
+.media-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+  background: var(--ink);
+}
+
+.media-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(9,12,11,.03) 48%, rgba(9,12,11,.62) 100%);
+}
+
+.media-visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  object-fit: cover;
+  transition: transform var(--slow) var(--ease), filter var(--normal) var(--ease);
+}
+
+.media-credit {
+  position: absolute;
+  z-index: 2;
+  left: 16px;
+  bottom: 14px;
+  color: rgba(248,250,246,.92);
+  text-shadow: 0 1px 14px rgba(0,0,0,.45);
+}
+
+.signature-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(330px, 39vw, 500px);
+  color: var(--white);
+  background: var(--ink);
+}
+
+.signature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(9,12,11,.18), rgba(9,12,11,.78));
+}
+
+.signature-card > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(.78) contrast(1.04);
+  transition: transform var(--slow) var(--ease), filter var(--normal) var(--ease);
+}
+
+.signature-card__label,
+.signature-card > strong,
+.signature-card__rail,
+.signature-card__number,
+.signature-card__signal {
+  position: relative;
+  z-index: 2;
+}
+
+.news-card__visual {
+  position: relative;
+  overflow: hidden;
+  background: var(--ink-2);
+}
+
+.news-card__visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 55%, rgba(9,12,11,.62));
+}
+
+.news-card__visual img {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform var(--slow) var(--ease), filter var(--normal) var(--ease);
+}
+
+.news-card__visual > span {
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  left: 14px;
+}
+
+@media (hover:hover) and (pointer:fine) {
+  .cockpit-card:hover .media-visual img,
+  .signature-card:hover > img,
+  .news-card:hover .news-card__visual img {
+    transform: scale(1.025);
+  }
+}
+
+@media (min-width: 640px) {
+  .media-visual,
+  .media-visual img { min-height: 280px; }
+  .news-card__visual img { min-height: 300px; }
+}
+
+@media (min-width: 1024px) {
+  .cockpit-card--wide .media-visual { min-height: 420px; }
+  .cockpit-card--wide .media-visual img { min-height: 420px; }
+}
