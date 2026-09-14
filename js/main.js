@@ -2,7 +2,6 @@
   "use strict";
 
   const root = document.documentElement;
-  const LEGACY_COMMIT = "6123cc2026dc6630edec2fb293be1073bb416a27";
 
   root.lang = "en";
   root.dataset.locale = "en";
@@ -87,11 +86,23 @@
     document.head.appendChild(refinement);
   }
 
-  const legacy = document.createElement("script");
-  legacy.src = `https://cdn.jsdelivr.net/gh/Ngh1aa/Voltis@${LEGACY_COMMIT}/js/main.js`;
-  legacy.onload = () => { forceEnglish(); replaceEnergyArchitectureVisual(); wireSiteNavigation(); loadRefinement(); };
-  legacy.onerror = () => { forceEnglish(); replaceEnergyArchitectureVisual(); wireSiteNavigation(); loadRefinement(); };
-  document.head.appendChild(legacy);
+  const afterLegacyRuntime = () => {
+    forceEnglish();
+    replaceEnergyArchitectureVisual();
+    wireSiteNavigation();
+    loadRefinement();
+  };
+
+  if (!document.querySelector('script[data-voltis-legacy-runtime]')) {
+    const legacy = document.createElement("script");
+    legacy.src = "./js/legacy-runtime.js?v=20260915-local";
+    legacy.dataset.voltisLegacyRuntime = "true";
+    legacy.onload = afterLegacyRuntime;
+    legacy.onerror = afterLegacyRuntime;
+    document.head.appendChild(legacy);
+  } else {
+    afterLegacyRuntime();
+  }
 
   wireSiteNavigation();
   window.addEventListener("pageshow", () => { forceEnglish(); replaceEnergyArchitectureVisual(); wireSiteNavigation(); });
