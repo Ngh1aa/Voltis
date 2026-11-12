@@ -1,58 +1,49 @@
-# VOLTIS — Tesla Reference Media Sources
+# VOLTIS — Image Sources and Credits
 
-Updated: 10 September 2026
+Updated: 12 November 2026
 
-This UI/UX prototype now uses Tesla-hosted reference media for the rendered photography and film layer. AERO, TERRAIN and VOLTIS remain fictional concept content; Tesla vehicles, products, trademarks and media remain the property of Tesla, Inc.
+All photography and film on the VOLTIS prototype is free-licence material from Wikimedia Commons (public domain, CC0, CC BY or CC BY-SA). Files were downloaded from each Commons file page after checking the licence shown there, then cropped, resized and re-encoded locally (WebP at quality 80, max 1800 px wide). The public credits page is `credits.html`, linked from every page footer.
 
-## Visual direction
+Earlier versions of the site used Tesla press media from `digitalassets.tesla.com`, third-party dealer/press photos and Unsplash images. All of these have been removed; no page references Tesla-hosted media any more.
 
-- Use official Tesla-hosted media as reference material only.
-- Prefer wide vehicle, charging, cabin and energy imagery with strong negative space for typography.
-- Keep VOLTIS brand treatment independent: black surfaces, energy green, motion orange, technical indexing and editorial typography.
-- Images are loaded from `digitalassets.tesla.com` and are mapped centrally in `js/media-library.js`.
-- All reference imagery is labelled in the UI as `REFERENCE MEDIA / TESLA.COM` where a persistent caption can be shown without hurting composition.
-- Replace third-party reference imagery with owned/licensed VOLTIS production assets before any commercial release.
+## Rules
 
-## Official Tesla source pages used for research
+- Allowed: public domain, CC0, CC BY and CC BY-SA (with attribution).
+- Sources: Wikimedia Commons (check the licence on each file page), Openverse filtered by licence, NASA / US government public domain.
+- Not allowed: Tesla-owned media, scraped Unsplash or Pexels images, manufacturer press photos with unclear terms, watermarked images.
+- VOLTIS is fictional: prefer generic or detail shots where brand badges are not prominent.
+- CC BY / CC BY-SA files must be credited with author, source and licence on `credits.html`. CC BY-SA adaptations stay CC BY-SA.
+- Images are centralised in `js/media-library.js` (page photography) and `js/data.js` (vehicles, stories, projects).
 
-### Vehicles
+## Files
 
-- Model Y: https://www.tesla.com/modely
-- Introducing New Model Y: https://www.tesla.com/learn/introducing-new-model-y
-- Model 3: https://www.tesla.com/model3
-- Cybertruck: https://www.tesla.com/cybertruck
-- Cybertruck materials article: https://www.tesla.com/learn/superior-durability-cybertruck-hfs-hard-freaking-stainless
+| # | Local file | Title (source) | Author | Licence | Used on | Changes |
+|---|---|---|---|---|---|---|
+| 1 | `assets/photos/road-light-trails.webp` | [A5 with Frankfurt airport on the horizon - Autobahn A5 mit Flughafen Frankfurt am Horizont - 02](https://commons.wikimedia.org/wiki/File:A5_with_Frankfurt_airport_on_the_horizon_-_Autobahn_A5_mit_Flughafen_Frankfurt_am_Horizont_-_02.jpg) | Norbert Nagel | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0) | Home hero | Cropped, resized, WebP |
+| 2 | `assets/photos/aero-fastback.webp` | [Hyundai Ioniq 6 1X7A7083](https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_6_1X7A7083.jpg) | Alexander-93 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | AERO model: home, vehicles list and panel, model page, configurator, compare, My garage; gallery | Cropped, resized, WebP |
+| 3 | `assets/photos/terrain-crossover.webp` | [Hyundai Ioniq 5 N Line IMG 3869](https://commons.wikimedia.org/wiki/File:Hyundai_Ioniq_5_N_Line_IMG_3869.jpg) | Alexander-93 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | TERRAIN model: home, vehicles list and panel, model page, configurator, compare, My garage | Cropped, licence plate blurred, resized, WebP |
+| 4 | `assets/photos/terrain-xl-suv.webp` | [Kia EV9 GT-Line 1X7A1984](https://commons.wikimedia.org/wiki/File:Kia_EV9_GT-Line_1X7A1984.jpg) | Alexander-93 | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | TERRAIN XL model: vehicles list, model page, configurator, compare, My garage | Cropped, dealer plate blurred, resized, WebP |
+| 5 | `assets/photos/city-compact.webp` | [Honda e in the Red Dot Design Museum](https://commons.wikimedia.org/wiki/File:Honda_e_in_the_Red_Dot_Design_Museum.jpg) | Rutger van der Maar | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | CITY model: vehicles list, model page, configurator, compare, My garage | Cropped, resized, WebP |
+| 6 | `assets/photos/link-van.webp` | [Ford E-Transit 003](https://commons.wikimedia.org/wiki/File:Ford_E-Transit_003.jpg) | JustAnotherCarDesigner | [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) | LINK model: vehicles list, model page, configurator, compare, My garage | Cropped, resized, WebP |
+| 7 | `assets/photos/cockpit-display.webp` | [2022 Hyundai Ioniq 5 Voyage AWD Japan Interior](https://commons.wikimedia.org/wiki/File:2022_Hyundai_Ioniq_5_Voyage_AWD_Japan_Interior.jpg) | Kalmarle | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Home cockpit and signature cards; story “Software should reduce decisions”; gallery | Cropped, resized, WebP |
+| 8 | `assets/photos/cabin-interior.webp` | [Kia EV6 CV Brown (6)](https://commons.wikimedia.org/wiki/File:Kia_EV6_CV_Brown_(6).jpg) | Damian B Oh | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Home cockpit card; story “Why electric vehicles deserve a different interior language”; gallery | Cropped, resized, WebP |
+| 9 | `assets/photos/steering-detail.webp` | [My steering wheel - Flickr - jonrawlinson](https://commons.wikimedia.org/wiki/File:My_steering_wheel_-_Flickr_-_jonrawlinson.jpg) | Jon Rawlinson | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | Home cockpit card; story “Good restraint is visible in what was removed” | Cropped, resized, WebP |
+| 10 | `assets/photos/instrument-cluster.webp` | [2013 Nissan Leaf dashboard](https://commons.wikimedia.org/wiki/File:2013_Nissan_Leaf_dashboard.JPG) | Kiwiev | [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) | Gallery | Cropped, resized, WebP |
+| 11 | `assets/photos/charging-night.webp` | [Electric car charging (9213)](https://commons.wikimedia.org/wiki/File:Electric_car_charging_(9213).jpg) | Ivan Radic | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0) | Home signature card; story “Fast charging is also an information design problem”; gallery | Cropped, resized, WebP |
+| 12 | `assets/photos/charging-hub.webp` | [DC fast charging at Ikea College Park MD 2026-01-20 13-23-57](https://commons.wikimedia.org/wiki/File:DC_fast_charging_at_Ikea_College_Park_MD_2026-01-20_13-23-57.jpg) | G. Edward Johnson | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | Projects hero; project “Charge Network” | Cropped, resized, WebP |
+| 13 | `assets/photos/charging-street-night.webp` | [LEVA charging station at night in Tuntorp 2](https://commons.wikimedia.org/wiki/File:LEVA_charging_station_at_night_in_Tuntorp_2.jpg) | W.carter | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Home news card; contact hero | Cropped, resized, WebP |
+| 14 | `assets/photos/connector-hand.webp` | [Electric vehicle charging station at Pippinger Flur 07](https://commons.wikimedia.org/wiki/File:Electric_vehicle_charging_station_at_Pippinger_Flur_07.jpg) | Kritzolina | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Project “Service Journey” | Cropped, resized, WebP |
+| 15 | `assets/photos/fleet-depot.webp` | [20210216 - Plug-in Hybrid Buses Charging in Nanning Jinyang Bus Depot](https://commons.wikimedia.org/wiki/File:20210216_-_Plug-in_Hybrid_Buses_Charging_in_Nanning_Jinyang_Bus_Depot.jpg) | TKK4000-Motomachi-Chukagai | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Project “Fleet Depot” | Cropped, resized, WebP |
+| 16 | `assets/photos/solar-roof.webp` | [Solar panels on a house in Boholiuby 2026](https://commons.wikimedia.org/wiki/File:Solar_panels_on_a_house_in_Boholiuby_2026.jpg) | Віщун | [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.en) | Story “Energy transparency should be part of ownership” | Cropped, resized, WebP |
+| 17 | `assets/photos/solar-field.webp` | [Photovoltaic power station, Glynn Co, GA, US](https://commons.wikimedia.org/wiki/File:Photovoltaic_power_station,_Glynn_Co,_GA,_US.jpg) | Jud McCranie | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Project “Energy Sites” | Cropped, resized, WebP |
+| 18 | `assets/photos/battery-storage.webp` | [1 MW 4 MWh Turner Energy Storage Project in Pullman, WA](https://commons.wikimedia.org/wiki/File:1_MW_4_MWh_Turner_Energy_Storage_Project_in_Pullman,_WA.jpg) | UniEnergy Technologies | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Home energy architecture; project “Storage Layer”; gallery | Cropped, resized, WebP |
+| 19 | `assets/photos/assembly-line.webp` | [001 Car factory assembly line - Opel factory in Gliwice, Poland](https://commons.wikimedia.org/wiki/File:001_Car_factory_assembly_line_-_Opel_factory_in_Gliwice,_Poland.jpg) | Marek Ślusarczyk (Tupungato) | [CC BY 3.0](https://creativecommons.org/licenses/by/3.0) | Company, careers hero; story “One brief, many disciplines”; gallery | Cropped, resized, WebP |
+| 20 | `assets/photos/battery-lab.webp` | [Lithium-ion coin cell batteries in laboratory testing fixture](https://commons.wikimedia.org/wiki/File:Lithium-ion_coin_cell_batteries_in_laboratory_testing_fixture.jpg) | Chingo K | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | Home news card | Cropped, resized, WebP |
+| 21 | `assets/photos/design-models.webp` | [Italian car models MAUTO n02](https://commons.wikimedia.org/wiki/File:Italian_car_models_MAUTO_n02.jpg) | Marie-Lan Taÿ Pamart | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | Home news card; resources hero | Cropped, resized, WebP |
+| 22 | `assets/photos/wind-offshore.webp` | [Afsluitdijk - wind turbines](https://commons.wikimedia.org/wiki/File:Afsluitdijk_-_wind_turbines.jpg) | Denkrahm | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) | Home signature card; gallery | Cropped, resized, WebP |
+| 23 | `assets/video/charging-station.webm, assets/video/charging-station.mp4, assets/photos/charging-station-film-poster.webp` | [Ionity Charging Station For Electric Cars (2024)](https://commons.wikimedia.org/wiki/File:Ionity_Charging_Station_For_Electric_Cars_(2024).webm) | Maximilian Schönherr | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0) | Gallery film and its poster frame | Re-encoded to 1280×720 (WebM VP9 and MP4 H.264), no audio; poster frame extracted at 10 s |
 
-### Cabin / interface
+## Notes
 
-- Model 3 touchscreen: https://www.tesla.com/support/videos/watch/touchscreen-meet-your-model-3
-- Model 3 physical controls: https://www.tesla.com/support/videos/watch/physical-controls-meet-your-model-3
-- Model 3 essentials: https://www.tesla.com/support/videos/watch/essentials-meet-your-model-3
-- Tesla app support: https://www.tesla.com/support/tesla-app
-
-### Charging / energy
-
-- Charging: https://www.tesla.com/support/charging
-- Supercharging: https://www.tesla.com/support/charging/supercharging
-- Supercharging video: https://www.tesla.com/support/videos/watch/supercharging
-- Travel / Supercharger reference: https://www.tesla.com/support/travel-tips-your-tesla
-- Tesla Energy: https://www.tesla.com/energy
-- Megapack: https://www.tesla.com/megapack/design
-- Integrated energy ecosystem: https://www.tesla.com/learn/power-your-home-with-one-fully-integrated-energy-ecosystem
-- Powerwall: https://www.tesla.com/learn/powerwall-home-battery-is-becoming-essential
-
-## Rendered media coverage
-
-- `index.html`: Model Y hero, Model 3 / Cybertruck product directions, Tesla cockpit/controls, Supercharger, integrated energy ecosystem and Megapack.
-- `vehicles.html`: Model 3 and Cybertruck reference imagery with more image-led composition.
-- `company.html`: Tesla technical/service visual reference.
-- `projects.html`: Supercharger, integrated energy ecosystem and Megapack.
-- `stories.html`: cabin, touchscreen, charging, technical/service, energy and controls.
-- `resources.html`: Tesla app visual used as a documentation/digital-system hero.
-- `gallery.html`: Tesla vehicle, cabin, charging, interface and energy imagery plus an official Tesla Supercharging reference film.
-- `careers.html`: technical/service visual reference.
-- `contact.html`: Tesla vehicle/charging reference image.
-
-## Rights note
-
-Tesla media is copyrighted material. Tesla's public Media Gallery states additional restrictions for its downloadable press assets, including media-use limitations and attribution requirements. This repository uses Tesla material only as reference content in a non-commercial UI/UX prototype. For production, promotional or commercial publication, obtain the appropriate permission/licence and replace reference material when necessary.
+- Vehicle photographs show real third-party cars (Hyundai, Kia, Honda, Ford) photographed by Commons contributors. They are reference stand-ins for the fictional VOLTIS models; licence plates were blurred where visible.
+- Replace reference photography with owned VOLTIS production assets before any commercial release.

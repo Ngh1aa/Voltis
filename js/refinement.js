@@ -6,11 +6,11 @@
     heroLine1: "Pure electric motion.",
     heroLine2: "Designed around the driving experience.",
     heroLead: "VOLTIS is an electric-mobility brand concept combining design, technology and systems thinking to create a clear, efficient and responsible driving experience.",
-    heroVisualLabel: "Tesla reference photography for the VOLTIS visual direction",
-    heroVisualNote: "REFERENCE IMAGE / NOT A VOLTIS PRODUCT",
+    heroVisualLabel: "Motorway light trails used as mood photography for the VOLTIS visual direction",
+    heroVisualNote: "MOOD IMAGE / NOT A VOLTIS PRODUCT",
     modelsTitle: "Two directions. One electric platform.",
     modelsIntro: "Two vehicle directions serve distinct needs: a fastback focused on an agile driving experience and a utility-focused vehicle prioritising space and versatility.",
-    prototypeNote: "AERO/TERRAIN names and characteristics are conceptual. Photography is sourced from Tesla as visual reference and does not represent VOLTIS products.",
+    prototypeNote: "AERO/TERRAIN names and characteristics are conceptual. Photography is free-licence reference material from Wikimedia Commons and does not show VOLTIS products.",
     energyTitle: "Energy architecture, designed as a system.",
     energyLead: "VOLTIS structures the experience around energy flow — from storage and conversion to driver feedback — with clear information and fewer unnecessary interactions.",
     energyCta: "Explore the technology",
@@ -29,58 +29,58 @@
     careersText: "VOLTIS is currently a concept. The careers area is designed to communicate the working environment, roles and application process as the project develops.",
     careersCta: "Explore opportunities",
     contactTitle: "Start your journey with VOLTIS.",
-    footerDisclaimer: "Reference media is sourced from Tesla.com and remains the property of Tesla, Inc.",
-    heroPhotoAlt: "Tesla Model Y used as reference photography for the VOLTIS visual direction",
-    aeroPhotoAlt: "Tesla Model 3 used as reference photography for the VOLTIS AERO direction",
-    terrainPhotoAlt: "Tesla Cybertruck used as reference photography for the VOLTIS TERRAIN direction",
-    cockpitAlt: "Tesla central touchscreen used as an HMI reference",
-    materialAlt: "Tesla cabin used as an interior material reference",
-    controlsAlt: "Tesla steering-wheel controls used as an interaction reference",
-    galleryEnergyAlt: "Tesla Supercharger used as an energy-system reference",
-    galleryInteriorAlt: "Tesla touchscreen used as an interface reference",
-    gallerySolarAlt: "Tesla integrated energy ecosystem used as a clean-energy reference",
-    newsDesignAlt: "Tesla Model Y used as an exterior design reference",
-    newsChargingAlt: "Tesla Supercharger used as a charging reference",
-    newsCompanyAlt: "Tesla service environment used as a technical company reference"
+    footerDisclaimer: "Photography: Wikimedia Commons contributors under CC0, public-domain and Creative Commons licences. See image credits.",
+    heroPhotoAlt: "Long-exposure light trails of traffic on a motorway at dusk",
+    aeroPhotoAlt: "Dark grey electric fastback saloon in side profile, used as reference for VOLTIS AERO",
+    terrainPhotoAlt: "Grey electric crossover seen from the rear three-quarter, used as reference for VOLTIS TERRAIN",
+    cockpitAlt: "Electric car cockpit with a wide panoramic driver and infotainment display",
+    materialAlt: "Electric car cabin with tan seats, floating centre console and curved dashboard display",
+    controlsAlt: "Close-up of a perforated leather steering-wheel rim beside the instrument dials",
+    galleryEnergyAlt: "Electric car plugged into a street charger on a rainy city evening",
+    galleryInteriorAlt: "Wide panoramic display in an electric car cockpit",
+    gallerySolarAlt: "Offshore wind turbines standing in calm water under a pale sky",
+    newsDesignAlt: "Clay and painted scale models of car designs displayed in a museum",
+    newsChargingAlt: "Orange electric car at a charging station at night",
+    newsCompanyAlt: "Lithium-ion coin cells clamped in a laboratory test fixture under red light"
   };
 
   const media = {
     hero: {
       selector: ".hero__media-frame img",
-      src: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/learn_new_model_y_hero.jpg",
+      src: "./assets/photos/road-light-trails.webp",
       altKey: "heroPhotoAlt",
       fallback: "./assets/voltis-aero.svg"
     },
     aero: {
       selector: '[data-model="aero"] .model-card__media img',
-      src: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/service-portal-hero.jpg",
+      src: "./assets/photos/aero-fastback.webp",
       altKey: "aeroPhotoAlt",
       fallback: "./assets/voltis-aero.svg"
     },
     terrain: {
       selector: '[data-model="terrain"] .model-card__media img',
-      src: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Learn-Cybertruck-HFS-Hero.jpg",
+      src: "./assets/photos/terrain-crossover.webp",
       altKey: "terrainPhotoAlt",
       fallback: "./assets/voltis-terrain.svg"
     }
   };
 
   const cockpitMedia = [
-    [".cluster-visual", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_526,w_846,c_fit,f_auto,q_auto:best/Touchscreen_3Y_MYT_Image", "cockpitAlt", "TESLA / HMI"],
-    [".material-visual", "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto:best/Essentials_3Y_Image", "materialAlt", "TESLA / CABIN"],
-    [".switch-visual", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_450,w_720,c_fit,f_auto,q_auto:best/Physical-Controls_3Y_MYT_Image", "controlsAlt", "TESLA / CONTROLS"]
+    [".cluster-visual", "./assets/photos/cockpit-display.webp", "cockpitAlt", "COCKPIT / HMI"],
+    [".material-visual", "./assets/photos/cabin-interior.webp", "materialAlt", "CABIN / MATERIAL"],
+    [".switch-visual", "./assets/photos/steering-detail.webp", "controlsAlt", "CONTROLS / TOUCH"]
   ];
 
   const signatureMedia = [
-    [".signature-card--rail", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_1056,w_1874,c_fit,f_auto,q_auto:best/Supercharging_Vehicle_Q4_21_Image", "galleryEnergyAlt"],
-    [".signature-card--index", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_526,w_846,c_fit,f_auto,q_auto:best/Touchscreen_3Y_MYT_Image", "galleryInteriorAlt"],
-    [".signature-card--signal", "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Ecosystem_Header_Image.png", "gallerySolarAlt"]
+    [".signature-card--rail", "./assets/photos/charging-night.webp", "galleryEnergyAlt"],
+    [".signature-card--index", "./assets/photos/cockpit-display.webp", "galleryInteriorAlt"],
+    [".signature-card--signal", "./assets/photos/wind-offshore.webp", "gallerySolarAlt"]
   ];
 
   const newsMedia = [
-    [".news-card__visual--a", "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/learn_new_model_y_hero.jpg", "newsDesignAlt", "01"],
-    [".news-card__visual--b", "https://digitalassets.tesla.com/tesla-contents/image/upload/h_1056,w_1874,c_fit,f_auto,q_auto:best/Supercharging_Vehicle_Q4_21_Image", "newsChargingAlt", "02"],
-    [".news-card__visual--c", "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/service-portal-hero.jpg", "newsCompanyAlt", "03"]
+    [".news-card__visual--a", "./assets/photos/design-models.webp", "newsDesignAlt", "01"],
+    [".news-card__visual--b", "./assets/photos/charging-street-night.webp", "newsChargingAlt", "02"],
+    [".news-card__visual--c", "./assets/photos/battery-lab.webp", "newsCompanyAlt", "03"]
   ];
 
   function imageMarkup(src, altKey) {

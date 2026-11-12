@@ -9,7 +9,6 @@
 
   const RANGE_OPTIONS = { any: 0, "400": 400, "500": 500, "600": 600 };
   const PRICE_OPTIONS = { any: Infinity, "1000": 1e9, "1500": 1.5e9, "2000": 2e9 };
-  const BADGE = '<span class="tesla-source-badge">REFERENCE MEDIA / TESLA.COM</span>';
 
   function rangeLabel(vehicle) {
     const min = catalogue.minRange(vehicle);
@@ -88,7 +87,7 @@
     function tile(v, selected) {
       return `
         <article class="model-tile" data-model-id="${esc(v.id)}">
-          <a class="model-tile__media" href="./vehicle.html?id=${esc(v.id)}" tabindex="-1" aria-hidden="true"><img src="${esc(v.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">${BADGE}</a>
+          <a class="model-tile__media" href="./vehicle.html?id=${esc(v.id)}" tabindex="-1" aria-hidden="true"><img src="${esc(v.image)}" alt="" loading="lazy" referrerpolicy="no-referrer"></a>
           <div class="model-tile__body">
             <span class="rail-label">${esc(v.index)} / ${esc(v.typeLabel)}</span>
             <h3><a href="./vehicle.html?id=${esc(v.id)}">${esc(v.name)}</a></h3>
@@ -224,7 +223,7 @@
             <div><dt>Charging 10 to 80%</dt><dd>${vehicle.chargeMinutes} min target</dd></div>
           </dl>
         </div>
-        <div class="shell detail-hero__media"><img src="${esc(vehicle.image)}" alt="${esc(vehicle.imageAlt)}" referrerpolicy="no-referrer" fetchpriority="high">${BADGE}</div>
+        <div class="shell detail-hero__media"><img src="${esc(vehicle.image)}" alt="${esc(vehicle.imageAlt)}" referrerpolicy="no-referrer" fetchpriority="high"></div>
       </section>
       <section class="section section--white">
         <div class="shell">
@@ -283,7 +282,6 @@
         <div class="configurator__visual">
           <figure class="config-preview">
             <img src="${esc(vehicle.image)}" alt="${esc(vehicle.imageAlt)}" referrerpolicy="no-referrer" loading="lazy">
-            ${BADGE}
           </figure>
           <div class="paint-sample"><span class="paint-sample__chip" data-paint-chip></span><div><small>Selected paint</small><strong data-paint-name></strong></div></div>
         </div>

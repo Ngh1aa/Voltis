@@ -68,11 +68,11 @@
     frame.removeAttribute("data-i18n-aria");
     frame.setAttribute("aria-label", "Reference image of utility-scale battery energy storage architecture");
     frame.innerHTML = `
-      <img src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/megapack-resources.jpg" alt="Utility-scale battery energy storage system used as reference imagery for VOLTIS energy architecture" loading="lazy" decoding="async" referrerpolicy="no-referrer">
+      <img src="./assets/photos/battery-storage.webp" alt="Containerised utility-scale battery energy storage system on a gravel site" loading="lazy" decoding="async" referrerpolicy="no-referrer">
       <div class="energy-map__photo-caption">
         <span>ENERGY / STORAGE / CONVERSION</span>
         <strong>From stored energy to motion.</strong>
-        <small>Reference image: Tesla Megapack. Used for visual direction only.</small>
+        <small>Reference image: Turner Energy Storage Project, Pullman WA (CC BY-SA 4.0). See image credits.</small>
       </div>`;
   }
 

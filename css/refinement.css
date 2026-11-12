@@ -218,8 +218,7 @@ body {
   transform: scale(1.005);
 }
 
-.hero__rail,
-.hero__media-frame .tesla-source-badge {
+.hero__rail {
   z-index: 3;
 }
 

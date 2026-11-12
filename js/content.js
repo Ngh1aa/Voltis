@@ -106,7 +106,7 @@
               <h1>${esc(story.title)}</h1>
               <p>${esc(story.excerpt)}</p>
             </div>
-            <div class="shell detail-hero__media"><img src="${esc(story.image)}" alt="${esc(story.imageAlt)}" referrerpolicy="no-referrer"><span class="tesla-source-badge">REFERENCE MEDIA</span></div>
+            <div class="shell detail-hero__media"><img src="${esc(story.image)}" alt="${esc(story.imageAlt)}" referrerpolicy="no-referrer"></div>
           </section>
           <section class="section section--white">
             <div class="shell article-layout">
@@ -225,7 +225,7 @@
                 <div><dt>Location</dt><dd>${esc(p.location)}</dd></div>
               </dl>
             </div>
-            <div class="shell detail-hero__media"><img src="${esc(p.image)}" alt="${esc(p.imageAlt)}" referrerpolicy="no-referrer"><span class="tesla-source-badge">REFERENCE MEDIA</span></div>
+            <div class="shell detail-hero__media"><img src="${esc(p.image)}" alt="${esc(p.imageAlt)}" referrerpolicy="no-referrer"></div>
           </section>
           <section class="section section--white">
             <div class="shell manifesto"><p class="manifesto__statement manifesto__statement--small">${esc(p.overview)}</p>

@@ -13,12 +13,14 @@ Voltis/
 ├─ test-drive.html   booking wizard (?model=, ?reschedule=TD-…)
 ├─ account.html      My VOLTIS: garage, bookings, applications, enquiries (?tab=)
 ├─ story.html, project.html, job.html, apply.html   detail pages (?id= / ?job=)
+├─ credits.html      image credits (author, source, licence)
 ├─ figma-*.html      design documentation pages
 ├─ css/   style.css, refinement.css (home) · pages.css, app.css, media-library.css (subpages)
 ├─ js/    data.js (catalogue + seed) · app-core.js (store, requests, UI states)
 │         vehicles.js · test-drive.js · account.js · content.js · careers.js · contact.js
 ├─ tests/e2e.cjs     end-to-end test (Playwright)
-├─ assets/ · docs/
+├─ assets/  photos/ (WebP) · video/ · concept SVGs
+├─ docs/
 ```
 
 ## Prototype features
@@ -26,8 +28,8 @@ Voltis/
 - English interface (the home page keeps Vietnamese source copy, switched to English at runtime by `js/main.js`).
 - Consistent responsive typography for section titles, product names, card titles, body copy, labels and CTAs.
 - Professional automotive-oriented copy benchmarked against current premium EV websites without copying their brand language.
-- Real reference photography for vehicles, cockpit/HMI, controls, charging, energy, engineering and editorial stories.
-- Tesla imagery is treated as reference/demo material; Unsplash imagery is selected from source pages stating use under the Unsplash License. See `docs/image-sources.md`.
+- Free-licence reference photography for vehicles, cockpit/HMI, controls, charging, energy, engineering and editorial stories, stored locally in `assets/photos/` (WebP) with a short charging film in `assets/video/`.
+- All photography and film comes from Wikimedia Commons under public-domain, CC0, CC BY or CC BY-SA licences. Every file is credited with title, author, source and licence on `credits.html` (linked from every footer) and in `docs/image-sources.md`.
 - Google Images and Pinterest are used for visual discovery only; repost/cache/watermarked image URLs are not embedded.
 - Responsive mobile-first layout with accessible native controls, visible focus states and Escape-close mobile navigation.
 - Reduced-motion support and one deliberate hero interaction.
@@ -76,7 +78,7 @@ Deploy from the repository `main` branch and `/ (root)`. GitHub Pages will serve
 
 ## Content / reality notice
 
-This is a UI/UX prototype. `AERO`, `TERRAIN` and qualitative product characteristics are concept material; they do not represent announced commercial VOLTIS products. Photography is reference material and may show third-party products or brands. Replace all concept information and reference-only photography with verified/licensed production assets before commercial release.
+This is a UI/UX prototype. `AERO`, `TERRAIN` and qualitative product characteristics are concept material; they do not represent announced commercial VOLTIS products. Photography is free-licence reference material from Wikimedia Commons (see `credits.html`) and shows third-party products and brands. Replace all concept information and reference-only photography with verified/licensed production assets before commercial release.
 
 ## Design documentation
 

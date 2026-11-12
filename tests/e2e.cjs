@@ -65,7 +65,7 @@ async function step(name, fn) {
 
   const renderedPages = [
     "index.html", "vehicles.html", "vehicle.html?id=aero", "compare.html?ids=aero,city", "test-drive.html", "account.html",
-    "stories.html", "story.html?id=one-brief", "projects.html", "project.html?id=energy-sites", "resources.html",
+    "credits.html", "stories.html", "story.html?id=one-brief", "projects.html", "project.html?id=energy-sites", "resources.html",
     "careers.html", "job.html?id=exterior-designer", "apply.html?job=exterior-designer", "contact.html", "company.html", "gallery.html",
     ...htmlFiles.filter((f) => f.startsWith("figma-"))
   ];

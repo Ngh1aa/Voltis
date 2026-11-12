@@ -9,24 +9,26 @@
 (() => {
   "use strict";
 
+  // Free-licence photography from Wikimedia Commons, processed into
+  // assets/photos/. Authors, sources and licences: credits.html.
+  const P = "./assets/photos/";
   const IMG = {
-    modelY: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/learn_new_model_y_hero.jpg",
-    cybertruck: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Learn-Cybertruck-HFS-Hero.jpg",
-    model3Dark: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/service-portal-hero.jpg",
-    supercharger: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_1056,w_1874,c_fit,f_auto,q_auto:best/Supercharging_Vehicle_Q4_21_Image",
-    touchscreen: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_526,w_846,c_fit,f_auto,q_auto:best/Touchscreen_3Y_MYT_Image",
-    controls: "https://digitalassets.tesla.com/tesla-contents/image/upload/h_450,w_720,c_fit,f_auto,q_auto:best/Physical-Controls_3Y_MYT_Image",
-    essentials: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto:best/Essentials_3Y_Image",
-    delivery: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/support-after-taking-delivery-hero-global.jpg",
-    travel: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/travel-tips-tesla-hero.jpg",
-    ecosystem: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Ecosystem_Header_Image.png",
-    megapack: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/megapack-resources.jpg",
-    teslaApp: "https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/support-tesla-app-hero.jpg",
-    engineers: "https://images.unsplash.com/photo-1581091212991-8891c7d4bd9b?auto=format&fit=crop&q=82&w=1800",
-    charger: "https://images.unsplash.com/photo-1751553822302-b8d5934a76b5?auto=format&fit=crop&q=82&w=1800",
-    solar: "https://images.unsplash.com/photo-1768839727824-28d6f0dcd1d1?auto=format&fit=crop&q=82&w=1800",
-    dashboard: "https://images.unsplash.com/photo-1694889648476-3777d917b91c?auto=format&fit=crop&q=82&w=1800",
-    interior: "https://images.unsplash.com/photo-1770290405667-5586bd4431b3?auto=format&fit=crop&q=82&w=1800"
+    aero: P + "aero-fastback.webp",
+    terrain: P + "terrain-crossover.webp",
+    terrainXl: P + "terrain-xl-suv.webp",
+    city: P + "city-compact.webp",
+    link: P + "link-van.webp",
+    cockpit: P + "cockpit-display.webp",
+    cabin: P + "cabin-interior.webp",
+    steering: P + "steering-detail.webp",
+    chargingNight: P + "charging-night.webp",
+    chargingHub: P + "charging-hub.webp",
+    connector: P + "connector-hand.webp",
+    fleetDepot: P + "fleet-depot.webp",
+    solarRoof: P + "solar-roof.webp",
+    solarField: P + "solar-field.webp",
+    storage: P + "battery-storage.webp",
+    assembly: P + "assembly-line.webp"
   };
 
   const COLOURS = {
@@ -47,8 +49,8 @@
       index: "VOLTIS / 01",
       tagline: "Low, quiet and precise.",
       summary: "A fastback concept shaped around clean airflow and a driver-first cabin.",
-      image: IMG.model3Dark,
-      imageAlt: "Tesla Model 3 reference image for the VOLTIS AERO fastback direction",
+      image: IMG.aero,
+      imageAlt: "Dark grey electric fastback saloon in side profile, used as reference for the VOLTIS AERO direction",
       seats: 5,
       chargeMinutes: 22,
       drive: "Rear- or all-wheel drive",
@@ -83,8 +85,8 @@
       index: "VOLTIS / 02",
       tagline: "Utility, without visual weight.",
       summary: "More space, more flexibility and an elevated driving position for longer, less predictable journeys.",
-      image: IMG.cybertruck,
-      imageAlt: "Tesla Cybertruck reference image for the VOLTIS TERRAIN utility direction",
+      image: IMG.terrain,
+      imageAlt: "Grey electric crossover seen from the rear three-quarter, used as reference for the VOLTIS TERRAIN direction",
       seats: 5,
       chargeMinutes: 26,
       drive: "All-wheel drive",
@@ -119,8 +121,8 @@
       index: "VOLTIS / 03",
       tagline: "Seven seats, one calm cabin.",
       summary: "A three-row electric SUV for families who travel together and need space without compromise.",
-      image: IMG.modelY,
-      imageAlt: "Tesla Model Y reference image for the VOLTIS TERRAIN XL direction",
+      image: IMG.terrainXl,
+      imageAlt: "Black three-row electric SUV parked in a car park, used as reference for the VOLTIS TERRAIN XL direction",
       seats: 7,
       chargeMinutes: 28,
       drive: "All-wheel drive",
@@ -154,8 +156,8 @@
       index: "VOLTIS / 04",
       tagline: "Small footprint, full attention.",
       summary: "A compact hatch for dense streets, short trips and easy parking, with the same calm interface.",
-      image: IMG.delivery,
-      imageAlt: "Tesla vehicle delivery reference image used for the VOLTIS CITY direction",
+      image: IMG.city,
+      imageAlt: "Compact silver electric hatchback with round headlamps in a dark exhibition hall, used as reference for the VOLTIS CITY direction",
       seats: 5,
       chargeMinutes: 25,
       drive: "Front-wheel drive",
@@ -188,8 +190,8 @@
       index: "VOLTIS / 05",
       tagline: "Built for work that runs all day.",
       summary: "An electric van for deliveries, shuttles and service fleets, planned around depot charging.",
-      image: IMG.travel,
-      imageAlt: "Tesla travel reference image used for the VOLTIS LINK fleet direction",
+      image: IMG.link,
+      imageAlt: "White electric panel van parked under a tree, used as reference for the VOLTIS LINK fleet direction",
       seats: 8,
       chargeMinutes: 32,
       drive: "Rear-wheel drive",
@@ -232,8 +234,8 @@
       readMinutes: 6,
       title: "Why electric vehicles deserve a different interior language.",
       excerpt: "Removing mechanical complexity should create a calmer cabin, not an excuse to fill every surface with another interface.",
-      image: IMG.essentials,
-      imageAlt: "Tesla Model 3 cabin reference",
+      image: IMG.cabin,
+      imageAlt: "Electric car cabin with tan seats, floating centre console and curved dashboard display",
       body: [
         "An electric platform removes the transmission tunnel, the engine bay and much of the heat management that shaped car interiors for a century. That freedom is easy to waste. Many new cabins fill the space with more screens, more lighting and more surfaces that ask for attention.",
         "VOLTIS starts from the opposite question: what does the driver actually need to see, touch and trust? Speed, energy state and warnings are separated by priority. Climate and media stay reachable without looking. Everything else waits until it is useful.",
@@ -247,8 +249,8 @@
       readMinutes: 5,
       title: "Software should reduce decisions, not create more of them.",
       excerpt: "A useful interface reveals complexity only when the driver needs it.",
-      image: IMG.touchscreen,
-      imageAlt: "Tesla touchscreen interface reference",
+      image: IMG.cockpit,
+      imageAlt: "Electric car cockpit with a wide panoramic driver and infotainment display",
       body: [
         "Every setting added to a vehicle interface is a decision handed back to the driver. Over time those decisions accumulate into menus nobody opens and features nobody trusts.",
         "The VOLTIS interface model treats defaults as product decisions. Regenerative braking, charging limits and climate pre-conditioning start from sensible values and explain themselves when changed.",
@@ -262,8 +264,8 @@
       readMinutes: 7,
       title: "Fast charging is also an information design problem.",
       excerpt: "Finding a charger, understanding state and recovering from errors all shape perceived speed.",
-      image: IMG.supercharger,
-      imageAlt: "Tesla Supercharger reference",
+      image: IMG.chargingNight,
+      imageAlt: "Electric car plugged into a street charger on a rainy city evening",
       body: [
         "Charging speed is usually reported in kilowatts. Drivers experience it in minutes, uncertainty and queues. A charger that delivers fewer kilowatts but works first time can feel faster than one that needs three attempts.",
         "That is why VOLTIS treats charging as a journey with states: finding a charger, arriving, connecting, charging, recovering from a fault and leaving. Each state has a clear message and a clear next action.",
@@ -277,8 +279,8 @@
       readMinutes: 4,
       title: "One brief, many disciplines.",
       excerpt: "Why product, engineering and communication need the same source of truth.",
-      image: IMG.engineers,
-      imageAlt: "Automotive engineers collaborating",
+      image: IMG.assembly,
+      imageAlt: "Car bodies moving along a factory assembly line",
       body: [
         "Vehicle programmes often split into separate tracks: design, engineering, software and marketing each with their own documents. The gaps between those documents are where customer problems hide.",
         "VOLTIS works from one brief per product decision. It states the user need, the constraints, the evidence and the open questions. Every discipline writes into it and reads from it.",
@@ -292,8 +294,8 @@
       readMinutes: 5,
       title: "Energy transparency should be part of ownership.",
       excerpt: "Drivers deserve clear context around source, storage and consumption.",
-      image: IMG.ecosystem,
-      imageAlt: "Tesla integrated energy ecosystem reference",
+      image: IMG.solarRoof,
+      imageAlt: "Solar panels covering the roof of a family house under a blue sky",
       body: [
         "An electric vehicle is only as clean as the energy that charges it, and only as efficient as the habits around it. Most drivers have no way to see either.",
         "VOLTIS ownership concepts show where energy came from when that data is available, how much was used per trip and what changed it: speed, temperature, climate settings or load.",
@@ -307,8 +309,8 @@
       readMinutes: 4,
       title: "Good restraint is visible in what was removed.",
       excerpt: "Premium design is often the result of editing, hierarchy and material discipline.",
-      image: IMG.controls,
-      imageAlt: "Tesla physical controls reference",
+      image: IMG.steering,
+      imageAlt: "Close-up of a perforated leather steering-wheel rim beside the instrument dials",
       body: [
         "Restraint is not minimalism for its own sake. It is the discipline of deciding what matters most and letting everything else step back.",
         "In the VOLTIS design language that means one accent colour per decision zone, one primary action per screen and physical controls for anything used while driving.",
@@ -332,8 +334,8 @@
       index: "PROJECT / 01",
       title: "Charge Network",
       summary: "A concept for reliable, legible charging experiences across destination, workplace and journey charging.",
-      image: IMG.supercharger,
-      imageAlt: "Tesla Supercharger infrastructure reference",
+      image: IMG.chargingHub,
+      imageAlt: "Rows of DC fast chargers at an open-air public charging hub",
       location: "Hanoi to Da Nang corridor",
       overview: "Charge Network explores how a mixed network of journey, destination and workplace chargers can feel like one service. The focus is availability before arrival, simple payment and fast recovery when a session fails.",
       phases: [
@@ -351,8 +353,8 @@
       index: "PROJECT / 02",
       title: "Energy Sites",
       summary: "Renewable generation, storage and site-level energy management visualised as one operating system.",
-      image: IMG.solar,
-      imageAlt: "Solar panels in an energy field",
+      image: IMG.solarField,
+      imageAlt: "Rows of ground-mounted solar panels at a photovoltaic power station",
       location: "Central Vietnam",
       overview: "Energy Sites combines solar generation, buffer storage and charging into one site plan, with a control interface that operators can read at a glance.",
       phases: [
@@ -370,8 +372,8 @@
       index: "PROJECT / 03",
       title: "Storage Layer",
       summary: "Utility-scale storage as the bridge between intermittent renewable generation and dependable mobility energy.",
-      image: IMG.megapack,
-      imageAlt: "Tesla Megapack utility-scale storage reference",
+      image: IMG.storage,
+      imageAlt: "Containerised utility-scale battery energy storage system on a gravel site",
       location: "Research programme",
       overview: "Storage Layer studies how stationary batteries can smooth renewable generation for high-power charging hubs, and how second-life vehicle packs could contribute.",
       phases: [
@@ -389,8 +391,8 @@
       index: "PROJECT / 04",
       title: "Fleet Depot",
       summary: "Overnight depot charging for delivery and shuttle fleets, scheduled around shifts and tariff windows.",
-      image: IMG.charger,
-      imageAlt: "Electric vehicle charging station",
+      image: IMG.fleetDepot,
+      imageAlt: "Plug-in buses connected to chargers at a city bus depot",
       location: "Ho Chi Minh City",
       overview: "Fleet Depot designs the charging schedule, depot layout and fleet manager interface for operators moving vans and shuttles to electric.",
       phases: [
@@ -408,8 +410,8 @@
       index: "PROJECT / 05",
       title: "Service Journey",
       summary: "One digital journey for booking, tracking and understanding vehicle service, from app to workshop.",
-      image: IMG.teslaApp,
-      imageAlt: "Tesla app reference used for the VOLTIS service journey",
+      image: IMG.connector,
+      imageAlt: "Hand holding a CCS fast-charging connector at a public charging station",
       location: "Digital programme",
       overview: "Service Journey connects the owner app, the workshop and remote diagnostics so that owners always know what is happening to their vehicle and why.",
       phases: [
@@ -440,7 +442,7 @@
     { id: "interface-guidelines", title: "Digital Interface Guidelines", summary: "Typography, hierarchy, accessibility and system feedback principles.", category: "ux", format: "md", generator: "interface" },
     { id: "corporate-profile", title: "Corporate Profile", summary: "Company positioning, capabilities and partnership model.", category: "company", format: "txt", generator: "profile" },
     { id: "vehicle-specs", title: "Concept Range Specification Sheet", summary: "Trims, batteries, range targets and indicative prices for every model.", category: "tech", format: "csv", generator: "specs" },
-    { id: "image-sources", title: "Prototype Image Sources", summary: "Reference photography sources and reuse notes for this design prototype.", category: "source", format: "md", file: "./docs/image-sources.md" }
+    { id: "image-sources", title: "Image Sources and Credits", summary: "Author, source and licence for every free-licence photograph and film used in this prototype.", category: "source", format: "md", file: "./docs/image-sources.md" }
   ];
 
   const resourceCategories = [
