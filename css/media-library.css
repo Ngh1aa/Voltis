@@ -18,7 +18,7 @@
 .page-media-band__caption{
   position:absolute;z-index:2;left:clamp(18px,3vw,36px);bottom:clamp(16px,2.4vw,28px);
   padding:8px 10px;background:rgba(9,12,11,.78);color:#f8faf6;
-  font-size:10px;font-weight:820;letter-spacing:.14em;text-transform:uppercase;
+  font-size:12px;font-weight:820;letter-spacing:.14em;text-transform:uppercase;
 }
 .project-map.project-map--photo{
   min-height:clamp(460px,54vw,700px);background:#101512;border:1px solid rgba(248,250,246,.14);
@@ -28,7 +28,7 @@
 .project-map--photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.06)}
 .project-map--photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,12,11,.02),rgba(9,12,11,.86));pointer-events:none}
 .project-map__caption{position:absolute;z-index:2;left:clamp(20px,4vw,42px);right:clamp(20px,4vw,42px);bottom:clamp(20px,4vw,38px);display:grid;gap:8px;color:#f8faf6}
-.project-map__caption span{color:#8dff63;font-size:10px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.project-map__caption span{color:#8dff63;font-size:12px;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
 .project-map__caption strong{max-width:13ch;font-size:clamp(1.7rem,3.5vw,3.8rem);line-height:.96;letter-spacing:-.045em}
 .vehicle-panel img,.story-card__media img,.project-card__media img,.gallery-item img,.careers-hero__media img,.media-frame img{
   filter:saturate(.9) contrast(1.045);
@@ -36,20 +36,23 @@
 
 .tesla-source-badge{
   position:absolute;
+  max-width:calc(100% - 24px);
+  white-space:nowrap;
+  overflow:hidden;
   z-index:4;
   right:clamp(12px,1.8vw,22px);
   bottom:clamp(12px,1.8vw,20px);
   display:inline-flex;
   align-items:center;
-  min-height:26px;
+  min-height:28px;
   padding:0 9px;
   border:1px solid rgba(248,250,246,.22);
   background:rgba(9,12,11,.62);
   color:rgba(248,250,246,.78);
   backdrop-filter:blur(10px);
-  font-size:8px;
+  font-size:12px;
   font-weight:820;
-  letter-spacing:.14em;
+  letter-spacing:.08em;
   text-transform:uppercase;
   pointer-events:none;
 }
@@ -84,7 +87,7 @@
   padding:7px 9px;
   background:#8dff63;
   color:#090c0b;
-  font-size:9px;
+  font-size:12px;
   font-weight:900;
   letter-spacing:.14em;
 }
@@ -95,7 +98,7 @@
 }
 @media (max-width:639px){
   .page-media-band{width:100%;border-left:0;border-right:0;min-height:300px}
-  .tesla-source-badge{font-size:7px;bottom:10px;right:10px}
+  .tesla-source-badge{font-size:12px;bottom:10px;right:10px}
 }
 @media (prefers-reduced-motion:reduce){
   .vehicle-panel img,.story-card__media img{transition:none!important}

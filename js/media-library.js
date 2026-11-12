@@ -102,7 +102,7 @@
       <video controls muted playsinline preload="metadata" poster="${IMG.supercharger}">
         <source src="${VIDEO.supercharging}" type="video/mp4">
       </video>
-      <figcaption>Film / charging experience · Tesla reference</figcaption>
+      <figcaption>Film / charging experience / Tesla reference</figcaption>
       <span class="film-index">FILM / 01</span>`;
     grid.prepend(figure);
   }
@@ -151,24 +151,10 @@
     addTeslaSourceBadge(document.querySelector(".media-frame"));
   }
 
+  // Project and story cards are rendered from js/data.js, which carries their
+  // images, so only the project hero map is upgraded here.
   function projects() {
     upgradeProjectMap();
-    setMany(".project-card__media img", [
-      { src: IMG.supercharger, alt: "Tesla Supercharger infrastructure reference" },
-      { src: IMG.ecosystem, alt: "Tesla integrated clean-energy ecosystem reference" },
-      { src: IMG.megapack, alt: "Tesla Megapack utility-scale storage reference" }
-    ]);
-  }
-
-  function stories() {
-    setMany(".story-card__media img", [
-      { src: IMG.essentials, alt: "Tesla Model 3 cabin reference" },
-      { src: IMG.touchscreen, alt: "Tesla touchscreen interface reference" },
-      { src: IMG.supercharger, alt: "Tesla Supercharger reference" },
-      { src: IMG.servicePortal || IMG.model3Dark, alt: "Tesla technical service reference" },
-      { src: IMG.ecosystem, alt: "Tesla integrated energy ecosystem reference" },
-      { src: IMG.controls, alt: "Tesla physical controls reference" }
-    ]);
   }
 
   function resources() {
@@ -205,7 +191,6 @@
     "vehicles.html": vehicles,
     "company.html": company,
     "projects.html": projects,
-    "stories.html": stories,
     "resources.html": resources,
     "gallery.html": gallery,
     "careers.html": careers,

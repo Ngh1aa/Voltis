@@ -2,7 +2,7 @@
   "use strict";
 
   const copy = {
-    headerCta: "Register interest",
+    headerCta: "Book a test drive",
     heroLine1: "Pure electric motion.",
     heroLine2: "Designed around the driving experience.",
     heroLead: "VOLTIS is an electric-mobility brand concept combining design, technology and systems thinking to create a clear, efficient and responsible driving experience.",
