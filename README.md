@@ -1,6 +1,8 @@
-# VOLTIS — Electric Mobility Website Prototype
+# VOLTIS — Electric Mobility Website
 
-Static HTML/CSS/JS prototype for the VOLTIS electric vehicle corporate/product website.
+Static HTML/CSS/JS website for VOLTIS, a fictional electric vehicle brand (concept product designed by Đỗ Anh Nghĩa).
+
+**Live / portfolio entry URL:** https://voltis-one.vercel.app/ (opens the homepage; My VOLTIS starts with one saved build).
 
 ## Structure
 
@@ -23,7 +25,7 @@ Voltis/
 ├─ docs/
 ```
 
-## Prototype features
+## Features
 
 - English interface (the home page keeps Vietnamese source copy, switched to English at runtime by `js/main.js`).
 - Consistent responsive typography for section titles, product names, card titles, body copy, labels and CTAs.
@@ -46,7 +48,9 @@ Every main workflow runs end to end in the browser, with loading, empty, not-fou
 - **Careers:** role filters, job detail, application wizard (CV is read as a local file name only), **My applications** with withdraw.
 - **Contact:** validated enquiry form that reaches a success state.
 
-**Data rule.** There is no server. Catalogue content and the starting user data live in `js/data.js`. On the first visit in a tab, `app-core.js` copies the seed into `sessionStorage` (`voltis.demo.v1`), so saved items survive navigation and reload in that tab only. Every page footer has **Reset demo data** and **Simulate a failed request** (the next request fails once, showing the error state and a retry). Confirmations state that this is a prototype and that nothing was sent or reserved. Range, price and charging values are labelled as concept targets, not homologated figures or offers.
+**Data rule.** There is no server. Catalogue content and the starting user data live in `js/data.js`. On the first visit in a tab, `app-core.js` copies the seed into `sessionStorage` (`voltis.demo.v1`), so saved items survive navigation and reload in that tab only. Prices and ranges are fictional targets, presented as product copy ("From 1.19 billion VND", "Up to 610 km (target)", "Specifications are targets and may change"). Every footer carries one honest line: "Concept product designed by Đỗ Anh Nghĩa." plus the Image credits link.
+
+**Demo tools (hidden).** Add `?demo=1` to any URL to show a small floating **Demo tools** menu with **Simulate a failed request** (the next request fails once, showing the error state and a retry) and **Reset demo data**. The flag stays on for that tab (sessionStorage); `?demo=0` turns it off. The `figma-*.html` documentation pages are not linked from the site but remain available by direct URL.
 
 ## Run locally
 
@@ -66,7 +70,7 @@ With the server running on port 8905 and Playwright installed somewhere on `NODE
 NODE_PATH=/path/to/node_modules node tests/e2e.cjs
 ```
 
-It walks every flow above plus reset, and fails on local console errors or any `href="#"`.
+It walks every flow above plus reset (via `?demo=1`), checks that no product page shows prototype wording or demo tools without `?demo=1`, and fails on local console errors or any `href="#"`. Set `BASE_URL` to test another host.
 
 ## Deployment
 

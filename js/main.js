@@ -42,7 +42,7 @@
     document.querySelector(".locale-switch")?.remove();
     document.title = "VOLTIS — Electric mobility, designed around experience";
     const description = document.querySelector('meta[name="description"]');
-    if (description) description.content = "VOLTIS — electric mobility brand and product experience concept.";
+    if (description) description.content = "VOLTIS — electric vehicles, charging and energy, designed as one system.";
   }
 
   function wireSiteNavigation() {
@@ -79,7 +79,7 @@
   function loadRefinement() {
     if (document.querySelector('script[data-voltis-refinement]')) return;
     const refinement = document.createElement("script");
-    refinement.src = "./js/refinement.js?v=7";
+    refinement.src = "./js/refinement.js?v=8";
     refinement.dataset.voltisRefinement = "true";
     refinement.onload = () => { forceEnglish(); replaceEnergyArchitectureVisual(); wireSiteNavigation(); };
     refinement.onerror = () => { forceEnglish(); replaceEnergyArchitectureVisual(); wireSiteNavigation(); };
@@ -95,7 +95,7 @@
 
   if (!document.querySelector('script[data-voltis-legacy-runtime]')) {
     const legacy = document.createElement("script");
-    legacy.src = "./js/legacy-runtime.js?v=20260915-local";
+    legacy.src = "./js/legacy-runtime.js?v=20261113";
     legacy.dataset.voltisLegacyRuntime = "true";
     legacy.onload = afterLegacyRuntime;
     legacy.onerror = afterLegacyRuntime;

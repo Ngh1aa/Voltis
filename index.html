@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#090c0b">
-  <meta name="description" content="VOLTIS — prototype website giới thiệu thương hiệu và sản phẩm xe ô tô điện.">
+  <meta name="description" content="VOLTIS — thương hiệu và dải xe ô tô điện, sạc và năng lượng.">
   <title>VOLTIS — Chuyển động bằng điện, thiết kế cho tương lai</title>
   <link rel="stylesheet" href="./css/style.css">
-  <script defer src="./js/main.js"></script>
+  <script defer src="./js/main.js?v=4"></script>
+  <script defer src="./js/data.js?v=4"></script>
+  <script defer src="./js/app-core.js?v=4"></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Bỏ qua điều hướng</a>
@@ -15,7 +17,7 @@
   <div class="announcement" role="status">
     <div class="shell announcement__inner">
       <span class="announcement__eyebrow">VOLTIS / 2026</span>
-      <p data-i18n="announcement">Bản mẫu thương hiệu xe điện thế hệ mới — trải nghiệm số song ngữ Việt / Anh.</p>
+      <p data-i18n="announcement">Đăng ký lái thử dải xe VOLTIS tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng.</p>
       <a href="#contact" class="announcement__link" data-i18n="announcementCta">Đăng ký trải nghiệm</a>
     </div>
   </div>
@@ -96,10 +98,10 @@
               <span class="btn__arrow" aria-hidden="true">↗</span>
             </a>
           </div>
-          <div class="hero__meta" aria-label="Thông tin bản mẫu" data-i18n-aria="heroMetaLabel">
+          <div class="hero__meta" aria-label="VOLTIS trong nháy mắt" data-i18n-aria="heroMetaLabel">
             <div>
-              <strong>02</strong>
-              <span data-i18n="heroMetaModels">mẫu xe concept</span>
+              <strong>05</strong>
+              <span data-i18n="heroMetaModels">mẫu xe thuần điện</span>
             </div>
             <div>
               <strong>EV</strong>
@@ -112,7 +114,7 @@
           </div>
         </div>
 
-        <div class="hero__visual" aria-label="Minh họa mẫu ý tưởng VOLTIS AERO" data-i18n-aria="heroVisualLabel">
+        <div class="hero__visual" aria-label="VOLTIS AERO" data-i18n-aria="heroVisualLabel">
           <div class="hero__media-frame">
             <img src="./assets/photos/road-light-trails.webp" alt="Vệt đèn giao thông phơi sáng dài trên đường cao tốc lúc chạng vạng" width="1400" height="760" fetchpriority="high" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='./assets/voltis-aero.svg';">
             <div class="hero__rail hero__rail--top" aria-hidden="true">
@@ -120,10 +122,10 @@
             </div>
             <div class="hero__rail hero__rail--bottom" aria-hidden="true">
               <span class="signal-dot"></span>
-              <span data-i18n="heroVisualNote">Ý TƯỞNG / KHÔNG PHẢI SẢN PHẨM THƯƠNG MẠI</span>
+              <span data-i18n="heroVisualNote">TRÊN ĐƯỜNG / SAU HOÀNG HÔN</span>
             </div>
           </div>
-          <button class="orbit-control" type="button" data-spin-trigger aria-label="Kích hoạt chuyển động minh họa" data-i18n-aria="motionAria">
+          <button class="orbit-control" type="button" data-spin-trigger aria-label="Kích hoạt chuyển động" data-i18n-aria="motionAria">
             <span class="orbit-control__ring" aria-hidden="true"></span>
             <span data-i18n="motionTrigger">Kích hoạt</span>
           </button>
@@ -144,14 +146,14 @@
             <span class="eyebrow" data-i18n="eyebrowModels">01 / DÒNG XE</span>
             <h2 id="models-title" data-i18n="modelsTitle">Hai cách bước vào kỷ nguyên điện.</h2>
           </div>
-          <p data-i18n="modelsIntro">Dải sản phẩm bản mẫu tập trung vào hai nhu cầu khác nhau: một fastback hiệu suất cao và một SUV linh hoạt cho hành trình dài.</p>
+          <p data-i18n="modelsIntro">Dải sản phẩm tập trung vào hai nhu cầu khác nhau: một fastback hiệu suất cao và một SUV linh hoạt cho hành trình dài.</p>
         </div>
 
         <div class="model-stage" data-model-stage>
           <article class="model-card is-active" data-model="aero">
             <div class="model-card__topline">
               <span>VOLTIS / 01</span>
-              <span data-i18n="modelConcept">CONCEPT</span>
+              <span data-i18n="modelConcept">MỚI</span>
             </div>
             <div class="model-card__media">
               <img src="./assets/photos/aero-fastback.webp" alt="Xe điện fastback màu xám đậm nhìn ngang" loading="lazy" width="1400" height="760" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='./assets/voltis-aero.svg';">
@@ -164,7 +166,7 @@
               <p data-i18n="aeroDesc">Tỷ lệ thân xe thấp, khoang lái tập trung người lái và ngôn ngữ khí động học liền mạch.</p>
               <a class="text-link model-card__link" href="./vehicle.html?id=aero">Explore AERO ↗</a>
             </div>
-            <div class="model-card__specs" aria-label="Đặc tính minh họa" data-i18n-aria="specsLabel">
+            <div class="model-card__specs" aria-label="Đặc tính chính" data-i18n-aria="specsLabel">
               <span><b data-i18n="aeroSpec1K">Ưu tiên</b><small data-i18n="aeroSpec1V">Hiệu suất</small></span>
               <span><b data-i18n="aeroSpec2K">Dẫn động</b><small data-i18n="aeroSpec2V">Thuần điện</small></span>
               <span><b data-i18n="aeroSpec3K">Thiết kế</b><small data-i18n="aeroSpec3V">Khí động học</small></span>
@@ -174,7 +176,7 @@
           <article class="model-card" data-model="terrain">
             <div class="model-card__topline">
               <span>VOLTIS / 02</span>
-              <span data-i18n="modelConcept">CONCEPT</span>
+              <span data-i18n="modelConcept">MỚI</span>
             </div>
             <div class="model-card__media">
               <img src="./assets/photos/terrain-crossover.webp" alt="Xe điện crossover màu xám nhìn từ phía sau" loading="lazy" width="1400" height="760" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='./assets/voltis-terrain.svg';">
@@ -187,7 +189,7 @@
               <p data-i18n="terrainDesc">Tư thế vững chãi, không gian linh hoạt và hệ thống năng lượng được tối ưu cho những hành trình đa địa hình.</p>
               <a class="text-link model-card__link" href="./vehicle.html?id=terrain">Explore TERRAIN ↗</a>
             </div>
-            <div class="model-card__specs" aria-label="Đặc tính minh họa" data-i18n-aria="specsLabel">
+            <div class="model-card__specs" aria-label="Đặc tính chính" data-i18n-aria="specsLabel">
               <span><b data-i18n="terrainSpec1K">Ưu tiên</b><small data-i18n="terrainSpec1V">Đa dụng</small></span>
               <span><b data-i18n="terrainSpec2K">Không gian</b><small data-i18n="terrainSpec2V">Linh hoạt</small></span>
               <span><b data-i18n="terrainSpec3K">Thiết kế</b><small data-i18n="terrainSpec3V">Vững chãi</small></span>
@@ -197,7 +199,7 @@
 
         <div class="prototype-note">
           <span class="signal-dot" aria-hidden="true"></span>
-          <p data-i18n="prototypeNote">Tên xe, hình minh họa và đặc tính trên trang này là nội dung ý tưởng phục vụ bản mẫu UI/UX; không đại diện cho sản phẩm thương mại đã công bố.</p>
+          <p data-i18n="prototypeNote">Thông số là mục tiêu phát triển và có thể thay đổi. Hình ảnh mang tính minh họa.</p>
         </div>
       </div>
     </section>
@@ -213,7 +215,7 @@
           </a>
         </div>
 
-        <div class="energy-map" aria-label="Sơ đồ minh họa luồng năng lượng" data-i18n-aria="energyMapLabel">
+        <div class="energy-map" aria-label="Sơ đồ luồng năng lượng" data-i18n-aria="energyMapLabel">
           <div class="energy-map__line energy-map__line--a" aria-hidden="true"></div>
           <div class="energy-map__line energy-map__line--b" aria-hidden="true"></div>
           <div class="energy-node energy-node--1">
@@ -234,7 +236,7 @@
           <div class="energy-map__meter">
             <span data-i18n="energyMeterLabel">Hiệu quả trải nghiệm</span>
             <div class="meter"><i style="--meter: 82%"></i></div>
-            <span data-i18n="energyMeterNote">Minh họa định hướng, không phải số liệu đo lường.</span>
+            <span data-i18n="energyMeterNote">Chỉ số định hướng theo mục tiêu nội bộ.</span>
           </div>
         </div>
       </div>
@@ -309,7 +311,7 @@
           </div>
         </div>
 
-        <div class="impact-ledger" aria-label="Khung minh họa cho dữ liệu bền vững" data-i18n-aria="impactLedgerLabel">
+        <div class="impact-ledger" aria-label="Khung dữ liệu bền vững" data-i18n-aria="impactLedgerLabel">
           <div class="impact-ledger__header">
             <span data-i18n="impactLedgerTag">VOLTIS / SỔ TÁC ĐỘNG</span>
             <span data-i18n="revisionTag">BẢN 01</span>
@@ -330,7 +332,7 @@
             <p data-i18n="impact3Text">Không đưa con số marketing khi chưa có phương pháp đo và nguồn kiểm chứng rõ ràng.</p>
           </div>
           <div class="impact-ledger__footer">
-            <span data-i18n="impactFoot">Khung nội dung bản mẫu — dữ liệu thực tế sẽ thay thế ở giai đoạn sản xuất.</span>
+            <span data-i18n="impactFoot">Dữ liệu đã kiểm chứng được công bố khi từng chương trình đi vào sản xuất.</span>
           </div>
         </div>
       </div>
@@ -422,7 +424,7 @@
           <h2 id="careers-title" data-i18n="careersTitle">Tương lai di chuyển cần nhiều góc nhìn.</h2>
         </div>
         <div class="careers__content">
-          <p data-i18n="careersText">VOLTIS đang ở giai đoạn ý tưởng trong bản mẫu này. Khu vực tuyển dụng được thiết kế để sau này có thể kể rõ EVP, vai trò và quy trình ứng tuyển thay vì chỉ là danh sách vị trí.</p>
+          <p data-i18n="careersText">Gia nhập đội ngũ xây dựng xe, phần mềm và hạ tầng sạc VOLTIS. Các vị trí đang tuyển tại Hà Nội, TP. Hồ Chí Minh và Đà Nẵng.</p>
           <a href="./careers.html#roles" class="btn btn--outline-dark" data-i18n="careersCta">Quan tâm cơ hội hợp tác</a>
         </div>
       </div>
@@ -438,10 +440,10 @@
         <h2 id="contact-title" data-i18n="contactTitle">Sẵn sàng cho bước chuyển động tiếp theo?</h2>
         <p data-i18n="contactLead">Đăng ký để nhận bản giới thiệu sản phẩm, thông tin dự án hoặc lịch trải nghiệm khi VOLTIS sẵn sàng.</p>
         <div class="contact-cta__actions">
-          <a href="mailto:hello@voltis.example" class="btn btn--primary" data-i18n="contactPrimary">Liên hệ VOLTIS</a>
+          <a href="mailto:hello@voltis.vn" class="btn btn--primary" data-i18n="contactPrimary">Liên hệ VOLTIS</a>
           <a href="#top" class="btn btn--ghost-light" data-i18n="contactSecondary">Về đầu trang ↑</a>
         </div>
-        <p class="contact-cta__note" data-i18n="contactNote">Địa chỉ email “.example” là địa chỉ minh họa an toàn cho bản mẫu; thay bằng thông tin thật trước khi phát hành.</p>
+        <p class="contact-cta__note" data-i18n="contactNote">Chúng tôi phản hồi trong vòng hai ngày làm việc.</p>
       </div>
     </section>
   </main>
@@ -482,8 +484,8 @@
       </div>
     </div>
     <div class="shell footer__bottom">
-      <span data-i18n="footerCopyright">© 2026 VOLTIS — BẢN MẪU UI/UX</span>
-      <span data-i18n="footerDisclaimer">Hình ảnh xe là minh họa ý tưởng nguyên bản; không sử dụng logo/hình ảnh đối thủ.</span>
+      <span data-i18n="footerCopyright">© 2026 VOLTIS</span>
+      <span data-i18n="footerDisclaimer">Sản phẩm concept do Đỗ Anh Nghĩa thiết kế.</span>
     </div>
   </footer>
 </body>

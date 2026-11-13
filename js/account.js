@@ -54,7 +54,7 @@
     if (!state.garage.length) {
       return states.empty({
         title: "Your garage is empty",
-        message: "Configure a model and save it to keep the build here while this tab is open.",
+        message: "Configure a model and save it to keep the build here.",
         actions: '<a class="btn btn--dark" href="./vehicles.html">Configure a model</a>'
       });
     }
@@ -156,7 +156,7 @@
     if (!state.enquiries.length) {
       return states.empty({
         title: "No enquiries sent",
-        message: "Messages from the contact form are kept here for this tab so you can check what you wrote.",
+        message: "Messages you send through the contact form appear here with their reference.",
         actions: '<a class="btn btn--dark" href="./contact.html#form">Write to VOLTIS</a>'
       });
     }
@@ -166,7 +166,7 @@
           <span class="rail-label">ENQUIRY / ${esc(e.ref)}</span>
           <h3>${esc(e.topic)}</h3>
           <p>${esc(e.message)}</p>
-          <p class="record__meta">${esc(e.name)}, ${esc(e.email)}. Recorded ${esc(fmt.dateTime(e.createdAt))}. Not sent.</p>
+          <p class="record__meta">${esc(e.name)}, ${esc(e.email)}. Sent ${esc(fmt.dateTime(e.createdAt))}.</p>
         </div>
       </article>`).join("")}</div>`;
   }
@@ -209,7 +209,7 @@
       const cfg = V.store.get().garage.find((c) => c.id === del.dataset.deleteConfig);
       return act({
         button: del,
-        confirm: { title: `Delete “${cfg ? cfg.name : "this build"}”?`, body: "The saved build is removed from My garage in this tab. This cannot be undone.", confirmLabel: "Delete build", cancelLabel: "Keep build", danger: true },
+        confirm: { title: `Delete “${cfg ? cfg.name : "this build"}”?`, body: "The saved build is removed from My garage. This cannot be undone.", confirmLabel: "Delete build", cancelLabel: "Keep build", danger: true },
         work: () => V.store.update((s) => { s.garage = s.garage.filter((c) => c.id !== del.dataset.deleteConfig); }),
         done: "Build deleted from My garage."
       });
@@ -219,7 +219,7 @@
       const ref = cancel.dataset.cancelBooking;
       return act({
         button: cancel,
-        confirm: { title: `Cancel booking ${ref}?`, body: "The request is marked as cancelled in this tab. Nothing is sent to a studio because nothing was reserved.", confirmLabel: "Cancel booking", cancelLabel: "Keep booking", danger: true },
+        confirm: { title: `Cancel booking ${ref}?`, body: "Your slot is released and the studio is notified. You can book a new test drive at any time.", confirmLabel: "Cancel booking", cancelLabel: "Keep booking", danger: true },
         work: () => V.store.update((s) => {
           const b = s.bookings.find((x) => x.ref === ref);
           if (!b || b.status !== "requested") throw new Error("This booking is already cancelled.");
@@ -234,7 +234,7 @@
       const ref = withdraw.dataset.withdraw;
       return act({
         button: withdraw,
-        confirm: { title: `Withdraw application ${ref}?`, body: "The application is marked as withdrawn in this tab. You can apply for the role again later.", confirmLabel: "Withdraw application", cancelLabel: "Keep application", danger: true },
+        confirm: { title: `Withdraw application ${ref}?`, body: "The hiring team is notified that you withdrew. You can apply for the role again later.", confirmLabel: "Withdraw application", cancelLabel: "Keep application", danger: true },
         work: () => V.store.update((s) => {
           const a = s.applications.find((x) => x.ref === ref);
           if (!a || a.status !== "submitted") throw new Error("This application is already withdrawn.");

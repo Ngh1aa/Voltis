@@ -1,9 +1,9 @@
 /*
- * VOLTIS prototype data — the single source for catalogue content and the
+ * VOLTIS data — the single source for catalogue content and the
  * seed for user data. app-core.js copies `seed` into sessionStorage on the
  * first visit in a tab and again when "Reset demo data" is used.
  *
- * Figures (range, price, charging) are concept targets for the prototype,
+ * Figures (range, price, charging) are fictional targets for this website,
  * not homologated values or commercial offers. Prices are in VND.
  */
 (() => {
@@ -48,7 +48,7 @@
       typeLabel: "Fastback",
       index: "VOLTIS / 01",
       tagline: "Low, quiet and precise.",
-      summary: "A fastback concept shaped around clean airflow and a driver-first cabin.",
+      summary: "A fastback shaped around clean airflow and a driver-first cabin.",
       image: IMG.aero,
       imageAlt: "Dark grey electric fastback saloon in side profile, used as reference for the VOLTIS AERO direction",
       seats: 5,
@@ -219,9 +219,9 @@
   ];
 
   const showrooms = [
-    { id: "hanoi", name: "VOLTIS Studio Hanoi", city: "Hanoi", address: "Concept location, Tay Ho District, Hanoi", hours: "Tue to Sun, 09:00 to 18:00", models: ["aero", "terrain", "terrain-xl", "city", "link"] },
-    { id: "saigon", name: "VOLTIS Studio Saigon", city: "Ho Chi Minh City", address: "Concept location, Thu Duc City, Ho Chi Minh City", hours: "Tue to Sun, 09:00 to 18:00", models: ["aero", "terrain", "terrain-xl", "city", "link"] },
-    { id: "danang", name: "VOLTIS Studio Da Nang", city: "Da Nang", address: "Concept location, Son Tra District, Da Nang", hours: "Tue to Sun, 09:00 to 18:00", models: ["aero", "terrain", "city"] }
+    { id: "hanoi", name: "VOLTIS Studio Hanoi", city: "Hanoi", address: "18 Xuan Dieu, Tay Ho District, Hanoi", hours: "Tue to Sun, 09:00 to 18:00", models: ["aero", "terrain", "terrain-xl", "city", "link"] },
+    { id: "saigon", name: "VOLTIS Studio Saigon", city: "Ho Chi Minh City", address: "88 Mai Chi Tho, Thu Duc City, Ho Chi Minh City", hours: "Tue to Sun, 09:00 to 18:00", models: ["aero", "terrain", "terrain-xl", "city", "link"] },
+    { id: "danang", name: "VOLTIS Studio Da Nang", city: "Da Nang", address: "25 Vo Nguyen Giap, Son Tra District, Da Nang", hours: "Tue to Sun, 09:00 to 18:00", models: ["aero", "terrain", "city"] }
   ];
 
   const slots = ["09:00", "10:30", "13:00", "14:30", "16:00", "17:30"];
@@ -298,7 +298,7 @@
       imageAlt: "Solar panels covering the roof of a family house under a blue sky",
       body: [
         "An electric vehicle is only as clean as the energy that charges it, and only as efficient as the habits around it. Most drivers have no way to see either.",
-        "VOLTIS ownership concepts show where energy came from when that data is available, how much was used per trip and what changed it: speed, temperature, climate settings or load.",
+        "VOLTIS ownership tools show where energy came from when that data is available, how much was used per trip and what changed it: speed, temperature, climate settings or load.",
         "The goal is not to lecture. It is to give drivers the same quality of information a fleet manager would expect."
       ]
     },
@@ -333,14 +333,14 @@
       status: "pilot",
       index: "PROJECT / 01",
       title: "Charge Network",
-      summary: "A concept for reliable, legible charging experiences across destination, workplace and journey charging.",
+      summary: "A programme for reliable, legible charging experiences across destination, workplace and journey charging.",
       image: IMG.chargingHub,
       imageAlt: "Rows of DC fast chargers at an open-air public charging hub",
       location: "Hanoi to Da Nang corridor",
       overview: "Charge Network explores how a mixed network of journey, destination and workplace chargers can feel like one service. The focus is availability before arrival, simple payment and fast recovery when a session fails.",
       phases: [
         ["Discover", "Ride-alongs with drivers on the Hanoi to Da Nang corridor to map waiting time and uncertainty."],
-        ["Prototype", "Pilot signage, app states and fault recovery at two concept sites."],
+        ["Build", "Pilot signage, app states and fault recovery at two pilot sites."],
         ["Measure", "Track first-time session success and time from arrival to charging."],
         ["Scale", "Package the site standard for partners and landlords."]
       ],
@@ -359,7 +359,7 @@
       overview: "Energy Sites combines solar generation, buffer storage and charging into one site plan, with a control interface that operators can read at a glance.",
       phases: [
         ["Discover", "Map load profiles and grid constraints for three candidate sites."],
-        ["Prototype", "Design the operator dashboard and alarm hierarchy."],
+        ["Build", "Design the operator dashboard and alarm hierarchy."],
         ["Measure", "Agree reporting for energy source, storage cycles and downtime."],
         ["Scale", "Turn the site plan into a reusable reference design."]
       ],
@@ -378,7 +378,7 @@
       overview: "Storage Layer studies how stationary batteries can smooth renewable generation for high-power charging hubs, and how second-life vehicle packs could contribute.",
       phases: [
         ["Discover", "Literature review and partner interviews on second-life battery use."],
-        ["Prototype", "Model hub demand against storage sizing scenarios."],
+        ["Build", "Model hub demand against storage sizing scenarios."],
         ["Measure", "Define safety, degradation and reporting requirements."],
         ["Scale", "Publish findings and decide whether to pilot."]
       ],
@@ -397,7 +397,7 @@
       overview: "Fleet Depot designs the charging schedule, depot layout and fleet manager interface for operators moving vans and shuttles to electric.",
       phases: [
         ["Discover", "Shadow depot managers through a full shift cycle."],
-        ["Prototype", "Schedule charging around routes, tariffs and driver handover."],
+        ["Build", "Schedule charging around routes, tariffs and driver handover."],
         ["Measure", "Track vehicles ready at shift start and energy cost per route."],
         ["Scale", "Offer the depot playbook with the LINK van."]
       ],
@@ -416,7 +416,7 @@
       overview: "Service Journey connects the owner app, the workshop and remote diagnostics so that owners always know what is happening to their vehicle and why.",
       phases: [
         ["Discover", "Interview owners and technicians about service pain points."],
-        ["Prototype", "Design booking, status tracking and approval of extra work."],
+        ["Build", "Design booking, status tracking and approval of extra work."],
         ["Measure", "Track repeat contacts and time to approval."],
         ["Scale", "Roll the journey into every studio."]
       ],
@@ -431,22 +431,22 @@
   ];
   const projectStatuses = [
     { id: "pilot", label: "Pilot" },
-    { id: "concept", label: "Concept" },
+    { id: "concept", label: "Design" },
     { id: "research", label: "Research" }
   ];
 
   const resources = [
-    { id: "product-principles", title: "VOLTIS Product Principles", summary: "Design intent, interaction hierarchy and concept boundaries.", category: "concept", format: "md", generator: "principles" },
+    { id: "product-principles", title: "VOLTIS Product Principles", summary: "Design intent, interaction hierarchy and product boundaries.", category: "concept", format: "md", generator: "principles" },
     { id: "energy-architecture", title: "Energy Architecture Overview", summary: "Charging, storage and vehicle-energy communication framework.", category: "tech", format: "md", generator: "energy" },
     { id: "impact-framework", title: "Impact Disclosure Framework", summary: "How lifecycle, sourcing and emissions claims should be documented.", category: "esg", format: "md", generator: "impact" },
     { id: "interface-guidelines", title: "Digital Interface Guidelines", summary: "Typography, hierarchy, accessibility and system feedback principles.", category: "ux", format: "md", generator: "interface" },
     { id: "corporate-profile", title: "Corporate Profile", summary: "Company positioning, capabilities and partnership model.", category: "company", format: "txt", generator: "profile" },
-    { id: "vehicle-specs", title: "Concept Range Specification Sheet", summary: "Trims, batteries, range targets and indicative prices for every model.", category: "tech", format: "csv", generator: "specs" },
-    { id: "image-sources", title: "Image Sources and Credits", summary: "Author, source and licence for every free-licence photograph and film used in this prototype.", category: "source", format: "md", file: "./docs/image-sources.md" }
+    { id: "vehicle-specs", title: "Range Specification Sheet", summary: "Trims, batteries, range targets and indicative prices for every model.", category: "tech", format: "csv", generator: "specs" },
+    { id: "image-sources", title: "Image Sources and Credits", summary: "Author, source and licence for every free-licence photograph and film used on this website.", category: "source", format: "md", file: "./docs/image-sources.md" }
   ];
 
   const resourceCategories = [
-    { id: "concept", label: "Concept" },
+    { id: "concept", label: "Design" },
     { id: "tech", label: "Technical" },
     { id: "esg", label: "ESG" },
     { id: "ux", label: "UX" },
@@ -522,7 +522,7 @@
       workMode: "On-site",
       type: "Full-time",
       posted: "2026-08-12",
-      summary: "Develop proportion, surfacing and lighting for the next VOLTIS concept.",
+      summary: "Develop proportion, surfacing and lighting for the next VOLTIS model.",
       responsibilities: ["Sketch, model and present exterior proposals.", "Work with aerodynamics on efficient surfaces.", "Prepare data for physical models."],
       requirements: ["Degree in transportation design.", "Strong sketching and digital surfacing skills."],
       niceToHave: ["Experience with Alias or Blender."]

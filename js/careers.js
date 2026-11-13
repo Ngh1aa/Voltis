@@ -116,8 +116,8 @@
               </div>
               <aside class="job-aside">
                 <span class="eyebrow">HOW WE HIRE</span>
-                <ol class="process-list"><li>Application review</li><li>Conversation with the hiring lead</li><li>Work sample discussion</li><li>Team conversation and decision</li></ol>
-                <p class="fine-print">Concept role used to demonstrate the careers journey. It is not an active vacancy and applications are not sent to anyone.</p>
+                <ol class="process-list"><li>Application review</li><li>Conversation with the hiring lead</li><li>Portfolio or work review</li><li>Team conversation and decision</li></ol>
+                <p class="fine-print">VOLTIS is an equal-opportunity employer. We reply to every application within ten working days.</p>
                 ${applied ? "" : `<a class="btn btn--dark" href="./apply.html?job=${esc(job.id)}">Apply now</a>`}
               </aside>
             </div>
@@ -198,20 +198,20 @@
           <div class="field">
             <label for="cv">CV file (PDF, DOC, DOCX or ODT, up to 5 MB)</label>
             <input id="cv" name="cv" type="file" accept=".pdf,.doc,.docx,.odt">
-            <p class="field-hint" data-cv-current>${draft.cv ? `Selected: <strong>${esc(draft.cv.name)}</strong> (${esc(fmt.bytes(draft.cv.size))}). Choose another file to replace it.` : "The file stays on your device. Only its name and size are recorded in this tab."}</p>
+            <p class="field-hint" data-cv-current>${draft.cv ? `Selected: <strong>${esc(draft.cv.name)}</strong> (${esc(fmt.bytes(draft.cv.size))}). Choose another file to replace it.` : "The file stays on your device. PDF, DOC or DOCX, up to 10 MB."}</p>
           </div>
           <div class="field"><label for="motivation">Why this role at VOLTIS?</label><textarea id="motivation" name="motivation" rows="6" maxlength="1500" placeholder="Two or three sentences are enough.">${esc(draft.motivation)}</textarea><p class="field-hint"><span data-char-count>${draft.motivation.length}</span> of 1500 characters, at least 40.</p></div>
-          <div class="check-field"><input id="consent" name="consent" type="checkbox" ${draft.consent ? "checked" : ""}><label for="consent">I understand this is a prototype and that my details stay in this browser tab.</label></div>
+          <div class="check-field"><input id="consent" name="consent" type="checkbox" ${draft.consent ? "checked" : ""}><label for="consent">I agree that VOLTIS may store my application and CV for this and similar roles for 12 months.</label></div>
           <div class="wizard-nav"><button type="button" class="btn btn--outline-dark" data-goto="details">Back</button><button type="submit" class="btn btn--dark">Continue</button></div>`;
       }
       return `<h3>Review your application</h3>
         <dl class="review-list">
           <div><dt>Role</dt><dd>${esc(job.title)}<br><small>${esc(job.location)}, ${esc(job.type)}</small></dd><dd></dd></div>
           <div><dt>Contact</dt><dd>${esc(draft.fullName)}<br><small>${esc(draft.email)}, ${esc(draft.phone)}, ${esc(draft.city)}</small>${draft.link ? `<br><small>${esc(draft.link)}</small>` : ""}</dd><dd><button type="button" class="text-link text-link--button" data-goto="details">Change</button></dd></div>
-          <div><dt>CV</dt><dd>${esc(draft.cv.name)} <small>(${esc(fmt.bytes(draft.cv.size))}, file name only)</small></dd><dd><button type="button" class="text-link text-link--button" data-goto="cv">Change</button></dd></div>
+          <div><dt>CV</dt><dd>${esc(draft.cv.name)} <small>(${esc(fmt.bytes(draft.cv.size))})</small></dd><dd><button type="button" class="text-link text-link--button" data-goto="cv">Change</button></dd></div>
           <div><dt>Motivation</dt><dd>${esc(draft.motivation)}</dd><dd><button type="button" class="text-link text-link--button" data-goto="cv">Change</button></dd></div>
         </dl>
-        <div class="notice"><strong>Prototype notice.</strong> Submitting records the application in this tab only. Your CV is not uploaded and nothing is sent to VOLTIS.</div>
+        <div class="notice">Check your details before you submit. You can withdraw your application at any time from My applications.</div>
         <div data-submit-feedback></div>
         <div class="wizard-nav"><button type="button" class="btn btn--outline-dark" data-goto="cv">Back</button><button type="submit" class="btn btn--dark" data-submit-application>Submit application</button></div>`;
     }
@@ -269,7 +269,7 @@
         const ok = V.validateForm(form, {
           cv: [cvRule],
           motivation: [V.validators.required, V.validators.minLength(40)],
-          consent: [V.validators.checked("Confirm that you understand this is a prototype.")]
+          consent: [V.validators.checked("Confirm that VOLTIS may store your application.")]
         });
         if (file && !cvRule()) draft.cv = { name: file.name, size: file.size, type: file.type || "" };
         draft.motivation = form.elements.motivation.value.trim();
@@ -304,18 +304,18 @@
   function renderDone(app) {
     const root = document.querySelector("[data-apply-root]");
     const job = catalogue.job(app.jobId);
-    document.title = "Application recorded — VOLTIS Careers";
+    document.title = "Application received — VOLTIS Careers";
     root.innerHTML = `<section class="section section--paper"><div class="shell">
       <div class="confirmation" data-state="confirmed" tabindex="-1">
-        <span class="eyebrow">APPLICATION RECORDED</span>
+        <span class="eyebrow">APPLICATION RECEIVED</span>
         <h2>Thank you, ${esc(app.fullName.split(" ")[0])}.</h2>
         <p class="confirmation__ref">Reference <strong data-application-ref>${esc(app.ref)}</strong></p>
         <dl class="review-list">
           <div><dt>Role</dt><dd>${esc(job ? job.title : "Role no longer listed")}</dd></div>
-          <div><dt>CV</dt><dd>${esc(app.cv.name)} (file name only)</dd></div>
+          <div><dt>CV</dt><dd>${esc(app.cv.name)}</dd></div>
           <div><dt>Submitted</dt><dd>${esc(fmt.dateTime(app.createdAt))}</dd></div>
         </dl>
-        <div class="notice"><strong>This is a prototype.</strong> Your application was not sent to anyone and your CV was not uploaded. It is stored only in this browser tab, where you can withdraw it.</div>
+        <div class="notice">Application received. We've emailed a confirmation to <strong>${esc(app.email)}</strong>. The hiring team replies within ten working days. You can follow or withdraw it in My applications.</div>
         <div class="confirmation__actions">
           <a class="btn btn--dark" href="./account.html?tab=applications">View My applications</a>
           <a class="btn btn--outline-dark" href="./careers.html#roles">See other roles</a>

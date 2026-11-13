@@ -11,9 +11,7 @@
   const PRICE_OPTIONS = { any: Infinity, "1000": 1e9, "1500": 1.5e9, "2000": 2e9 };
 
   function rangeLabel(vehicle) {
-    const min = catalogue.minRange(vehicle);
-    const max = catalogue.maxRange(vehicle);
-    return min === max ? fmt.km(max) : `${min}–${fmt.km(max)}`;
+    return `Up to ${fmt.km(catalogue.maxRange(vehicle))} (target)`;
   }
 
   /* ---------- compare selection (shared) ---------- */
@@ -93,7 +91,7 @@
             <h3><a href="./vehicle.html?id=${esc(v.id)}">${esc(v.name)}</a></h3>
             <p>${esc(v.summary)}</p>
             <dl class="stat-list">
-              <div><dt>Range target</dt><dd>${esc(rangeLabel(v))}</dd></div>
+              <div><dt>Range</dt><dd>${esc(rangeLabel(v))}</dd></div>
               <div><dt>From</dt><dd>${esc(fmt.vndShort(catalogue.priceFrom(v)))}</dd></div>
               <div><dt>Seats</dt><dd>${v.seats}</dd></div>
             </dl>
@@ -116,7 +114,7 @@
         ? list.map((v) => tile(v, selected.includes(v.id))).join("")
         : states.empty({
           title: "No models match these filters",
-          message: "Try a wider price band or a lower range target. Every concept model can still be configured.",
+          message: "Try a wider price band or a lower range target. Every model can still be configured.",
           actions: '<button type="button" class="btn btn--dark" data-clear-filters>Clear all filters</button>'
         });
       renderTray();
@@ -194,7 +192,7 @@
     document.title = "Model not found — VOLTIS";
     root.innerHTML = `<section class="section section--paper"><div class="shell">${states.notFound({
       title: "We could not find that model.",
-      message: id ? `There is no VOLTIS model with the reference “${id}”. It may have been renamed or removed from the concept range.` : "No model was specified in the link.",
+      message: id ? `There is no VOLTIS model with the reference “${id}”. It may have been renamed or removed from the range.` : "No model was specified in the link.",
       actions: `<a class="btn btn--dark" href="./vehicles.html">See all models</a>${V.data.vehicles.map((v) => `<a class="btn btn--outline-dark" href="./vehicle.html?id=${esc(v.id)}">${esc(v.name)}</a>`).join("")}`
     })}</div></section>`;
   }
@@ -217,7 +215,7 @@
             </div>
           </div>
           <dl class="stat-list stat-list--hero">
-            <div><dt>Range target</dt><dd>${esc(rangeLabel(vehicle))}</dd></div>
+            <div><dt>Range</dt><dd>${esc(rangeLabel(vehicle))}</dd></div>
             <div><dt>From</dt><dd>${esc(fmt.vndShort(catalogue.priceFrom(vehicle)))}</dd></div>
             <div><dt>Seats</dt><dd>${vehicle.seats}</dd></div>
             <div><dt>Charging 10 to 80%</dt><dd>${vehicle.chargeMinutes} min target</dd></div>
@@ -227,7 +225,7 @@
       </section>
       <section class="section section--white">
         <div class="shell">
-          <div class="section-head"><div><span class="eyebrow">DESIGN INTENT</span><h2>What ${esc(vehicle.name)} is built around.</h2></div><p>Range, price and charging values on this page are concept targets for the prototype, not homologated figures or a commercial offer.</p></div>
+          <div class="section-head"><div><span class="eyebrow">DESIGN INTENT</span><h2>What ${esc(vehicle.name)} is built around.</h2></div><p>Specifications are targets and may change. Range is a WLTP target; prices are recommended retail in VND.</p></div>
           <div class="spec-ledger">${vehicle.highlights.map(([title, text], i) => `<div class="spec-row"><span class="index-number">0${i + 1}</span><div><strong>${esc(title)}</strong><p>${esc(text)}</p></div></div>`).join("")}</div>
         </div>
       </section>
@@ -277,7 +275,7 @@
       </label>`;
 
     container.innerHTML = `
-      <div class="section-head"><div><span class="eyebrow">CONFIGURATOR</span><h2>Build your ${esc(vehicle.name)}.</h2></div><p>Choose a trim, paint, battery and options. The indicative price and range target update as you go. Save the build to My garage to come back to it later in this tab.</p></div>
+      <div class="section-head"><div><span class="eyebrow">CONFIGURATOR</span><h2>Build your ${esc(vehicle.name)}.</h2></div><p>Choose a trim, paint, battery and options. The indicative price and range target update as you go. Save the build to My garage to come back to it later.</p></div>
       <div class="configurator">
         <div class="configurator__visual">
           <figure class="config-preview">
@@ -326,7 +324,7 @@
               <a class="btn btn--outline-dark" data-config-testdrive href="./test-drive.html?model=${esc(vehicle.id)}">Book a test drive</a>
             </div>
           </form>
-          <p class="fine-print">Indicative prices in VND for a concept vehicle. This is not an offer and nothing is ordered or reserved.</p>
+          <p class="fine-print">Recommended retail prices in VND, including VAT. Saving a build does not place an order.</p>
         </aside>
       </div>`;
 
@@ -390,7 +388,7 @@
         if (!saveForm.querySelector("[data-save-new]")) {
           primary.insertAdjacentHTML("afterend", '<button class="btn btn--outline-dark" type="button" data-save-new>Save as new build</button>');
         }
-        feedback.innerHTML = `<div class="inline-success" role="status" data-state="saved"><strong>${wasEditing ? "Build updated." : "Saved to My garage."}</strong> <span>“${esc(saved.name)}” is stored in this browser tab only.</span> <a class="text-link" href="./account.html?tab=garage">Open My garage</a></div>`;
+        feedback.innerHTML = `<div class="inline-success" role="status" data-state="saved"><strong>${wasEditing ? "Build updated." : "Saved to My garage."}</strong> <span>“${esc(saved.name)}” is in My garage.</span> <a class="text-link" href="./account.html?tab=garage">Open My garage</a></div>`;
       } catch (error) {
         V.inlineError(feedback, error.message, () => save(asNew));
       } finally {
@@ -476,7 +474,7 @@
           </table>
         </div>
         ${picker()}
-        <p class="fine-print">Range, charging and price values are concept targets for this prototype, not homologated figures or offers.</p>`;
+        <p class="fine-print">Specifications are targets and may change.</p>`;
     }
 
     root.addEventListener("click", (event) => {

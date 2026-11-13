@@ -81,7 +81,7 @@
       if (!booking || booking.status !== "requested") {
         root.innerHTML = states.notFound({
           title: booking ? "This booking was cancelled." : "We could not find that booking.",
-          message: booking ? `Booking ${rescheduleRef} is cancelled, so it cannot be rescheduled. You can request a new test drive instead.` : `There is no active booking with reference ${rescheduleRef} in this browser tab.`,
+          message: booking ? `Booking ${rescheduleRef} is cancelled, so it cannot be rescheduled. You can request a new test drive instead.` : `There is no active booking with reference ${rescheduleRef}.`,
           actions: '<a class="btn btn--dark" href="./account.html?tab=bookings">Go to My bookings</a><a class="btn btn--outline-dark" href="./test-drive.html">Book a new test drive</a>'
         });
         return;
@@ -176,7 +176,7 @@
     const vehicle = catalogue.vehicle(draft.modelId);
     return `
       <h3>Choose a VOLTIS studio</h3>
-      <p class="wizard__lead">Showing availability for <strong>${esc(vehicle.name)}</strong>. Studios are concept locations.</p>
+      <p class="wizard__lead">Showing availability for <strong>${esc(vehicle.name)}</strong>. Studios are open Tuesday to Sunday.</p>
       <fieldset class="choice-group" id="showroom-field"><legend class="visually-hidden">Studio</legend>
         ${V.data.showrooms.map((s, i) => {
           const available = s.models.includes(vehicle.id);
@@ -242,7 +242,7 @@
     const c = draft.contact;
     return `
       <h3>Your details</h3>
-      <p class="wizard__lead">We use these only to show your booking in this tab. Nothing is sent.</p>
+      <p class="wizard__lead">Your studio uses these details to confirm the booking and reach you if anything changes.</p>
       <div class="form-grid">
         <div class="field"><label for="firstName">First name</label><input id="firstName" name="firstName" autocomplete="given-name" value="${esc(c.firstName)}"></div>
         <div class="field"><label for="lastName">Last name</label><input id="lastName" name="lastName" autocomplete="family-name" value="${esc(c.lastName)}"></div>
@@ -269,7 +269,7 @@
         <div><dt>Date and time</dt><dd>${esc(fmt.longDate(draft.date))} at ${esc(draft.slot)}${draft.mode === "reschedule" ? `<br><small>Was ${esc(fmt.longDate(draft.original.date))} at ${esc(draft.original.slot)}</small>` : ""}</dd><dd>${change("slot")}</dd></div>
         <div><dt>Contact</dt><dd>${esc(c.firstName)} ${esc(c.lastName)}<br><small>${esc(c.email)}, ${esc(c.phone)}</small>${c.notes ? `<br><small>Note: ${esc(c.notes)}</small>` : ""}</dd><dd>${change("details")}</dd></div>
       </dl>
-      <div class="notice"><strong>Prototype notice.</strong> Confirming stores this request in this browser tab only. No test drive is reserved and nothing is sent to a studio.</div>
+      <div class="notice">Test drives last about 45 minutes, including a short walk-through. Bring your driving licence. You can reschedule or cancel at any time from My bookings.</div>
       <div data-submit-feedback></div>
       ${nav({ next: draft.mode === "reschedule" ? "Confirm new time" : "Confirm request", nextAttr: "data-confirm-booking" })}`;
   }
@@ -280,8 +280,8 @@
     const showroom = catalogue.showroom(booking.showroomId);
     root.innerHTML = `
       <div class="confirmation" data-state="confirmed" tabindex="-1">
-        <span class="eyebrow">${rescheduled ? "RESCHEDULED" : "REQUEST RECORDED"}</span>
-        <h2>${rescheduled ? "Your new time is saved." : "Your test drive request is saved."}</h2>
+        <span class="eyebrow">${rescheduled ? "RESCHEDULED" : "BOOKING CONFIRMED"}</span>
+        <h2>${rescheduled ? "Your test drive is moved to the new time." : "Test drive booked."}</h2>
         <p class="confirmation__ref">Reference <strong data-booking-ref>${esc(booking.ref)}</strong></p>
         <dl class="review-list">
           <div><dt>Model</dt><dd>${esc(vehicle.name)}</dd></div>
@@ -289,7 +289,7 @@
           <div><dt>Date and time</dt><dd>${esc(fmt.longDate(booking.date))} at ${esc(booking.slot)}</dd></div>
           <div><dt>Contact</dt><dd>${esc(booking.contact.firstName)} ${esc(booking.contact.lastName)}, ${esc(booking.contact.email)}</dd></div>
         </dl>
-        <div class="notice"><strong>This is a prototype.</strong> No test drive has been reserved, no studio was contacted and no email was sent. The request exists only in this browser tab until you close it or reset the demo data.</div>
+        <div class="notice">We've emailed the details to <strong>${esc(booking.contact.email)}</strong>. ${esc(showroom.name)} will call ${esc(booking.contact.phone)} the day before to confirm.</div>
         <div class="confirmation__actions">
           <a class="btn btn--dark" href="./account.html?tab=bookings">View My bookings</a>
           <button type="button" class="btn btn--outline-dark" data-ics>Download calendar file</button>
@@ -306,12 +306,12 @@
     const [h, m] = booking.slot.split(":");
     const stamp = new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
     const ics = [
-      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//VOLTIS//Prototype//EN", "BEGIN:VEVENT",
-      `UID:${booking.ref}@voltis.example`, `DTSTAMP:${stamp}`,
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//VOLTIS//Test Drive//EN", "BEGIN:VEVENT",
+      `UID:${booking.ref}@voltis.vn`, `DTSTAMP:${stamp}`,
       `DTSTART:${booking.date.replace(/-/g, "")}T${h}${m}00`, "DURATION:PT45M",
-      `SUMMARY:VOLTIS ${vehicle.name} test drive (prototype - not reserved)`,
+      `SUMMARY:VOLTIS ${vehicle.name} test drive`,
       `LOCATION:${showroom.name}\\, ${showroom.address.replace(/,/g, "\\,")}`,
-      `DESCRIPTION:Reference ${booking.ref}. Prototype booking - nothing was reserved.`,
+      `DESCRIPTION:Reference ${booking.ref}. Bring your driving licence. Reschedule or cancel from My VOLTIS.`,
       "END:VEVENT", "END:VCALENDAR"
     ].join("\r\n");
     V.download(`voltis-test-drive-${booking.ref}.ics`, ics, "text/calendar");

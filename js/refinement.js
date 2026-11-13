@@ -5,12 +5,12 @@
     headerCta: "Book a test drive",
     heroLine1: "Pure electric motion.",
     heroLine2: "Designed around the driving experience.",
-    heroLead: "VOLTIS is an electric-mobility brand concept combining design, technology and systems thinking to create a clear, efficient and responsible driving experience.",
+    heroLead: "VOLTIS is an electric-mobility brand combining design, technology and systems thinking to create a clear, efficient and responsible driving experience.",
     heroVisualLabel: "Motorway light trails used as mood photography for the VOLTIS visual direction",
-    heroVisualNote: "MOOD IMAGE / NOT A VOLTIS PRODUCT",
+    heroVisualNote: "ON THE ROAD / AFTER DARK",
     modelsTitle: "Two directions. One electric platform.",
     modelsIntro: "Two vehicle directions serve distinct needs: a fastback focused on an agile driving experience and a utility-focused vehicle prioritising space and versatility.",
-    prototypeNote: "AERO/TERRAIN names and characteristics are conceptual. Photography is free-licence reference material from Wikimedia Commons and does not show VOLTIS products.",
+    prototypeNote: "Specifications are targets and may change. Images are for illustration; see image credits.",
     energyTitle: "Energy architecture, designed as a system.",
     energyLead: "VOLTIS structures the experience around energy flow — from storage and conversion to driver feedback — with clear information and fewer unnecessary interactions.",
     energyCta: "Explore the technology",
@@ -26,10 +26,10 @@
     newsAll: "View all stories ↗",
     news3Text: "One visual system can scale consistently from the website and brand materials to retail spaces and the in-car experience.",
     careersTitle: "Build the next generation of mobility with us.",
-    careersText: "VOLTIS is currently a concept. The careers area is designed to communicate the working environment, roles and application process as the project develops.",
+    careersText: "Join the teams building VOLTIS vehicles, software and charging. Roles are open in Hanoi, Ho Chi Minh City and Da Nang.",
     careersCta: "Explore opportunities",
     contactTitle: "Start your journey with VOLTIS.",
-    footerDisclaimer: "Photography: Wikimedia Commons contributors under CC0, public-domain and Creative Commons licences. See image credits.",
+    footerDisclaimer: "Concept product designed by Đỗ Anh Nghĩa.",
     heroPhotoAlt: "Long-exposure light trails of traffic on a motorway at dusk",
     aeroPhotoAlt: "Dark grey electric fastback saloon in side profile, used as reference for VOLTIS AERO",
     terrainPhotoAlt: "Grey electric crossover seen from the rear three-quarter, used as reference for VOLTIS TERRAIN",
@@ -128,7 +128,7 @@
       document.querySelectorAll(`[data-i18n-alt="${key}"]`).forEach(el => { el.setAttribute("alt", value); });
     });
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.content = "VOLTIS — electric mobility brand and product experience prototype.";
+    if (meta) meta.content = "VOLTIS — electric vehicles, charging and energy, designed as one system.";
   }
 
   upgradeMedia();

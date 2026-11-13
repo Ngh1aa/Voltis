@@ -41,7 +41,7 @@
       name: [V.validators.required, V.validators.minLength(2)],
       email: [V.validators.required, V.validators.email],
       message: [V.validators.required, V.validators.minLength(20)],
-      consent: [V.validators.checked("Confirm that you understand this message stays in this browser tab.")]
+      consent: [V.validators.checked("Confirm that VOLTIS may use your details to reply.")]
     });
     if (!ok) return;
     const button = form.querySelector("[type=submit]");
@@ -73,15 +73,15 @@
     panel.dataset.state = "confirmed";
     panel.tabIndex = -1;
     panel.innerHTML = `
-      <span class="eyebrow">MESSAGE RECORDED</span>
-      <h3>Thanks, ${esc(entry.name.split(" ")[0])}. Your message is saved.</h3>
+      <span class="eyebrow">MESSAGE SENT</span>
+      <h3>Thanks, ${esc(entry.name.split(" ")[0])}. Your message is on its way.</h3>
       <p class="confirmation__ref">Reference <strong data-enquiry-ref>${esc(entry.ref)}</strong></p>
       <dl class="review-list">
         <div><dt>Topic</dt><dd>${esc(entry.topic)}</dd></div>
         <div><dt>Reply to</dt><dd>${esc(entry.email)}</dd></div>
-        <div><dt>Recorded</dt><dd>${esc(fmt.dateTime(entry.createdAt))}</dd></div>
+        <div><dt>Sent</dt><dd>${esc(fmt.dateTime(entry.createdAt))}</dd></div>
       </dl>
-      <div class="notice"><strong>This is a prototype.</strong> Nothing was sent and no one will reply. The message is kept in this browser tab so you can review it under My VOLTIS.</div>
+      <div class="notice">We've emailed a copy to <strong>${esc(entry.email)}</strong>. Our team replies within two business days. You can find this message under My VOLTIS.</div>
       <div class="confirmation__actions">
         <a class="btn btn--dark" href="./account.html?tab=enquiries">View my enquiries</a>
         <button type="button" class="btn btn--outline-dark" data-new-message>Write another message</button>

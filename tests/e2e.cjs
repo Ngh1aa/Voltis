@@ -4,7 +4,8 @@
  *   py -3 -m http.server 8905 --bind 127.0.0.1     (from the repo root)
  *   NODE_PATH=<dir with playwright> node tests/e2e.cjs
  *
- * Covers every prototype flow, reset, console errors and href="#" checks.
+ * Covers every flow, the hidden demo tools (?demo=1), reset, console errors,
+ * href="#" checks and the absence of prototype wording on product pages.
  * Console errors from third-party image hosts are reported but not failed,
  * because reference photography is loaded from external CDNs.
  */
@@ -51,7 +52,12 @@ async function step(name, fn) {
     await page.waitForSelector(".v-dialog [data-dialog-confirm]");
     await page.click(".v-dialog [data-dialog-confirm]");
   };
+  const openDemoTools = async () => {
+    await page.waitForSelector("[data-demo-tools]", { state: "attached" });
+    await page.evaluate(() => { document.querySelector("[data-demo-tools]").open = true; });
+  };
   const failNext = async () => {
+    await openDemoTools();
     await page.check("[data-fail-toggle]");
     await page.waitForFunction(() => JSON.parse(sessionStorage.getItem("voltis.demo.v1")).failNext === true);
   };
@@ -79,9 +85,45 @@ async function step(name, fn) {
     }
   });
 
-  /* ---------- start clean ---------- */
+  /* ---------- no prototype wording, demo tools hidden unless ?demo=1 ---------- */
+  const productPages = renderedPages.filter((u) => !u.startsWith("figma-"));
+  const PROTO = /prototype|demo data|sandbox|simulat|fictional|state lab|portfolio review/i;
+  await step(`no prototype wording and no demo tools on ${productPages.length} product pages`, async () => {
+    await go("index.html");
+    await page.evaluate(() => sessionStorage.clear());
+    for (const url of productPages) {
+      await go(url);
+      await page.waitForLoadState("load");
+      await page.waitForTimeout(url.startsWith("index") ? 1200 : 600);
+      const body = await page.evaluate(() => document.body.innerText);
+      const hit = body.match(PROTO);
+      assert.equal(hit, null, `${url} shows "${hit && body.slice(Math.max(0, hit.index - 60), hit.index + 60)}"`);
+      assert.equal(await page.locator("[data-demo-tools]").count(), 0, `${url} shows demo tools`);
+      const title = await page.title();
+      assert.doesNotMatch(title, PROTO, `${url} title`);
+    }
+  });
+
+  await step("demo tools appear with ?demo=1, persist in the tab and turn off with ?demo=0", async () => {
+    await go("contact.html?demo=1");
+    await page.waitForSelector("[data-demo-tools] > summary");
+    assert.ok(await page.locator("[data-demo-tools] > summary").isVisible());
+    await go("vehicles.html");
+    await page.waitForSelector("[data-demo-tools] > summary");
+    await page.click("[data-demo-tools] > summary");
+    assert.ok(await page.locator("[data-demo-tools] [data-reset-demo]").isVisible());
+    assert.ok(await page.locator("[data-demo-tools] [data-fail-toggle]").isVisible());
+    await go("index.html");
+    await page.waitForSelector("[data-demo-tools] > summary");
+    await go("vehicles.html?demo=0");
+    await page.waitForLoadState("load");
+    assert.equal(await page.locator("[data-demo-tools]").count(), 0);
+  });
+
+  /* ---------- start clean (demo tools on for the rest of the run) ---------- */
   await go("vehicles.html");
   await page.evaluate(() => sessionStorage.clear());
+  await go("vehicles.html?demo=1");
 
   /* ---------- vehicles list ---------- */
   await step("vehicles: loading state then 5 models", async () => {
@@ -224,12 +266,13 @@ async function step(name, fn) {
     await page.click('[data-step="details"] button[type="submit"]');
     await page.waitForSelector('[data-step="review"]');
     assert.match(await text(".review-list"), /LINK/);
-    assert.match(await text(".notice"), /No test drive is reserved/);
+    assert.match(await text(".notice"), /driving licence/);
     await page.click("[data-confirm-booking]");
     await page.waitForSelector('[data-state="confirmed"]');
     bookingRef = await text("[data-booking-ref]");
     assert.match(bookingRef, /^TD-[A-Z0-9]{6}$/);
-    assert.match(await text(".confirmation .notice"), /prototype/i);
+    assert.match(await text(".confirmation h2"), /Test drive booked/);
+    assert.match(await text(".confirmation .notice"), /emailed the details to linh@example\.com/);
     await page.reload();
     await page.waitForSelector("[data-booking-ref]");
     assert.equal(await text("[data-booking-ref]"), bookingRef);
@@ -389,7 +432,7 @@ async function step(name, fn) {
     await page.waitForSelector('[data-state="confirmed"]');
     appRef = await text("[data-application-ref]");
     assert.match(appRef, /^AP-/);
-    assert.match(await text(".confirmation .notice"), /not sent/);
+    assert.match(await text(".confirmation .notice"), /emailed a confirmation to minh@example\.com/);
     await go("apply.html?job=exterior-designer");
     await page.waitForSelector('[data-state="empty"]');
     assert.match(await text('[data-state="empty"] h2'), /already applied/);
@@ -405,7 +448,7 @@ async function step(name, fn) {
   });
 
   /* ---------- contact + simulated failure ---------- */
-  await step("contact: validation, simulated failure with retry, success state", async () => {
+  await step("contact: validation, failed request with retry, success state", async () => {
     await go("contact.html");
     await page.waitForSelector("[data-contact-form]");
     await page.click('[data-contact-form] button[type="submit"]');
@@ -425,7 +468,7 @@ async function step(name, fn) {
     await page.click("[data-form-feedback] [data-retry]");
     await page.waitForSelector('[data-state="confirmed"]');
     assert.match(await text("[data-enquiry-ref]"), /^EN-/);
-    assert.match(await text(".confirmation .notice"), /Nothing was sent/);
+    assert.match(await text(".confirmation .notice"), /emailed a copy to an@example\.com/);
     await go("account.html?tab=enquiries");
     await page.waitForSelector(".record");
     assert.match(await text(".record"), /Partnership/);
@@ -456,7 +499,8 @@ async function step(name, fn) {
     await go("account.html");
     await page.waitForSelector(".record");
     assert.equal(await page.locator(".record").count(), 2);
-    await page.click(".reset-panel [data-reset-demo]");
+    await openDemoTools();
+    await page.click("[data-demo-tools] [data-reset-demo]");
     await confirmDialog();
     await page.waitForLoadState("load");
     await page.waitForSelector(".toast--success");

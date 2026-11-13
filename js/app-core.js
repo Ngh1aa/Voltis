@@ -1,7 +1,7 @@
 /*
- * VOLTIS prototype core: session store, simulated requests, formatting and
- * shared UI (toasts, confirm dialog, page states, form validation, footer
- * prototype controls). Feature scripts use window.Voltis.
+ * VOLTIS core: session store, request layer, formatting and
+ * shared UI (toasts, confirm dialog, page states, form validation,
+ * demo tools shown only with ?demo=1). Feature scripts use window.Voltis.
  *
  * There is no server. Every "request" resolves locally after a short delay
  * and all user data lives in sessionStorage for the current tab only.
@@ -284,7 +284,7 @@
 
   const validators = {
     required: (value) => (String(value ?? "").trim() ? "" : "This field is required."),
-    email: (value) => (!value || EMAIL.test(String(value).trim()) ? "" : "Enter an email address like name@example.com."),
+    email: (value) => (!value || EMAIL.test(String(value).trim()) ? "" : "Enter an email address in the format name@domain.com."),
     phone: (value) => (!value || PHONE.test(String(value).replace(/\s+/g, " ").trim()) ? "" : "Enter a Vietnamese phone number, for example 0912 345 678 or +84 912 345 678."),
     minLength: (min) => (value) => (!value || String(value).trim().length >= min ? "" : `Write at least ${min} characters.`),
     checked: (message) => (value) => (value ? "" : message),
@@ -384,7 +384,7 @@
     container.querySelector(".inline-alert").focus?.();
   }
 
-  /* ---------- chrome: header count, prototype controls ---------- */
+  /* ---------- chrome: header count, demo tools ---------- */
   function accountCount(state) {
     return state.garage.length
       + state.bookings.filter((b) => b.status === "requested").length
@@ -401,7 +401,55 @@
     document.querySelectorAll("[data-fail-toggle]").forEach((toggle) => { toggle.checked = Boolean(state.failNext); });
   }
 
+  /* ---------- hidden demo tools (?demo=1 turns on, ?demo=0 off) ---------- */
+  const DEMO_FLAG = "voltis.demoTools";
+  function demoToolsEnabled() {
+    const param = query("demo");
+    try {
+      if (param === "1") sessionStorage.setItem(DEMO_FLAG, "1");
+      else if (param === "0") sessionStorage.removeItem(DEMO_FLAG);
+      return sessionStorage.getItem(DEMO_FLAG) === "1";
+    } catch (_) {
+      return param === "1";
+    }
+  }
+
+  function mountDemoTools() {
+    if (document.querySelector("[data-demo-tools]")) return;
+    const style = document.createElement("style");
+    style.textContent = `
+      .demo-tools{position:fixed;left:16px;bottom:16px;z-index:110;font:500 13px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif;color:#f8faf6}
+      .demo-tools>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(9,12,11,.86);border:1px solid rgba(248,250,246,.22);box-shadow:0 6px 20px rgba(0,0,0,.25);font-size:12px;letter-spacing:.06em}
+      .demo-tools>summary::-webkit-details-marker{display:none}
+      .demo-tools>summary::before{content:"";width:7px;height:7px;border-radius:50%;background:#8dff63}
+      .demo-tools[open]>summary{margin-bottom:8px}
+      .demo-tools__panel{display:grid;gap:10px;width:min(260px,calc(100vw - 32px));padding:14px;border-radius:12px;background:#0b0f0d;border:1px solid rgba(248,250,246,.18);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+      .demo-tools__panel label{display:flex;align-items:center;gap:8px;cursor:pointer}
+      .demo-tools__panel button{justify-self:start;padding:7px 12px;border-radius:6px;border:1px solid rgba(248,250,246,.35);background:transparent;color:inherit;font:inherit;cursor:pointer}
+      .demo-tools__panel button:hover,.demo-tools__panel button:focus-visible{background:rgba(248,250,246,.1)}
+      .demo-tools :focus-visible{outline:2px solid #8dff63;outline-offset:2px}`;
+    document.head.appendChild(style);
+    const tools = document.createElement("details");
+    tools.className = "demo-tools";
+    tools.dataset.demoTools = "";
+    tools.innerHTML = `<summary>Demo tools</summary>
+      <div class="demo-tools__panel" role="group" aria-label="Demo tools">
+        <label><input type="checkbox" data-fail-toggle> Simulate a failed request</label>
+        <button type="button" data-reset-demo>Reset demo data</button>
+      </div>`;
+    document.body.appendChild(tools);
+    // Sit above the compare tray (fixed to the bottom) whenever it is open.
+    const place = () => {
+      const tray = document.querySelector("[data-compare-tray]:not([hidden])");
+      tools.style.bottom = tray ? `${tray.offsetHeight + 12}px` : "";
+    };
+    new MutationObserver(place).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ["hidden"] });
+    window.addEventListener("resize", place);
+    place();
+  }
+
   function initChrome() {
+    if (demoToolsEnabled()) mountDemoTools();
     syncChrome(read());
     store.subscribe(syncChrome);
 
